@@ -1,0 +1,787 @@
+<html>
+<head>
+<title>MiniFormelsammlung f&uuml;r C</title>
+
+<link rel="StyleSheet" href="style.css" />
+
+</head>
+<body>
+<tt>
+<center><h1>MiniFormelsammlung f&uuml;r C</h1></center>
+<hr size=="1">
+<pre>
+Beachte: &Uuml;bersichtliche Darstellung des Programmcodes
+         Sinnvolle Einr&uuml;ckungen, sinnvolle Leerzeilen
+         &quot;Sprechende&quot; VariablenNamen, ...
+         Aussagef&auml;hige Kommentare
+</pre>
+
+
+<p>
+<a name="regeln"><h2>Regeln</h2></a>
+<hr size=="1">
+Dateinamen und Verzeichnisnamen stets in Kleinbuchstaben<br>
+Dateinamen und Verzeichnisnamen stets <u>ohne</u> Leerzeichen<br>
+Leerzeichen trennen Parameter voneinander -&gt; Le erzeic hentre nnenParam etervone inander!<br>
+Variablennamen beginnen mit einem <b>k</b>LEINBUCHSTABEN<br>
+Funktionsnamen beginnen stets mit einem <b>k</b>LEINBUCHSTABEN<br>
+</p>
+<br>
+
+
+<p>
+<a name="anweisungsblock"><h2>Anweisungsblock</h2></a>
+<hr size=="1">
+<pre>
+<b>{</b>  Anfang Anweisungsblock
+   Inhalt Anweisungsblock
+   Variablen leben nur innerhalb des Anweisungsblocks in dem sie deklariert wurden
+<b>}</b>  Ende Anweisungsblock
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="grundgeruest"><h2>Grundger&uuml;st</h2></a>
+<hr size=="1">
+<pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+   // Deklarationen
+   ...
+   // Definitionen, Initialisierungen
+   ...
+   // Berechnungen/Funktionalit&auml;ten
+   ...
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="helloworld"><h2>Hello World!</h2></a>
+<hr size=="1">
+<pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+   printf(&quot;Hello World!\n&quot;);
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="kompilieren"><h2>kompilieren</h2></a>
+<hr size=="1">
+<pre>
+<b>gcc programmname.c</b>
+starten mit: ./a.out
+
+Besser:
+<b>gcc -o programmname programmname.c</b>
+starten mit: ./programmname
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="objektdatei"><h2>Objektdatei</h2></a>
+<hr size=="1">
+<pre>
+gcc -c -o programmname.o programmname.c
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="linken"><h2>linken</h2></a>
+<hr size=="1">
+<pre>
+gcc -o programmname pro1.o pro2.o pro3.o usw.
+starten: ./programmname
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="variablentypen"><h2>Variablentypen</h2></a>
+<hr size=="1">
+<pre>
+int     Integer = Ganzzahl, z.B. -3, 0, 17, 123, ...
+float   Flie&szlig;kommazahl, z.B. -56.2, 123.456, 1.0, ...
+char    Zeichenvariable, ein einziges Zeichen
+char[]  Zeichenketten-Variable 1-dimensional, viele Zeichen
+int[][] Integer-Variable 2-dimensional
+u.a.
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="casting"><h2>casting</h2></a>
+<hr size=="1">
+<pre>
+<u>&nbsp;Beispiel 1&nbsp;</u>              <u>&nbsp;Beispiel 2&nbsp;</u>              <u>&nbsp;Beispiel 3&nbsp;</u>
+int n;                    int n;                    float a;
+float a;                  n = 4/<b>(int)</b>2.0;           a = 5/<b>(float)</b>2;
+a = 1.2345;               Ergebnis: n==2            Ergebnis: a==2.5
+n = <b>(int)</b>a;
+Ergebnis: n==1
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="erweitertesgrundgeruest"><h2>Erweitertes Grundger&uuml;st</h2></a>
+<hr size=="1">
+<pre>
+                               |<u>&nbsp;Beispiel&nbsp;</u>
+#includeDateien                | #include &lt;stdio.h&gt;
+                               | #include &lt;math.h&gt;
+#Pr&auml;CompilerAnweisungen        | #define rot 2
+unsch&ouml;ne globale Variablen;    | const int ungut = 77;
+                               | int nixgut = 88;
+FunktionsPrototypen;           | int berechne(int);
+int main()                     | int main()
+{                              | {
+   ...                         |    ...
+}                              | }
+Funktionen                     | int berechnen(int a)
+{                              | {
+   ...                         |    ...
+}                              | }
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="gueltigkeitsbereich"><h2>G&uuml;ltigkeitsbereich von Variablen</h2></a>
+<hr size=="1">
+<pre>
+Lokale Variablen
+   - werden innerhalb von Funktionen() oder Anweisungsbl&ouml;cken <b>{}</b> deklariert.
+   - sind in anderen Funktionen bzw. au&szlig;erhalb des Anweisungsblocks nicht bekannt
+     bzw. werden (wenn nicht angegeben) beim Verlassen der Fumktion gel&ouml;scht.
+
+Globale Variablen                                           <u>Beispiel</u> <b>int a;</b>
+   werden au&szlig;erhalb von Funktionen deklariert und haben              int main()
+   &quot;dateiweite&quot; G&uuml;ltigkeit.                                          {...
+
+Statische Variablen
+   behalten ihren Wert auch wenn ihr G&uuml;ltigkeitsbereich
+   verlassen wird.                                          <u>Beispiel</u> <b>static</b> int a;
+
+Externe Variablen
+   sind in anderen Dateien schon vorhanden und werden
+   (wo angegeben) &quot;programmglobal&quot; benutzt.
+   Beispiel  <u>main.c</u>           <u>datei2.c</u>
+             <b>int zahl;</b>        <b>extern int zahl;</b>
+             int main()       void funktion()
+             {...             {...
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="funktionen"><h2>Funktionen</h2></a>
+<hr size=="1">
+<pre>
+     <u>&nbsp;Parameter&nbsp;</u>                 <u>&nbsp;Beispiel&nbsp;</u>
+<b>keine</b> Parameter&uuml;bergabe     <b>void</b> funktionsName(<b>void</b>);
+nur <b>hin</b>_Parameter           void funktionsName( <b>int</b>);
+nur <b>zur&uuml;ck</b>_Parameter        <b>int</b>  funktionsName(void);
+<b>hin</b>_- und <b>zur&uuml;ck</b>_Parameter  <b>int</b>  funktionsName( <b>int</b>);
+
+<u>Beachte</u>: Der R&uuml;ckgabe-<b>Parameter</b> kann nur ein einfacher Datentyp
+         (int, double, float, char[], Zeiger etc.) sein.
+
+<u>&nbsp;Beispiel mit char-Array&nbsp;</u>
+
+char meinFeld[4+1];
+strcpy(meinFeld, gibFeld(1));
+
+<b>char*</b> gibFeld(int nummer)
+{
+   <b>static</b> char feld[2][4]; // <b>static</b>: dass Variable nicht gel&ouml;scht wird beim Verlassen
+   strcpy(feld[0],"abcd"); //         der Funktion vgl. <a href="#gueltigkeitsbereich">G&uuml;ltigkeitsbereich von Variablen</a>
+   strcpy(feld[1],"efgh");
+   strcpy(feld[2],"ijkl");
+   ...
+   return <b>feld[nummer]</b>;  // Anmerkung: Ein Feld ohne [] ist seine Adresse
+                         //            hier die Adresse von feld[1]
+                         // R&uuml;ckgabe:  Adresse auf "efgh"
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="tastatureingabe"><h2>Tastatureingabe</h2></a>
+<hr size=="1">
+<pre>
+int start;
+printf(&quot;Startzahl = &quot;);
+<b>scanf</b>(&quot;%i&quot;, &amp;start); // Anmerkung: Das <b>&amp;</b> nicht vergessen
+fflush(stdin);       // schreibt den Inhalt des Tastaturpuffers
+                     // vollst&auml;ndig in die Ger&auml;tedatei
+getchar();           // l&ouml;scht das Zeichen [Enter]
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="mathfn"><h2>Mathematische Funktionen</h2></a>
+<hr size=="1">
+<h2>Winkelfunktion, Potenzfunktionen, Logarithmus, runden, Modulo</h2>
+<pre>
+#include &lt;<b>math.h</b>&gt;
+cos(), sin(), tan()                | acos(), asin(), atan()
+exp(), log() beide Basis <i>e</i>         | pow(Basis,Exponent), sqrt()
+ceil()  -&gt;aufrunden                | fabs()      -&gt; absoluter Wert
+floor() -&gt;abrunden                 | fmod bzw. % -&gt; Modulo = Ganzzahliger Rest
+<u>Anmerkung</u>: linken (Linkerflag) mit Parameter <b>-lm</b>             einer Divisionsrechnung
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="modulobsp"><h2>Modulo (Beispiel)</h2></a>
+<hr size=="1">
+<h2>Rest einer ganzzahligen Division, 5. Grundrechenart ;-)</h2>
+<pre>
+int rest;
+rest = 5<b>%</b>2;
+<u>Ergebnis</u>: Rest==1
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="op_prio"><h2>Operatoren, Priorit&auml;ten</h2></a>
+<hr size=="1">
+<pre>
+<table border="1" cellspacing="0" cellpadding="1">
+<tr><th colspan="2" bgcolor="yellow">Mathematische Operatoren</th><th>Priorit&auml;t</th><th colspan="2" bgcolor="yellow">Verh&auml;ltnis und logische Operatoren</th></tr>
+<tr><td>++<br>--</td><td>Inkrement<br>Dekrement</td><td rowspan="5">&nbsp;h&ouml;chste<br><br><br><br><br><br><br><br><br><br><br>niedrigste</td><td>!</td><td>NICHT</td></tr>
+<tr><td>-</td><td>monadisches Minus (Vorzeichen)</td><td>&gt;<br>&gt;=<br>&lt;<br>&lt;=</td><td>gr&ouml;&szlig;er<br>gr&ouml;&szlig;er gleich<br>kleiner<br>kleiner gleich</td></tr>
+<tr><td>*<br>/<br>%</td><td>mal<br>geteilt<br>Modulo (Rest einer ganzzahligen Division)</td><td>==<br>!=</td><td>gleich (identisch)<br>ungleich</td></tr>
+<tr><td>+<br>-</td><td>plus<br>minus</td><td>&amp;&amp;</td><td>UND</td></tr>
+<tr><td colspan="2">&nbsp;</td><td>||</td><td>ODER</td></tr>
+<tr><th colspan="2" bgcolor="yellow">Bitweise Operatoren</th><td rowspan="5" colspan="3">
+<pre>Beispiele
+
+  x = 10
+  y = ++x -&gt; y = 11   y = x++ -&gt; y = 10
+  y = --x -&gt; y = 9    y = x-- -&gt; y = 10
+
+  y = y &gt;&gt; 1   schiebe y um 1 nach <b>rechts</b></pre>
+</td></tr>
+<tr><td>&amp;<br>|</td><td>UND<br>ODER</td></tr>
+<tr><td>^</td><td>XOR</td></tr>
+<tr><td>~<br>&nbsp;</td><td>Einerkomplement<br>siehe: <a href="http://de.wikipedia.org/wiki/Einerkomplement">de.wikipedia.org</a></td></tr>
+<tr><td>&lt;&lt;<br>&gt;&gt;</td><td>schieben nach <b>links</b><br>schieben nach <b>rechts</b></td></tr>
+</table>
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="bedingung1"><h2>Bedingung/Entscheidung 1</h2></a>
+<hr size=="1">
+<h2>Zweifache Auswahl mit: if</h2>
+<pre>
+<b>if</b>(a==5)
+{
+   printf(&quot;a hat den Wert f&uuml;nf\n&quot;);
+}
+
+<u>Beachte</u>: == f&uuml;r Vergleich
+         =  f&uuml;r Zuweisung
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="bedingung2"><h2>Bedingung/Entscheidung 2</h2></a>
+<hr size=="1">
+<h2>Zweifache Auswahl mit: if, else</h2>
+<pre>
+<b>if</b>(a&lt;b)
+{
+   printf("a ist kleiner\n");
+}
+<b>else</b>
+{
+   printf("a ist gr&ouml;&szlig;er\n");
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="bedingung3"><h2>Bedingung/Entscheidung 3</h2></a>
+<hr size=="1">
+<h2>Mehrfache Auswahl mit: if, else if, else</h2>
+<pre>
+<b>if</b>(a&lt;0)
+{
+   printf("a ist kleiner 0\n");
+}
+<b>else if</b>(a&lt;10)
+{
+   printf("a ist [0...10[\n");
+}
+<b>else</b>
+{
+   printf("a ist [10...\n");
+}
+
+Anmerkung: Der &quot;else if&quot;-Block kann beliebig h&auml;ufig wiederholt werden.
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="bedingung4"><h2>Bedingung/Entscheidung 4</h2></a>
+<hr size=="1">
+<h2>Mehrfache Auswahl mit: switch, case, default</h2>
+<pre>
+int zahl;
+zahl=2;
+<b>switch</b>(zahl)
+{
+   <b>case</b> 1: printf(&quot;Eins\n&quot;); break;
+   <b>case</b> 2: printf(&quot;Zwei\n&quot;); break;
+   <b>case</b> 3: printf(&quot;Drei\n&quot;); break;
+   <b>default</b>:printf(&quot;Rest\n&quot;);
+}
+
+<u>Beachte</u>
+falsch: float zahl;          es muss eine int_Zahl sein!
+falsch: case &lt;1: printf...   es d&uuml;rfen keine Bereiche sein!
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="schleifen1"><h2>Schleifen/Iteration 1</h2></a>
+<hr size=="1">
+<h2><b>for</b>-Schleife - Startwert und Endwert bekannt</h2>
+<pre>
+<b>for</b>(z&auml;hlVariable=StartWert; wiederholBedingung; schrittWeite)
+{
+   /* Schleifenk&ouml;rper */
+}
+
+<u>Anmerkung</u>: Wiederholungsbedingung == TRUE
+
+<u>Beispiel</u>: Z&auml;hlen von 1 bis 10
+
+int z;
+<b>for</b>(z=1; z&lt;11; z=z+1)
+{
+   printf(&quot;Z&auml;hler=%i\n&quot;, z);
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="schleifen2"><h2>Schleifen/Iteration 2</h2></a>
+<hr size=="1">
+<h2><b>do-while</b>-Schleife - fu&szlig;gesteuert</h2>
+<pre>
+<u>Beispiel</u>: Z&auml;hlen von 1 bis 10
+
+int z;
+z=1;
+<b>do</b>
+{
+   printf(&quot;Z&auml;hler=%i\n&quot;, z);
+   z=z+1;
+}
+<b>while</b>(z&lt;11); // WiederholungsBedingung, solange
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="schleifen3"><h2>Schleifen/Iteration 3</h2></a>
+<hr size=="1">
+<h2><b>while</b>-Schleife - kopfgesteuert</h2>
+<pre>
+<u>Beispiel</u>: Z&auml;hlen von 1 bis 10
+
+int z;
+z=1;
+<b>while</b>(z&lt;11) // Eintitts-, WiederholungsBedingung, solange
+{
+   printf(&quot;Z&auml;hler=%i\n&quot;, z);
+   z=z+1;
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="schleifeabbruch"><h2>Schleifen-Abbruch</h2></a>
+<hr size=="1">
+<pre>
+<b>continue</b> -&gt; springt zum Bedingungs-Teil der Schleife
+<b>break</b>    -&gt; springt aus der Schleife heraus
+Beachte: Befehle innerhalb einer Schleifenkonstruktion.
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="felder"><h2>Felder, Arrays - f&uuml;r Zahlen</h2></a>
+<hr size=="1">
+<pre>
+int a<b>[</b>anzahl<b>]</b>;        |Beispiel:
+                      |   int a[5];
+                      |   a[3]=88;
+                      |   printf(&quot;Zahl=%i\n&quot;, a[3]);
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="string"><h2>Strings, Zeichenketten - f&uuml;r Zeichen</h2></a>
+<hr size=="1">
+<pre>
+#include &lt;string.h&gt;
+char ort[] = &quot;Berlin&quot;;
+
+<u>Achtung</u>
+   Das letzte Zeichen ist stets ein &quot;\0&quot; (NULL-Terminierung)
+   Daf&uuml;r mu&szlig; Platz reserviert werden!
+
+<u>Operationen mit Zeichenketten</u>
+   str<b>cpy</b> = Copy
+   str<b>cat</b> = Concatenation, Verkettung, aneinander reihen
+
+<u>Variante</u>                   | <u>Variante</u>
+   char ort[7];            |    char ort[7];
+   strcpy(ort,&quot;Berlin&quot;);   |    strcpy(ort,&quot;Be&quot;);
+                           |    strcat(ort,&quot;rlin&quot;);
+
+<u>Ausgabe</u>
+   printf(&quot;Wohnort: %s\n&quot;, ort);     -&gt;Berlin
+   printf(&quot;Wohnort: %c\n&quot;, ort[2]);  -&gt;r
+
+<u>Manipulation</u>
+   ort[2]='X';
+   printf(&quot;Wohnort: %s\n&quot;, ort);     -&gt;BeXlin
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="stringarray"><h2>String-Arrays</h2></a>
+<hr size=="1">
+<h2>vgl. auch Abschitt <a href="#funktionen">Funktionen</a></h2>
+<pre>
+<u>Beispiel</u>
+   char text<b>[</b>3<b>][</b>16<b>]</b>;
+   strcpy(text[0], &quot;Berlin&quot;);
+   strcpy(text[1], &quot;Rumpelstilzchen&quot;);
+   strcpy(text[2], &quot;nochmal&quot;);
+
+   text[1][3]='X';
+
+   int y;
+   for(y=0; y&lt;3; y++)
+      printf(&quot;Variable text[%i]=%s\n&quot;, y, text[y]);
+
+<u>Ausgabe</u>
+   Variable text[0]=Berlin
+   Variable text[1]=RumXelstilzchen
+   Variable text[2]=nochmal
+
+<u>Beispiel</u>                          <u>sch&ouml;ner</u>
+   char ort[7];                 |    char ort[1][7];
+   strcpy(ort,&quot;Berlin&quot;);        |    strcpy(ort[0],&quot;Berlin&quot;);
+   ort[2]='X';                  |    ort[0][2]='X';
+   printf(&quot;Wohnort: %s\n&quot;,ort); |    printf(&quot;Wohnort: %s\n&quot;,ort[0]);
+      -&gt;Wohnort: BeXlin         |       -&gt;wohnort: BeXlin
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="castingintchar"><h2>casting int -&gt; char</h2></a>
+<hr size=="1">
+<pre>
+<u>Beispiel</u>
+   int wert=17;
+   char dieZahl[3];              // <u>Anmerkung</u>: Gen&uuml;gend Speicherplazt anfordern!
+   <b>sprintf</b>(dieZahl, &quot;%i&quot;, wert); // <b>casting</b>
+   printf(&quot;%i\n&quot;, wert);
+   printf(&quot;%s\n&quot;, dieZahl);
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="castingcharint"><h2>casting <b>char</b> -&gt; <b>int</b></h2></a>
+<hr size=="1">
+<pre>
+<u>Beispiel</u>
+   #include &lt;stdlib.h&gt; // f&uuml;r atoi() = ansi_to_int
+   #include &lt;string.h&gt; // f&uuml;r strcpy()
+   int wert;
+   char dieZahl[4];    // <u>Anmerkung</u>: Gen&uuml;gend Speicherplazt anfordern!
+   strcpy(dieZahl, "123");
+   wert = <b>atoi</b>(dieZahl);  // <b>casting</b>
+   printf(&quot;%i\n&quot;, wert);
+   printf(&quot;%s\n&quot;, dieZahl);
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="zufall"><h2>Zufallszahlen</h2></a>
+<hr size=="1">
+<pre>
+#include &lt;stdlib.h&gt;
+
+Zufallszahl erzeugen
+   int zzahl = rand();
+
+Startwert auf 7 setzen
+   srand(7);   // oder auch srandom(...);
+               // startwert=0...32000...
+
+Zufallszahlengenerator mit der Systemzeit initialisieren
+   #include &lt;time.h&gt;
+   srand(time(0));
+
+Beispiel Zufallszahl im Bereich 1...6
+   int zz = rand()%6+1;
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="zeit"><h2>Zeitmessungen</h2></a>
+<hr size=="1">
+<pre>
+#include &lt;time.h&gt;
+<b>time_t</b> startzeit, endezeit;
+startzeit = <b>time</b>(NULL);
+sleep(2); // Zeit vergeht
+endezeit = <b>time</b>(NULL);
+printf("Verstrichene Zeit = %5.0f sec\n", <b>difftime</b>(endezeit,startzeit));
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="schreiben"><h2>In Dateien schreiben</h2></a>
+<hr size=="1">
+<pre>
+<u>Beispiel</u>
+
+   #include &lt;string.h&gt;
+
+   FILE* dateizeiger;
+   dateizeiger = <b>fopen</b>("datei.txt", "<b>w</b>");
+
+   // Fehlerbehandlung
+   if ( dateizeiger == NULL )
+   {
+      printf("\nDatei kann nicht geoeffnet werden!\n");
+      getchar();
+      return;
+   }
+
+   char text[9]; // gen&uuml;gend Zeichen reservieren
+   strcpy(text, &quot;Hallo :)&quot;);
+   int zahl = 321;
+
+   <b>fprintf</b>(dateizeiger, &quot;%<b>s</b>\n&quot;, &quot;abc&quot;); // Text
+   <b>fprintf</b>(dateizeiger, &quot;%<b>s</b>\n&quot;, text);  // Text
+   <b>fprintf</b>(dateizeiger, &quot;%<b>i</b>\n&quot;, zahl);  // Zahl
+
+   <b>fclose</b>(dateizeiger);
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="lesen"><h2>Aus Dateien lesen</h2></a>
+<hr size=="1">
+<pre>
+<u>Beispiel</u>
+
+   FILE* dateizeiger;
+   dateizeiger = <b>fopen</b>("datei.txt", "<b>r</b>");
+
+   // Fehlerbehandlung
+   if ( dateizeiger == NULL )
+   {
+      printf("Datei kann nicht geoeffnet werden!\n");
+      getchar();
+      return;
+   }
+
+   char zeile[88+1];                 // gen&uuml;gend Zeichen reservieren
+   while(1)                          // Endlosschleife
+   {
+      <b>fgets</b>(zeile, 88, dateizeiger); // ganze Zeile auslesen
+      if(feof(dateizeiger))          // Dateiende erreicht
+         break;                      // Schleifenabbruch
+      printf(&quot;%s&quot;, zeile);
+   }
+
+   <b>fclose</b>(dateizeiger);
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="escape"><h2>Escape-Steuersequenzen</h2></a>
+<hr size=="1">
+<br>
+<u>Beachte</u>: Farben k&ouml;nnen auf unterschiedlichen Systemen verschieden definiert sein!<br>
+<br>
+
+
+<table border="0"><tr>
+<td bgcolor="yellow">&nbsp;&nbsp;&nbsp;<a name="zeichenfarbe"><tt><b>&gt;Zeichenfarbe&lt;</b></tt></a>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<a href="#hintergrundfarbe"><tt>Hintergrundfarbe</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt>Bildschirm <a href="#loeschen">l&ouml;schen</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt>Cursor <a href="#positionieren">positionieren</a></tt>&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+
+<pre>
+void <b>fgcolor</b>(int farbe)
+{
+   switch (farbe)
+   {
+      case  1: printf(&quot;\033[30m&quot;);break; // schwarz
+      case  2: printf(&quot;\033[31m&quot;);break; // rot
+      case  3: printf(&quot;\033[32m&quot;);break; // gr&uuml;n
+      case  4: printf(&quot;\033[33m&quot;);break; // gelb
+      case  5: printf(&quot;\033[34m&quot;);break; // blau
+      case  6: printf(&quot;\033[35m&quot;);break; // lila, magenta, violett
+      case  7: printf(&quot;\033[36m&quot;);break; // tuerkies, cyan
+      case  8: printf(&quot;\033[37m&quot;);break; // grau
+      case  9: printf(&quot;\033[38m&quot;);break; // weiss
+      case 10: printf(&quot;\033[01m&quot;);break; // hell(-farbig)
+      case 11: printf(&quot;\033[02m&quot;);break; // dunkel(-grau)
+      case 12: printf(&quot;\033[00m&quot;);break; // normal
+      case 13: printf(&quot;\033[05m&quot;);break; // blink
+      case 14: printf(&quot;\033[07m&quot;);break; // reverse
+      default: printf(&quot;\nFehler: Farbcode nicht im Wertebereichs.\n&quot;); break;
+   }
+}
+
+
+<table border="0"><tr>
+<td bgcolor="yellow">&nbsp;&nbsp;&nbsp;<a name="hintergrundfarbe"><tt><b>&gt;Hintergrundfarbe&lt;</b></tt></a>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt>Bildschirm <a href="#loeschen">l&ouml;schen</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt>Cursor <a href="#positionieren">positionieren</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt><a href="#zeichenfarbe">Zeichenfarbe</a></tt>&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+void <b>bgcolor</b>(int farbe)
+{
+   switch (farbe)
+   {
+      case  1: printf(&quot;\033[40m&quot;); break; // schwarz
+      case  2: printf(&quot;\033[41m&quot;); break; // rot
+      case  3: printf(&quot;\033[42m&quot;); break; // gr&uuml;n
+      case  4: printf(&quot;\033[43m&quot;); break; // gelb
+      case  5: printf(&quot;\033[44m&quot;); break; // blau
+      case  6: printf(&quot;\033[45m&quot;); break; // lila, magenta, violett
+      case  7: printf(&quot;\033[46m&quot;); break; // tuerkies, cyan
+      case  8: printf(&quot;\033[47m&quot;); break; // grau
+      case  9: printf(&quot;\033[48m&quot;); break; // weiss
+      case 12: printf(&quot;\033[00m&quot;); break; // normal
+      default: printf(&quot;\nFehler: Farbcode ausserhalb des Wertebereichs.\n&quot;); break;
+   }
+}
+
+
+<table border="0"><tr>
+<td bgcolor="yellow">&nbsp;&nbsp;&nbsp;<tt><b>&gt;Bildschirm <a name="loeschen">l&ouml;schen&lt;</a></b></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt>Cursor <a href="#positionieren">positionieren</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt><a href="#zeichenfarbe">Zeichenfarbe</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt><a href="#hintergrundfarbe">Hintergrundfarbe</a></tt>&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+void <b>cls</b>() // clear screen
+{
+   printf(&quot;\033[2J&quot;);
+}
+
+
+<table border="0"><tr>
+<td bgcolor="yellow">&nbsp;&nbsp;&nbsp;<tt><b>&gt;Cursor <a name="positionieren">positionieren&lt;</a></b></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt><a href="#zeichenfarbe">Zeichenfarbe</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt><a href="#hintergrundfarbe">Hintergrundfarbe</a></tt>&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;<tt>Bildschirm <a href="#loeschen">l&ouml;schen</a></tt>&nbsp;&nbsp;&nbsp;</td>
+</tr></table>
+void <b>pos</b>(int x,int y)
+{
+   printf(&quot;\033[%i;%if&quot;,y,x);
+}
+
+
+<b>Beispiel: Quadrat auf Bildschirm l&ouml;schen</b>
+
+void qcls(int tlcX, int tlcY, int brcX, int brcY)  // tlc = top-left-corner, brc = bottom-right-corner
+{
+   int x, y;
+   for (x=tlcX; x&lt;=brcX; x++)
+   {
+      for (y=tlcY; y&lt;=brcY; y++)
+      {
+         pos(x,y);
+         printf(" ");
+      }
+   }
+   printf("\n");
+}
+
+
+<hr size="1">
+<table border="0" width="100%"><tr><td align="right">(c)ufg</td></tr></table>
+</tt>
+
+</body>
+</html>

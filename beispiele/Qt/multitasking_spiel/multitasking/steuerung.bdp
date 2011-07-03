@@ -1,0 +1,10 @@
+BabyDevelop-Projektdatei
+ProjektName=Steuerung
+ProjektTyp=3
+nKlassen=3
+KlassenName1=Bild
+KlassenArt1=1
+KlassenName2=Spieler
+KlassenArt2=1
+KlassenName3=Angreifer
+KlassenArt3=1

@@ -1,0 +1,33 @@
+<html>
+<body>
+<pre>
+/* spieldaten.h */
+
+#ifndef SPIELDATEN_H
+#define SPIELDATEN_H
+
+#include &lt;stdio.h&gt;    //wg. printf
+#include &lt;stdlib.h&gt;   //wg. rand()
+
+class SpielDaten
+{
+public: 
+   SpielDaten();
+  ~SpielDaten();
+
+public:   //Attribute, Member
+   int spielBrettDaten[5][5];
+
+private:
+   int anzahlMinen;
+
+public:   //Methoden
+   void initialisiereSpielDaten(int);
+   int leseDatenfeld(int,int);
+   int getAnzahlMinen();
+};
+
+#endif
+</pre>
+</body>
+</html>

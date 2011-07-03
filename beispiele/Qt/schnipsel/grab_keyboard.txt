@@ -1,0 +1,23 @@
+Hallo Roman,
+
+hier ein paar Anregungen:
+
+Qt-Hilfe, Home, Functions
+-> grabKeyboard: QWidget
+-> grabMouse: QWidget
+
+---8<----------------------------------------
+
+void Oberflaeche::keyPressEvent(QKeyEvent *e)
+{
+   e->accept();  // Annehmen des KeyEvents
+
+---8<----------------------------------------
+
+z.B. im Konstruktor
+   setActiveWindow();
+
+---8<----------------------------------------
+
+Gruß
+ufg

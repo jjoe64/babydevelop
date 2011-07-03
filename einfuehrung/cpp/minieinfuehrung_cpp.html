@@ -1,0 +1,305 @@
+<html>
+<head>
+<title>MiniFormelsammlung f&uuml;r C++</title>
+
+<link rel="StyleSheet" href="style.css" />
+
+</head>
+<body>
+<tt>
+<center><h1>MiniFormelsammlung f&uuml;r C++</h1></center>
+<hr size=="1">
+<pre>
+Beachte: &Uuml;bersichtliche Darstellung des Programmcodes
+         Sinnvolle Einr&uuml;ckungen, sinnvolle Leerzeilen
+         &quot;Sprechende&quot; VariablenNamen, ...
+         Aussagef&auml;hige Kommentare
+</pre>
+
+
+<p>
+<a name="regeln"><h2>Regeln zur gef&auml;lligen Beachtung</h2></a>
+<hr size=="1">
+Dateinamen stets in Kleinbuchstaben<br>
+Dateinamen stets <u>ohne</u> Leerzeichen<br>
+Leerzeichen trennen Parameter voneinander -&gt; LeerzeichentrennenParametervoneinander!<br>
+Variablennamen beginnen mit einem <b>k</b>LEINBUCHSTABEN<br>
+Funktionsnamen beginnen mit einem <b>k</b>LEINBUCHSTABEN<br>
+Attributsnamen beginnen mit einem <b>k</b>LEINBUCHSTABEN<br>
+Objektnamen    beginnen mit einem <b>k</b>LEINBUCHSTABEN<br>
+Methodennamen  beginnen mit einem <b>k</b>LEINBUCHSTABEN<br>
+Klassenamen    beginnen mit einem <b>G</b>ro&szlig;buchstaben
+</p>
+
+
+<p>
+<a name="programmbeispiel"><h2>Programmbeispiel - Konsoleanwendung &quot;Hello World!&quot;</h2></a>
+<hr size=="1">
+<pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+   char str[22];
+   cin.getline(str,21);         //Variante I
+   cin &gt;&gt; str;                  //Variante II
+   //printf(&quot;Hallo %s\n&quot;, str); //in C (old world ;-)
+   cout &lt;&lt; &quot;Hallo neue Welt!&quot; &lt;&lt; str &lt;&lt; endl;
+}
+
+<u>Beachte</u>
+  Dateiendung: <b>.cpp</b>
+  kompilieren mit: <b>g++</b>
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="klasse"><h2>Klasse</h2></a>
+<hr size=="1">
+<pre>
+Anmerkung: Siehe auch <a href="#klasseabstrakt">abstrakte Klasse</a> und <a href="#virtuell">virtuelle Methode</a>
+
+<img src="klasse.png">
+
+<b><u>Datei</u> turm.h - Deklarationen</b>
+
+Class Turm
+{
+public:
+   Turm();                 // Konstruktor
+  ~Turm();                 // Destruktor
+public:
+   int dieHoehe;               // Attribut
+private:
+   int derDurchmesser;         // Attribut
+public:
+   void setzeDurchmesser(int); // Methode
+}
+
+<b><u>Datei</u> turm.cpp - Definitionen, Implementierung, Funktionalit&auml;t</b>
+
+#include "turm.h"
+
+/* Konstruktor */
+Turm::Turm ()
+{
+   dieHoehe = 0; // Vorgabewert
+}
+
+/* Destruktor */
+Turm::~Turm()
+{
+}
+
+/* Methode */
+void Turm::setzeDurchmesser(int durchmesser)
+{
+   derDurchmesser = durchmesser;
+}
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="klasseabstrakt"><h2>Abstrakte Klasse</h2></a>
+<hr size=="1">
+<pre>
+Eine abstrakte Klasse (Basisklasse, Oberklasse, Superklasse)
+hat virtuelle und/oder rein virtuelle Methoden.
+
+Anmerkung  I: Von einer abstrakten Klasse k&ouml;nnen keine Objekte erzeugt werden.
+Anmerkung II: Siehe auch <a href="#klasse">Klasse</a> und <a href="#virtuell">virtuelle Methode</a>
+
+Darstellungsvarianten abstrakter Klassen/virtueller Methoden<br>
+<table border="0">
+<tr><td width="45%" align="center">a) <i><b>kursiv</b></i> geschrieben</td><td width="55%" align="center">b) mit Beschreibung <b>{abstrakt}</b></td></tr>
+<tr><td colspan="2"><img src="klasseabstrakt.png"></td></tr>
+</table>
+
+Auszug aus der <b><u>Datei</u> turm.h - Deklarationen</b>
+...
+public:
+   <b>virtual</b> void setzeDurchmesser(int); // virtuelle Methode
+...
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="objekt"><h2>Objekt</h2></a>
+<hr size=="1">
+<pre>
+Turm* meinTurm;
+meinTurm = new Turm();
+
+<img src="objekt.png">
+</pre>
+Anmerkung: Siehe auch <a href="#objektmit">Objekt mit seinen Eigenschaften</a>.
+</p>
+<br>
+
+
+<p>
+<a name="methode"><h2>Methode</h2></a>
+<hr size=="1">
+<b>Methoden, Operationen, Slots, Funktionen</b>
+
+<pre>
+<b><u>Datei</u> main.cpp</b>
+
+#include "turm.h"
+
+int main()
+{
+   Turm* meinTurm;
+   meinTurm = new Turm();
+   meinTurm-&gt;setzeDurchmesser(2);
+   meinTurm-&gt;dieHoehe=20;
+}
+
+<a name="objektmit"><b>Objekt mit seinen Eigenschaften</b></a>
+<p>   <img src="objekt_2.png"></p>
+</pre>
+</p>
+
+
+<p>
+<a name="datenkapselung"><h2>Datenkapselung</h2></a>
+<hr size=="1">
+<pre>
+Zugriffsattribute:
+-private   -&gt; nur die Klasse selbst hat Zugriff
+#protected -&gt; nur die Klasse selbst hat Zugriff und abgeleitete Klassen
++public    -&gt; Zugriff ohne Beschr&auml;nkungen
+
+<u>Forderung der Objektorientierung</u>: Attribute sollen vor dem Zugriff von au&szlig;en
+                                  gesch&uuml;tzt werden. Zugriff nur &uuml;ber Methoden.
+                         richtig: meinTurm-&gt;<b>setzeDurchmesser(</b>2<b>)</b>;
+                        so nicht: meinTurm-&gt;dieHoehe=20;
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="vererbung"><h2>Vererbung</h2></a>
+<hr size=="1">
+<pre>
+<img src="vererbung.png">
+
+<b><u>Datei</u> maeuseturm.h</b>
+
+class Maeuseturm <b>: public Turm</b>
+{
+public:
+   Maeuseturm(); // Konstruktor
+  ~Maeuseturm(); // Destruktor
+private:
+   ...;
+public:
+   ...;
+};
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="ueberladen"><h2>&Uuml;berladen</h2></a>
+<hr size=="1">
+<pre>
+<b>&Uuml;berladen von Methoden/Funktionen</b>
+
+<img src="funktionsueberladung.png">
+
+<b><u>Datei</u> turm.h</b>
+
+class Turm
+{
+public:
+   Turm(); // Konstruktor
+  ~Turm(); // Destruktor
+public:
+   int dieHoehe;
+private:
+   int derDurchmesser;
+public:
+   void setzeDurchmesser(int);
+   void setzeDurchmesser(int,int);
+   void setzeDurchmesser(int,int,int);
+};
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="ueberschreiben"><h2>&Uuml;berschreiben</h2></a>
+<hr size=="1">
+<b>&Uuml;berschreiben von Methoden/Funktionen</b>
+<pre>
+<img src="ueberschreiben.png">
+
+<b><u>Datei</u> turm.h</b>
+
+class Turm
+{
+public:
+   Turm(); // Konstruktor
+  ~Turm(); // Destruktor
+public:
+   int dieHoehe;
+private:
+   int derDurchmesser;
+public:
+   void setzeDurchmesser(int);
+};
+
+<b><u>Datei</u> funkturm.h</b>
+
+class Funkturm : public Turm
+{
+public:
+   Funkturm(); // Konstruktor
+  ~Funkturm(); // Destruktor
+private:
+   int anzahlAntennen;
+public:
+   void setzeDurchmesser(int);
+   void setzeAntennen(int);
+};
+</pre>
+</p>
+<br>
+
+
+<p>
+<a name="virtuell"><h2>Virtuelle Methode</h2></a>
+<hr size=="1">
+abstrakt, virtuell, rein virtuell
+<pre>
+Eine <b>abstrakte Klasse</b> (Basisklasse, Oberklasse, Superklasse) hat
+<b>virtuelle</b> und/oder <b>rein virtuelle</b> Methoden.
+
+<u>virtuelle Methode</u>                      <u>rein virtuelle Methode</u>
+virtual void berechneFlaeche();        virtual void berechneFlaeche() = 0;
+
+Anmerkung: Siehe auch <a href="#klasse">Klasse</a> und <a href="#klasseabstrakt">abstrakte Klasse</a>
+
+</pre>
+</p>
+
+<hr size="1">
+<table border="0" width="100%"><tr><td align="right">(c)ufg</td></tr></table>
+
+</tt>
+
+</body>
+</html>

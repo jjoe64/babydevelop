@@ -1,0 +1,51 @@
+Aktuell
+-------
+
+
+---8<--------------------------------------------------------------------
+
+prüfung auf unerlaubte zeichen in funktion auslagern
+und noch verbessern
+und verzeichnis auf keine dateien überprüfen
+
+
+
+REMark von qt3/bdp5 übernommen
+
+
+ToDo
+----
+///BabyDevelop///
+
+- hilfedateien übernehmen
+
+- Projekt-schließen -> Menüs deaktivieren z.B. neuer Prototyp
+
+- Fehleingaben abfangen, Leerzeichen verboten, Sonderzeichen verboten
+
+- für Meldungsfenster ein anderes terminal nehmen wg. Steuerzeichen
+
+- install.sh-programm das alles findet:
+  - clasess.html-pfad
+  - moc-pfad
+  - linker-optionen
+  - gcc-, g++-pfad
+  - browswebefehl
+
+- Importierte Klassen -> in bdp-Projekt-Datei erster Buchstabe groß machen
+- Einstellungen->Speichern: kein Projekt geoeffnet und dann?
+- aus void ladeRCFile() -> int ladeRCFile()
+- Zeilenumbruch ja/nein
+
+- Neutrale Texte im Meldungsfenster
+- Mal Klassendiagramme usw. zeichnen mit dia + dia2code :-(
+
+- babydevelop.rc, babydevelop_user.rc: Manipulationen melden, abfangen, infos anzeigen
+
+///babyDevelop-Hilfe///
+- BLed->isActive(),
+
+///designer///
+- doppelte Objektnamen erkennen
+- Radiobuttons/Optionsfelder vervollständigen
+

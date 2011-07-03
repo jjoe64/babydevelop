@@ -1,0 +1,166 @@
+<html>
+<head>
+<title>Dokumentation BUG</title>
+</head>
+<body>
+<h1>
+Dokumentation BUG - <b><font color="magenta"><u>B</u></font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b> <u>U</u>niversal <u>G</u>rafikfl&auml;che
+</h1>
+
+<hr size="1">
+
+<center><img src="bug.png"></center>
+
+<tt>
+<h2>Konstruktor</h2>
+<ul>
+   <b>BUG::BUG(</b>QWidget*<b> elternObjekt = 0);</b>
+
+   <h3>Beispiel</h3>
+   <ul>
+      BUG* meineGrafikflaeche;<br>
+      meineGrafikflaeche = new BUG(this);
+   </ul>
+</ul>
+
+<h2>&Ouml;ffentliche Methoden</h2>
+<ul>
+   <li><h3>Grafikfl&auml;che l&ouml;schen</h3>
+   <ul>
+      <b>void loeschen();</b><br>
+   </ul>
+
+   <li><h3>Linie zeichnen</h3>
+   <ul>
+      <b>void zeichneLinie(</b>double<b> x0, </b>double<b> y0, </b>double<b> x1, </b>double<b> y1, </b>int<b> farbe, </b>int<b> breite);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>farbe</i> ist optional, Vorgabe=2 (schwarz).<br>
+         Parameter <i>breite</i> ist optional, Vorgabe=0 (ein Pixel).
+      </ul>
+   </ul>
+
+   <li><h3>Punkt zeichnen</h3>
+   <ul>
+      <b>void zeichnePunkt(</b>double<b> x, </b>double<b> y, </b>int<b> farbe, </b>int<b> durchmesser);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>farbe</i> ist optional, Vorgabe=2 (schwarz).<br>
+         Parameter <i>durchmesser</i> ist optional, Vorgabe=0 (ein Pixel).
+      </ul>
+   </ul>
+
+   <li><h3>Bild darstellen</h3>
+   <ul>
+      <b>void zeichneBild(</b>QString<b> dateiName);</b><br>
+   </ul>
+
+   <li><h3>x-Bildposition setzen</h3>
+   <ul>
+      <b>void setzeBildX(</b>double<b> x);</b><br>
+   </ul>
+
+   <li><h3>y-Bildposition setzen</h3>
+   <ul>
+      <b>void setzeBildY(</b>double<b> y);</b><br>
+   </ul>
+
+   <li><h3>Breite des Zeichenbereichs setzen</h3>
+   <ul>
+      <b>void setzeBreite(</b>int<b> breite);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>breite</i> in Pixel (mind. 100 = Vorgabe).<br>
+         Der Zeichenbereich ist von der schwarzen Linie umrundet (siehe Bild oben). Die Linie selbst ge&ouml;rt nicht dazu.
+      </ul>
+   </ul>
+
+   <li><h3>H&ouml;he des Zeichenbereichs setzen</h3>
+   <ul>
+      <b>void setzeHoehe(</b>int<b> h&ouml;he);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>h&ouml;he</i> in Pixel (mind. 100 = Vorgabe).<br>
+      </ul>
+   </ul>
+
+   <li><h3>Randbreite setzen</h3>
+   <ul>
+      <b>void setzeRandbreite(</b>int<b> randBreite);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>randBreite</i> in Pixel (Vorgabe = 0).<br>
+         Der Rand ist der Bereich ab der schwarzen Linie bis zum Rand der grauen Fl&auml;che (siehe Bild oben).
+      </ul>
+   </ul>
+
+   <li><h3>Mathematische Grenzen des Koordinatensystems setzen - x_Minimum</h3>
+   <ul>
+      <b>void setzeXmin(</b>double<b> x_Minimum);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>x_Minimum</i> <tt><b>&lt;</b></tt> <i>x_Maximum</i> (Vorgabe=-1).<br>
+      </ul>
+   </ul>
+
+   <li><h3>Mathematische Grenzen des Koordinatensystems setzen - x_Maximum</h3>
+   <ul>
+      <b>void setzeXmax(</b>double<b> x_Maximum);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>x_Maximum</i> <tt><b>&gt;</b></tt> <i>x_Minimum</i> (Vorgabe = +1).<br>
+      </ul>
+   </ul>
+
+   <li><h3>Mathematische Grenzen des Koordinatensystems setzen - y_Minimum</h3>
+   <ul>
+      <b>void setzeYmin(</b>double<b> y_Minimum);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>y_Minimum</i> <tt><b>&lt;</b></tt> <i>y_Maximum</i> (Vorgabe = -1).<br>
+      </ul>
+   </ul>
+
+   <li><h3>Mathematische Grenzen des Koordinatensystems setzen - y_Maximum</h3>
+   <ul>
+      <b>void setzeYmax(</b>double<b> y_Maximum);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>x_Maximum</i> <tt><b>&gt;</b></tt> <i>x_Minimum</i> (Vorgabe = +1).<br>
+      </ul>
+   </ul>
+
+   <li><h3>Hintergrundfarbe setzen</h3>
+   <ul>
+      <b>void setzeHintergrundfarbe(</b>int<b> farbe);</b><br>
+      <br>
+      <u>Anmerkung</u><br>
+      <ul>
+         Parameter <i>farbe</i> aus dem Qt-GlobalColor-Namensraum.<br>
+         //file:///usr/share/qt4/doc/html/qt.html#GlobalColor-enum
+      </ul>
+      <h3>Beispiel</h3>
+      <ul>
+         meineGrafikflaeche-&gt;setzeHintergrundfarbe(Qt::yellow);<br>
+      </ul>
+   </ul>
+
+</ul>
+
+
+</tt>
+
+<hr size="1">
+<table size="100%" align="right"><tr><td>(c)ufg</td></tr></table>
+</body>
+</html>
+

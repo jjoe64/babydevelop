@@ -1,0 +1,21 @@
+BabyDevelopRC-File
+FensterStartGroesse=0,0,800,450
+MeldungsFensterStartGroesse=0,480,800,90
+Schriftart=Courier New
+n.c.=n.c.
+n.c.=n.c.
+QtHilfePfadDatei=c:\qt\4.6.3\doc\html\classes.html
+n.c.=n.c.
+QtDir=c:\qt\4.6.3
+QtLib=c:\qt\4.6.3\lib
+Libs=-lQtCore -lQtGui -lQt3Support -lutil
+MocDir=-/-
+Sprache=dd
+n.c.=n.c.
+n.c.=n.c.
+n.c.=n.c.
+n.c.=n.c.
+n.c.=n.c.
+n.c.=n.c.
+n.c.=n.c.
+n.c.=n.c.

@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>BabyDevelop Einf&uuml;hrung - (c)ufg</title>
+</head>
+<body>
+
+<center>
+<h1><b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-Einf&uuml;hrung</h1>
+</center>
+<hr size="1" "noshade">
+<center>
+<table border="0" width="80%"><tr><td>
+<h2>Die Men&uuml;s von <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b></h2>
+</td><td align="right">
+<a href="programmieren.html">Programmieren</a> mit <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b></td></tr>
+</table>
+</center>
+<hr size="1" "noshade">
+
+<table border="1" width="100%"><tr>
+   <td width="25%" align="center"><h3>Men&uuml; &#187;<a href="projekt.html">Projekt</a>&#171;</h3></td>
+      <td width="25%" bgcolor="yellow" align="center"><h3>Men&uuml; &#171;Bearbeiten&#187;</h3></td>
+         <td width="25%" align="center"><h3>Men&uuml; &#187;<a href="info.html">Info</a>&#171;</h3></td>
+            <td width="25%" align="center"><h3>Men&uuml; &#187;<a href="hilfe.html">Hilfe</a>&#171;</h3></td>
+</tr>
+</table>
+<hr size="1" "noshade">
+
+<h3>Der Men&uuml;punkt Bearbeiten</h3>
+
+<ul>
+   <li><h4>&#187;Rundschlag&#171;</h4>
+   F&uuml;hrt alle Schritte zum Erstellen und Ausf&uuml;hren des aktuell ge&ouml;ffneten Projekts durch. D.h. <b>kompilieren</b> aller
+   zum Projekt geh&ouml;render Dateien mit anschlie&szlig;endem <b>linken</b> und <b>ausf&uuml;hren</b>.
+   Im Meldungsfenster werden dabei die Kompilermeldungen ausgegeben. In <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-typischer Weise
+   wird Ihnen die Entscheidung &uuml;ber Erfolg oder Misserfolg Ihrer Programmierkunst <u>nicht</u> abgenommen.
+   Beantworten Sie also erst dann die Frage zur Durchf&uuml;hrung weiterer &quot;Rundschlag&quot;-Schritte, wenn Sie die
+   Ausgaben des Kompiliers gewissenhaft &uuml;berpr&uuml;ft haben&nbsp;:-)<br>
+   Dazu ein Beispiel:
+   <ol>
+      Sie finden im <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-Verzeichnis 
+      unter <b>beispiele/mine</b> eine (einfache) Version eines Programms das schon viele ComputerUser erfeute. 
+      &Ouml;ffnen Sie das Projekt mit <b>Projek-&gt;&Ouml;ffnen...</b> und Sie werden feststellen, 
+      dass es aus sieben Dateien besteht. Das Kompilieren, Linken und Ausf&uuml;hren vollzieht 
+      sich bei diesem Programm auf folgende Weise:
+<center>
+<h4>M i n e n&nbsp;&nbsp;&nbsp;s u c h e n</h4>
+<table border="1" cellspacing="0" cellpadding="3">
+<tr>
+<td valign="top" rowspan="2">Datei:</td><td align="center">main.cpp</td><td align="center">mine.cpp</td><td align="center">mine.h</td><td align="center">spieldaten.cpp</td><td align="center">spieldaten.h</td><td align="center">spieloberflaeche.cpp</td><td align="center">spieloberflaeche.h</td>
+</tr>
+
+<tr bgcolor="yellow"><td align="center" colspan="7"><tt>k o m p i l i e r e n</tt></td></tr>
+
+<tr>
+<td>erzeugt wird:</td><td align="center">main.o</td><td colspan="2" align="center">mine.o</td><td colspan="2" align="center">spieldaten.o</td><td colspan="2" align="center">spieloberflaeche.o</td>
+</tr>
+
+<tr><td colspan="8">&nbsp;</td></tr>
+
+<tr>
+<td bgcolor="yellow">ver&auml;ndert wird:</td><td colspan="3">&nbsp;</td><td bgcolor="yellow" align="center">spieldaten.cpp</td><td colspan="3">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">&nbsp;</td><td colspan="2" bgcolor="yellow" align="center"><tt>kompilieren</tt></td><td colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" bgcolor="yellow">erzeugt wird:</td><td colspan="3">&nbsp;</td><td colspan="2" bgcolor="yellow" align="center">spieledaten.o</td><td colspan="2">&nbsp;</td>
+</tr>
+
+<tr><td colspan="8">&nbsp;</td></tr>
+
+<tr>
+<td bgcolor="yellow">ver&auml;ndert wird:</td><td colspan="4">&nbsp;</td><td bgcolor="yellow" align="center">spieldaten.h</td><td colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4">&nbsp;</td><td colspan="2" bgcolor="yellow" align="center"><tt>kompilieren</tt></td><td colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td align="center" bgcolor="yellow">erzeugt wird:</td><td colspan="3">&nbsp;</td><td colspan="2" bgcolor="yellow" align="center">spieledaten.o</td><td colspan="3">&nbsp;</td>
+</tr>
+
+<tr><td colspan="8">&nbsp;</td></tr>
+
+<tr>
+<td>&nbsp;</td><td colspan="7" bgcolor="yellow" align="center"><tt>linken</tt> aller <b>o</b>bjekt-Dateien</td>
+</tr>
+
+<tr>
+<td bgcolor="yellow" align="center">erzeugt wird:</td><td bgcolor="yellow" colspan="7" align="center"><b>babydevelop</b> (Bin&auml;rdatei)</td>
+</tr>
+
+</table>
+</center>
+<br>
+Erst eine/die Bin&auml;rdatei kann dann gestartet werden.
+
+   </ol>
+
+   <li><h4>&#187;Kompilieren&#171;</h4>
+   Kompiliert nur die Datei (main.cpp) oder Klasse (h- und cpp-Datei) deren Reiter (Tabulator) aktiviert ist und erzeugt deren Objektdatei.
+   Beachten Sie, dass Ver&auml;nderungen im Quellcode zuvor gespeichert werden m&uuml;ssen. Bei &quot;Automatisch speichern&quot; auf &quot;Ein&quot;
+   wird dies von
+   <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+   gesteuert (Men&uuml;: Bearbeiten, Einstellungen, Automatisch speichern).
+
+   <li><h4>&#187;Linken&#171;</h4>
+   Hier werden alle Objektdateien des Projekts gelinkt und die ausf&uuml;hrbare Bin&auml;rdatei erzeugt.
+
+   <li><h4>&#187;Ausf&uuml;hren&#171;</h4>
+   Ausf&uuml;hren der aktuell vorhandenen Bin&auml;rdatei des Projekts.
+
+   <li><h4>&#187;Alle kompilieren&#171;</h4>
+   Unter diesem Men&uuml;punkt werden alle zum Projekt geh&ouml;renden Dateien kompiliert und die entsprechenden Objektdateien erzeugt.
+
+   <li><h4>&#187;Neuer Prototyp...&#171;</h4>
+   Erstellt f&uuml;r ein C-Projekt die <b>h</b>- und <b>c</b>-Datei einer Funktion.
+
+   <li><h4>&#187;Neue allgemeine Klasse...&#171;</h4>
+   Erzeugen Sie hiermit allgemeine Klassen die <u>keine</u> Qt-Widgets enthalten.
+   Es werden die <b>h</b>-&nbsp;und <b>cpp</b>-Dateien mit ihren Standard-Konstruktoren
+   und&nbsp;-Destruktoren erzeugt.
+   Hier ein Beispiel f&uuml;r die h-Datei einer Klasse mit dem Namen <b>Beispiel</b>:
+   <pre>
+   class Beispiel
+   {
+   public:
+      Beispiel();   /* Konstruktor */
+     ~Beispiel();   /* Destruktor  */
+   };</pre>
+   Anmerkung: Sie k&ouml;nnen nachtr&auml;glich aus einer &quot;allgemeinen-Klasse&quot; keine &quot;Qt-Klasse&quot; machen. Die von <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+   selbst&auml;ndig erzeugten &quot;kompilier-Scripte&quot; f&uuml;r &quot;allgemeine-Klassen&quot; enthalten nicht den f&uuml;r &quot;Qt-Klassen&quot; notwendigen <b>M</b>eta<b>O</b>bject<b>C</b>ompiler (moc).
+
+   <li><h4>&#187;Neue grafische Klasse...&#171;</h4>
+   Erzeugen Sie hiermit Klassen die <b>Qt</b>-Klassen enthalten sollen.
+   Dabei werden die <b>h</b>-&nbsp;und <b>cpp</b>-Dateien mit ihren Standard-Konstruktoren
+   und&nbsp;-Destruktoren erzeugt.
+   Auch wird das <b>Q_OBJECT</b>-Makro eingef&uuml;gt.<br>
+   <br>
+   Beachte: <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+   leitet grafische Klassen von der <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-eigenen
+   Klasse <b>ProgrammFenster</b> ab. Die Klasse <b>ProgrammFenster</b> ist ihrerseits lediglich von <b>QWidget</b> abgeleitet.
+   Der Vorteil liegt darin, dass dadurch der Standardkonstruktor <u>keine</u> Parameter ben&ouml;tigt.
+   Hier ein Beispiel f&uuml;r die h-Datei einer Klasse mit dem Namen <b>Beispiel</b>:
+   <pre>
+   #include &quot;/opt/babyDevelop/programmfenster.h&quot;
+   class Beispiel : public ProgrammFenster
+   {
+      Q_OBJECT
+   public:
+      Beispiel();   /* Konstruktor */
+     ~Beispiel();   /* Destruktor  */
+   };</pre>
+   Und hier noch zum Vergleich die Variante mit direkter Ableitung von <b>QWidget</b>:
+   <pre>
+   #include &lt;qwidget.h&gt;
+   class Beispiel : public QWidget
+   {
+      Q_OBJECT
+   public:
+      Beispiel(QWidget* parent=0, const char *name=0); /* Konstruktor */
+     ~Beispiel();                                      /* Destruktor  */
+   };</pre>
+
+   Anmerkung: Sie k&ouml;nnen nachtr&auml;glich aus einer &quot;Qt-Klasse&quot; keine &quot;allgemeine-Klasse&quot; machen, 
+   da die
+   
+   von <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+   selbst&auml;ndig erzeugten &quot;kompilier-Scripte&quot; für Qt-Klassen den <b>M</b>eta<b>O</b>bject<b>C</b>ompiler (moc) enthalten.
+   Dieser w&uuml;rde beim Kompilieren einer &quot;allgemeinen-Klasse&quot; den Kompiliervorgang mit einer Fehlermeldung abbrechen.
+
+   <li><h4>&#187;Prototyp importieren...&#171;</h4>
+   Zum Importieren einer <b>h</b>- und zugeh&ouml;riger <b>c</b>-Datei einer &quot;ausgelagerten&quot; Funktion. Der Quellcode (h- und c-Datei) wird ins
+   Projektverzeichnis kopiert.
+
+   <li><h4>&#187;Klasse importieren...&#171;</h4>
+   Dieser Men&uuml;punkt ist zum Importieren beliebiger Klassen. Der Quellcode (h- und cpp-Datei) wird ins
+   Projektverzeichnis kopiert. Unterschieden wird zwischen zwei Arten von Klassen: <b>Allgemeine&nbsp;Klasse</b>
+   und <b>Grafische Klasse</b>. Vergleiche hierzu auch die Anmerkungen zu &quot;Neue allgemeine Klasse...&quot; und &quot;Neue grafische Klasse...&quot;.
+
+   <li><h4>&#187;Prototyp l&ouml;schen&#171;</h4>
+   L&ouml;schen des aktiven Prototyps. Es werden unabh&auml;ngig von aktiver h-&nbsp;oder c-Datei stets beide Dateien gel&ouml;scht.
+
+   <li><h4>&#187;Klasse l&ouml;schen&#171;</h4>
+   L&ouml;schen der aktiven Klasse. Es werden unabh&auml;ngig von aktiver h-&nbsp;oder cpp-Datei stets beide Dateien gel&ouml;scht.
+
+   <li><h4>&#187;Einstellungen...&#171;</h4>
+   Hier k&ouml;nnen verschiedene Einstellungen zum Optimieren von <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+   vorgenommen werden. Es sind benutzer-/projekt-spezifische Einstellungen die im Homeverzeichnis in der Datei <tt>.babydevelop_user.rc</tt> (versteckte Datei) bzw. im Projektverzeichnis in der Datei <tt>bdpProjekt.rc</tt> gespeichert werden.<br>
+   (Weiere) Compiler- und Linkeroptionen k&ouml;nnen hier auch f&uuml;r den GP2X angegeben werden.
+</ul>
+Anmerkung: Je nach Projekttyp (C-, C++, Qt/C++- oder GP2X/SDL-Projekt) sind die entsprechenden Men&uuml;punkte (de)aktiviert.<br>
+<hr size="1" noshade>
+<table border="0" width="100%"><tr><td align="right">&copy;ufg@hosengummi.de</td></tr></table>
+</body>
+</html>

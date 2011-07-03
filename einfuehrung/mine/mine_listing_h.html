@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+/* mine.h */
+
+#include &lt;qwidget.h&gt;
+
+#include &quot;spieloberflaeche.h&quot;
+#include &quot;spieldaten.h&quot;
+
+class Mine : public QWidget
+{
+   Q_OBJECT 
+public:
+   /* Konstruktor */
+   Mine(QWidget* parent=0, const char *name=0);
+   /* Destruktor */
+  ~Mine();
+
+private:   //Objekte
+   SpielOberflaeche *so;
+   SpielDaten       *sd;
+
+private:   //Attribute, Member
+   int fehler;          //Anzahl getroffener Minen
+   int anzAufgedeckt;   //Anzahl der aufgedeckten Felder
+
+private:   //Methoden
+   int analysiereSpielzug(int, int);
+
+private slots:
+   void spieleZug(int, int, int);
+   void ende();
+   void neuesSpiel(int);
+};
+</pre>
+</body>
+</html>

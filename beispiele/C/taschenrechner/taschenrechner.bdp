@@ -1,0 +1,8 @@
+BabyDevelop-Projektdatei
+ProjektName=Taschenrechner
+ProjektTyp=1
+nKlassen=2
+KlassenName1=addieren
+KlassenArt1=0
+KlassenName2=subtrahieren
+KlassenArt2=0

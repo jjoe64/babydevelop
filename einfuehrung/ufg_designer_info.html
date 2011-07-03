@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>BabyDevelop Einf&uuml;hrung - (c)ufg</title>
+</head>
+<body>
+
+<center>
+<h1><b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-GUI-Designer-Strukturen</h1>
+</center>
+<hr size="1" "noshade">
+
+
+
+<h3>Quellcode-Strukturen *.h-Datei (Beispiel)</h3>
+<table border="1" cellspacing="0" cellpadding="3" bgcolor="lightgreen"><tr><td>
+<pre>
+...
+#include &quot;panzerserversocket.h&quot;   &lt;- <i>Bereich f&uuml;r weitere HeaderDateien</i>
+
+#include &lt;qwidget.h&gt;
+/* &lt;UFGdesigner&gt; */
+#include &lt;qpushbutton.h&gt;
+#include &lt;qlabel.h&gt;
+#include &lt;qlineedit.h&gt;
+/* &lt;/UFGdesigner&gt; */
+
+class ServerPult : public QWidget
+{
+   Q_OBJECT
+public:
+   ServerPult(QWidget* parent=0, const char *name=0); /* Konstruktor */
+  ~ServerPult();                                      /* Destruktor  */
+/* &lt;UFGdesigner&gt; */
+   QPushButton* <font color="blue">keyEnde</font>;
+   QLabel* <font color="blue">portLabel</font>;
+   QLineEdit* <font color="blue">port</font>;
+/* &lt;/UFGdesigner&gt; */
+...
+</pre>
+</td></tr></table>
+
+
+<h3>Quellcode-Strukturen *.cpp-Datei (Beispiel)</h3>
+Parameter (<font color="red">rot</font>) k&ouml;nnen ver&auml;ndert werden.
+<table border="1" cellspacing="0" cellpadding="3" bgcolor="lightgreen"><tr><td>
+<pre>
+...
+/* &lt;UFGdesigner&gt; */
+   this-&gt;setGeometry(<font color="red">200</font>,<font color="red">200</font>,<font color="red">159</font>,<font color="red">275</font>);
+
+   <font color="blue">label1</font> = new QLabel(&quot;<font color="red">label1</font>&quot;,this);
+   <font color="blue">label1</font>-&gt;setPaletteBackgroundColor(<font color="red">yellow</font>);   &lt;-<i>diese Zeile kann gel&ouml;scht werden</i>
+   <font color="blue">label1</font>-&gt;setGeometry(<font color="red">10</font>,<font color="red">10</font>,<font color="red">140</font>,<font color="red">50</font>);
+   <font color="blue">label1</font>-&gt;show();
+
+   <font color="blue">lineEdit2</font> = new QLineEdit(&quot;<font color="red">lineEdit2</font>&quot;,this);
+   <font color="blue">lineEdit2</font>-&gt;setGeometry(<font color="red">10</font>,<font color="red">70</font>,<font color="red">140</font>,<font color="red">30</font>);
+   <font color="blue">lineEdit2</font>-&gt;show();
+
+   <font color="blue">pushButton3</font> = new QPushButton(&quot;<font color="red">pushButton3</font>&quot;,this);
+   <font color="blue">pushButton3</font>-&gt;setGeometry(<font color="red">10</font>,<font color="red">110</font>,<font color="red">140</font>,<font color="red">40</font>);
+   <font color="blue">pushButton3</font>-&gt;show();
+
+   <font color="blue">led4</font> = new BLed(&quot;<font color="red">led4</font>&quot;,this);
+   <font color="blue">led4</font>-&gt;setGeometry(<font color="red">40</font>,<font color="red">170</font>,<font color="red">150</font>,<font color="red">90</font>);
+   <font color="blue">led4</font>-&gt;show();
+
+/* &lt;/UFGdesigner&gt; */
+...
+</pre>
+</td></tr></table>
+Ebenfalls k&ouml;nnen Sie die Objektnamen (<font color="blue">blau</font>) ver&auml;ndern, 
+wenn Sie diese in der <b>cpp</b>- <u>und</u> in der <b>h</b>-Datei &auml;ndern.
+
+<hr size="1" "noshade">
+
+<a name="bled">
+<h3>BLed</h3>
+</a>
+Den Quellcode der Klasse BLed finden Sie bei
+<ul>
+   <li><b>Mac OS X</b><br>
+       in /Developer/babyDevelop/beispiele/led_timer/bled_dateien<br>
+       <br>
+   <li><b>Linux</b><br>
+       in /opt/babyDevelop/beispiele/led_timer/bled_dateien
+</ul>
+
+<hr size="1" "noshade">
+<table border="0" width="100%"><tr><td align="right">&copy;ufg@hosengummi.de</td></tr></table>
+</body>
+</html>

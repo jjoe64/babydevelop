@@ -1,0 +1,133 @@
+<html>
+<body>
+<pre>
+#include &quot;spieloberflaeche.h&quot;
+
+<a name="kon_de_struktor">SpielOberflaeche::SpielOberflaeche(QWidget *parent, const char *name ) : QWidget(parent,name)</a>
+{
+   //Spieloberflaehe (QWidget) einstellen
+   this-&gt;setGeometry(10, 10, 219, 260);
+   this-&gt;setPaletteBackgroundColor(&quot;yellow&quot;);
+
+   //Spielbrett einstellen
+   spielBrett = new QTable(this);
+   spielBrett-&gt;setGeometry(35,35,(5)*30,(5)*30);   //Groesse der Tabelle (keine Scrollbalken)
+   spielBrett-&gt;setNumCols(5);   //Anzahl der Zeilen/Spalten
+   spielBrett-&gt;setNumRows(5);
+   spielBrett-&gt;setLeftMargin(0);   //Zeilen-/Spaltenkoepfe unsichtbar
+   spielBrett-&gt;setTopMargin(0);
+   spielBrett-&gt;setLineWidth(0);   //Randbreite
+   for(int z=0;z&lt;5;z++)   //Spielfeld
+   {
+      spielBrett-&gt;setColumnWidth(z,30);
+      spielBrett-&gt;setRowHeight(z,30);
+      spielBrett-&gt;setRowReadOnly(z,true);   //nicht beschreibbar mit Tastatur
+   }
+   //mit definiertem Inhalt fuellen
+   for(int x=0;x&lt;5;x++)
+      {
+         for(int y=0;y&lt;5;y++)
+         {
+            spielBrett-&gt;setText(x,y,&quot; &quot;);   //Leerzeichen
+         }
+      }
+   spielBrett-&gt;show();
+
+   //Mausklick auf Spielfeld abfangen
+   connect(spielBrett,SIGNAL(clicked(int,int,int,const QPoint &)),SLOT(mausKlickAufFeld(int,int,int)));
+
+   //Knoepfe
+   keyNeuesSpiel = new QPushButton(&quot;Neues Spiel&quot;,this);
+   keyNeuesSpiel-&gt;setGeometry(10,220,90,30);
+   keyNeuesSpiel-&gt;show();
+   connect( keyNeuesSpiel, SIGNAL( clicked() ), SLOT( sende_neuesSpiel() ) );
+
+   keyEnde = new QPushButton(&quot;Ende&quot;,this);
+   keyEnde-&gt;setGeometry(120,220,90,30);
+   keyEnde-&gt;show();
+   connect( keyEnde, SIGNAL( clicked() ), SLOT( sende_ende() ) );
+
+   anzAufgedeckt=0;
+}
+
+
+SpielOberflaeche::~SpielOberflaeche()
+{
+}
+
+
+<a name="methoden">/* Methoden */</a>
+
+<a name="sende_ende">void SpielOberflaeche::sende_ende()</a>
+{
+   emit keyEndeClicked();
+}
+
+
+<a name="sende_neues_spiel">void SpielOberflaeche::sende_neuesSpiel()</a>
+{
+   emit keyNeuesSpielClicked( 5 );   //5 = Anzahl der Minen
+}
+
+
+<a name="next_aufgedeckt">void SpielOberflaeche::nextAufgedeckt()</a>
+{
+   anzAufgedeckt++;
+}
+
+
+<a name="get_anz_aufgedeckt">int SpielOberflaeche::getAnzAufgedeckt()</a>
+{
+   return anzAufgedeckt;
+}
+
+
+<a name="zeige_meldung">void SpielOberflaeche::zeigeMeldung(int anzahlMinen)</a>
+{
+   keyEnde-&gt;setEnabled(false);
+   keyNeuesSpiel-&gt;setEnabled(false);
+   QMessageBox::information(this,&quot;- Minen-Information -&quot;,&quot;Anzahl der Minen = &quot; + QString::number(anzahlMinen) );
+   keyEnde-&gt;setEnabled(true);
+   keyNeuesSpiel-&gt;setEnabled(true);
+}
+
+
+<a name="get_status">int SpielOberflaeche::getStatus(int x, int y)</a>
+{
+   if(spielBrett-&gt;text(y,x)==&quot; &qut;)return -1;   //noch nicht geklicktes Feld
+   if(spielBrett-&gt;text(y,x)==&quot;X&quot;)return 1;   //X-gesetztes Feld
+   return 0;   //aufgedecktes Feld
+}
+
+
+<a name="maus_klick_auf_feld">void SpielOberflaeche::mausKlickAufFeld(int y,int x, int b)</a>
+{
+   qWarning(&quot;SpielOberflaeche::Zeile=%i - Spalte=%i - Knopf=%i&quot;,y,x,b );
+   emit spieleZugClicked(x,y,b);
+} 
+
+
+<a name="loesche_spielbrett">void SpielOberflaeche::loescheSpielbrett()</a>
+{
+      for(int x=0;x&lt;5;x++)
+      {
+         for(int y=0;y&lt;5;y++)
+         {
+            spielBrett-&gt;setText(y,x,&quot; &quot;);
+         }
+      }
+}
+
+
+<a name="schreibe_auf_feld">void SpielOberflaeche::schreibeAufFeld(int x, int y, QString zeichen)</a>
+{
+   //QFont schrift( t-&gt;font() );
+   //schrift.setPixelSize(25);
+   //t-&gt;setFont( schrift );
+   QFont schrift( &quot;Courier&quot;, 26, QFont::Bold );
+   spielBrett-&gt;setFont( schrift );
+   spielBrett-&gt;setText(y,x,zeichen);
+}
+</pre>
+</body>
+</html>

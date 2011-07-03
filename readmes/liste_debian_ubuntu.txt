@@ -1,0 +1,19 @@
+ Benoetigte Pakete/Tips fuer Debian/Ubuntu
+-------------------------------------------
+
+----------------------------------------------------------------------
+ Pakete für Qt bzw. BabyDevelop installieren
+---------------------------------------------
+Mit System -> Systemverwaltung -> Synapic-Paketverwaltung -> [Suchen]
+oder in der Konsole als root-User mit: apt-get install PaketName(n)
+
+Folgende Pakete werden benötigt:
+   qt4-dev-tools qt4-doc qt4-qtconfig g++ make libqt4-dev
+
+
+ Fuer PostgreSQL
+-----------------
+libqt3-mt-psql libdbd-pg-perl libdbd-pgsql libpg-perl libpq-dev pgaccess postgresql postgresql-dev
+->/etc/postgresql/7.4/main/postgresql.conf ändern: tcpip_socket = yes
+->/etc/postgres/pg_hba.conf ändern bei ipv4: host    all   all       0.0.0.0  0.0.0.0   password
+

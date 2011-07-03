@@ -1,0 +1,136 @@
+####################################
+# Qt4 Makefile fuer BabyDevelop 10 #
+####################################
+
+#-------------------------------#
+#          Qt-Dir               #
+#-------------------------------#
+
+#---Fuer Ubuntu, 7.04, ..., 10.04
+QTDIR=/usr/include/qt4
+
+
+#-------------------------------#
+#          moc                  #
+#-------------------------------#
+
+#---Fuer Ubuntu, 7.04, ..., 10.04
+MOC=/usr/bin/moc-qt4
+
+
+#-------------------------------#
+#          cFlags               #
+#-------------------------------#
+
+#---Fuer Ubuntu, 7.04, ..., 10.04
+CFLAGS=-g -c -Wall -I$(QTDIR) -I$(QTDIR)/Qt -I$(QTDIR)/QtCore -I$(QTDIR)/QtGui -DLINUX
+
+
+#-------------------------------#
+#          lFlags               #
+#-------------------------------#
+
+#---Fuer Ubuntu 7.04, ..., 10.04
+LDFLAGS=-L/usr/lib -lQtCore -lQtGui -lQt3Support -lutil
+
+
+#-------------------------------#
+#   Verschiedene Definitionen   #
+#-------------------------------#
+CC=g++
+LD=g++
+OUT=babydevelop
+SRC=../src
+OBJ=../obj
+
+all: clean arbeiter ufgi18n codeeditor eingabe_1 import einstellungen ufgdesigner ufgbasis ufgpushbutton ufglineedit ufglabel ufgled ufgbild debugger programmfenster bled main bdp linken
+
+clean:
+	-rm -f ../$(OUT)
+	-rm -f $(OBJ)/*
+
+arbeiter:
+	$(CC) $(CFLAGS) $(SRC)/arbeiter.cpp -o $(OBJ)/arbeiter.o
+
+ufgi18n:
+	$(CC) $(CFLAGS) $(SRC)/ufgi18n.cpp -o $(OBJ)/ufgi18n.o
+
+codeeditor:
+	$(CC) $(CFLAGS) $(SRC)/codeeditor.cpp -o $(OBJ)/codeeditor.o
+	$(MOC) $(SRC)/codeeditor.h -o $(OBJ)/codeeditor.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/codeeditor.moc.cpp -o $(OBJ)/codeeditor.moc.o
+
+eingabe_1:
+	$(CC) $(CFLAGS) $(SRC)/eingabe_1.cpp -o $(OBJ)/eingabe_1.o
+	$(MOC) $(SRC)/eingabe_1.h -o $(OBJ)/eingabe_1.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/eingabe_1.moc.cpp -o $(OBJ)/eingabe_1.moc.o
+
+import:
+	$(CC) $(CFLAGS) $(SRC)/importieren.cpp -o $(OBJ)/importieren.o
+	$(MOC) $(SRC)/importieren.h -o $(OBJ)/importieren.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/importieren.moc.cpp -o $(OBJ)/importieren.moc.o
+
+einstellungen:
+	$(CC) $(CFLAGS) $(SRC)/einstellungen.cpp -o $(OBJ)/einstellungen.o
+	$(MOC) $(SRC)/einstellungen.h -o $(OBJ)/einstellungen.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/einstellungen.moc.cpp -o $(OBJ)/einstellungen.moc.o
+
+ufgdesigner:
+	$(CC) $(CFLAGS) $(SRC)/ufgdesigner.cpp -o $(OBJ)/ufgdesigner.o
+	$(MOC) $(SRC)/ufgdesigner.h -o $(OBJ)/ufgdesigner.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/ufgdesigner.moc.cpp -o $(OBJ)/ufgdesigner.moc.o
+
+ufgbasis:
+		$(CC) $(CFLAGS) $(SRC)/ufgbasis.cpp -o $(OBJ)/ufgbasis.o
+
+ufgpushbutton:
+	$(CC) $(CFLAGS) $(SRC)/ufgpushbutton.cpp -o $(OBJ)/ufgpushbutton.o
+	$(MOC) $(SRC)/ufgpushbutton.h -o $(OBJ)/ufgpushbutton.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/ufgpushbutton.moc.cpp -o $(OBJ)/ufgpushbutton.moc.o
+
+ufglineedit:
+	$(CC) $(CFLAGS) $(SRC)/ufglineedit.cpp -o $(OBJ)/ufglineedit.o
+	$(MOC) $(SRC)/ufglineedit.h -o $(OBJ)/ufglineedit.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/ufglineedit.moc.cpp -o $(OBJ)/ufglineedit.moc.o
+
+ufglabel:
+	$(CC) $(CFLAGS) $(SRC)/ufglabel.cpp -o $(OBJ)/ufglabel.o
+	$(MOC) $(SRC)/ufglabel.h -o $(OBJ)/ufglabel.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/ufglabel.moc.cpp -o $(OBJ)/ufglabel.moc.o
+
+ufgled:
+	$(CC) $(CFLAGS) $(SRC)/ufgled.cpp -o $(OBJ)/ufgled.o
+	$(MOC) $(SRC)/ufgled.h -o $(OBJ)/ufgled.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/ufgled.moc.cpp -o $(OBJ)/ufgled.moc.o
+
+ufgbild:
+	$(CC) $(CFLAGS) $(SRC)/ufgbild.cpp -o $(OBJ)/ufgbild.o
+	$(MOC) $(SRC)/ufgbild.h -o $(OBJ)/ufgbild.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/ufgbild.moc.cpp -o $(OBJ)/ufgbild.moc.o
+
+debugger:
+	$(CC) $(CFLAGS) $(SRC)/debugger.cpp -o $(OBJ)/debugger.o
+	$(MOC) $(SRC)/debugger.h -o $(OBJ)/debugger.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/debugger.moc.cpp -o $(OBJ)/debugger.moc.o
+
+programmfenster:
+	$(CC) $(CFLAGS) $(SRC)/programmfenster.cpp -o $(OBJ)/programmfenster.o
+	$(MOC) $(SRC)/programmfenster.h -o $(OBJ)/programmfenster.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/programmfenster.moc.cpp -o $(OBJ)/programmfenster.moc.o
+
+bled:
+	$(CC) $(CFLAGS) $(SRC)/bled.cpp -o $(OBJ)/bled.o
+	$(MOC) $(SRC)/bled.h -o $(OBJ)/bled.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/bled.moc.cpp -o $(OBJ)/bled.moc.o
+
+main:
+	$(CC) $(CFLAGS) $(SRC)/main.cpp -o $(OBJ)/main.o
+
+bdp:
+	$(CC) $(CFLAGS) $(SRC)/babydevelop.cpp -o $(OBJ)/babydevelop.o
+	$(MOC) $(SRC)/babydevelop.h -o $(OBJ)/babydevelop.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/babydevelop.moc.cpp -o $(OBJ)/babydevelop.moc.o
+
+linken:
+	$(LD) $(LDFLAGS) $(OBJ)/*.o -o ../$(OUT)
+

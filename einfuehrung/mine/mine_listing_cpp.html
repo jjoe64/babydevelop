@@ -1,0 +1,94 @@
+<html>
+<body>
+<pre>
+/* mine.cpp */
+
+#include &quot;mine.h&quot;
+
+<a name="kon_de_struktor">Mine::Mine(QWidget *parent, const char *name) : QWidget(parent, name)</a>
+{
+   this-&gt;setGeometry(100,100,239,280);
+   so = new SpielOberflaeche(this);
+   connect( so, SIGNAL( keyEndeClicked()              ), SLOT( ende() )                 );
+   connect( so, SIGNAL( keyNeuesSpielClicked(int)     ), SLOT( neuesSpiel(int) )        );
+   connect( so, SIGNAL( spieleZugClicked(int,int,int) ), SLOT( spieleZug(int,int,int) ) );
+   so-&gt;show();
+   sd = new SpielDaten();
+   sd-&gt;initialisiereSpielDaten(5);
+   so-&gt;zeigeMeldung(5);
+   fehler = 0;
+   anzAufgedeckt = 0;
+}
+
+Mine::~Mine()
+{
+}
+
+<a name="methoden">/* Methoden */</a>
+
+<a name="analysierespielzug">int Mine::analysiereSpielzug(int x, int y)</a>
+{
+   qWarning(&quot;Steuerung::analysiereSpielzug... x: %i :: y: %i&quot;, x, y);
+   return sd-&gt;leseDatenfeld(x,y);
+}
+
+<a name="spielezug">void Mine::spieleZug(int x, int y, int b)</a>
+{
+   int erg = analysiereSpielzug(x,y);
+   qWarning(&quot;Steuerung::spieleZug... erg = %i&quot;, erg);
+   qWarning(&quot;Steuerung::spieleZug... knopf = %i&quot;, b);
+   if(b==1)   //(Links)Klick
+   {
+      if( erg==-1 )   //Mine getroffen
+      {
+         QMessageBox::information( this ,&quot;nix gut&quot;, QString( &quot;Es wurde eine Mine getroffen :-(&quot; ) );
+         fehler++;
+      }
+      else   //freies Feld, Anzahl der Minen in Umgebung oder X-gesetztes Feld
+      {
+         if(so-&gt;getStatus(x,y)!=0)   //Aktion nur sinnvoll bei nicht aufgedecktem Feld (=-1) oder X-gesetztem Feld (=1)
+         {
+            so-&gt;schreibeAufFeld(x,y,QString::number(erg));
+            //anzAufgedeckt++;
+            so-&gt;nextAufgedeckt();
+            if( (25 - sd-&gt;getAnzahlMinen() - so-&gt;getAnzAufgedeckt() ) == 0 )   //SpielEnde
+            {
+               QMessageBox::information( this ,&quot;Spielende&quot;, &quot;Alle Felder richtig gesetzt :-)\n\n&quot; + QString::number(fehler) + &quot; Minen getroffen!\n\n- Spielende -&quot; );
+            }
+         }
+      }
+   }
+   else   //Rechtsklick
+   {
+      qWarning(&quot;Steuerung::spieleZug(...)... Rechtsklick&quot;);
+      int status = so-&gt;getStatus(x,y);
+      if( status == 1 )   //X-gesetztes Feld
+      {
+         so-&gt;schreibeAufFeld(x,y,&quot; &quot;);   //X-Markierung wieder loeschen
+      }
+      if( status == -1 )   //noch nicht gedrcktes Feld
+      {
+         so-&gt;schreibeAufFeld(x,y,&quot;X&quot;);   //X-Markierung setzen
+      }
+   }
+}
+
+<a name="neuesspiel">void Mine::neuesSpiel(int anzahl)</a>
+{
+   qWarning(&quot;%i&quot;,anzahl);
+   sd-&gt;initialisiereSpielDaten(anzahl);
+   so-&gt;loescheSpielbrett();
+   so-&gt;zeigeMeldung(anzahl);
+   fehler = 0;
+   anzAufgedeckt = 0;
+   //weg//delete so;
+   //weg//erzeugeSpieloberflaeche();
+}
+
+<a name="ende">void Mine::ende()</a>
+{
+   exit(0);
+}
+</pre>
+</body>
+</html>

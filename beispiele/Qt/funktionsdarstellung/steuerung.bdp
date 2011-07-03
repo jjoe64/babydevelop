@@ -1,0 +1,10 @@
+BabyDevelop-Projektdatei
+ProjektName=Steuerung
+ProjektTyp=3
+nKlassen=3
+KlassenName1=Zeichenflaeche
+KlassenArt1=1
+KlassenName2=Linie
+KlassenArt2=0
+KlassenName3=Punkt
+KlassenArt3=0

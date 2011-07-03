@@ -1,0 +1,12 @@
+BabyDevelop-Projektdatei
+ProjektName=Steuerung
+ProjektTyp=2
+nKlassen=4
+KlassenName1=auto
+KlassenArt1=0
+KlassenName2=boot
+KlassenArt2=0
+KlassenName3=laster
+KlassenArt3=0
+KlassenName4=vehikel
+KlassenArt4=0

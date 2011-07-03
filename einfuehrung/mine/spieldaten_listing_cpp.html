@@ -1,0 +1,225 @@
+<html>
+<body>
+<pre>
+#include &quot;spieldaten.h&quot;
+
+<a name="kon_de_struktor">SpielDaten::SpielDaten()</a>
+{
+/*
+   Um eine zufaellige Startzahl zu erzeugen
+   schreibe man folgendes Script:
+      #!/bin/bash
+      f=$(cat /proc/uptime | awk -F&quot; &quot; {' print $1 '})
+      d=$(echo $f |sed -e &quot;s:\.::&quot;)
+      exit $d
+   und speichere es im Home-Verzeichnis unter dem Namen laufzeit ab.
+   Es liest die Anzahl der 1/100 Sekunden seit Systemstart.
+   Dann setze das x-Attribut mit: chmod +x laufzeit
+   Mit den folgenden zwei Zeilen wird diese Zahl ausgelesen.
+*/
+   int startwert = system("~/laufzeit");
+   srand(startwert);   //oder auch srandom(...);
+
+   //unused---int spielBrettDaten[5][5];
+   //spielBrettDaten[5][5];
+   //anzahlAufgedeckt = 0;
+   anzahlMinen = 5;
+}
+
+SpielDaten::~SpielDaten()
+{
+}
+
+<a name="methoden">/* Methoden */</a>
+
+<a name="lesedatenfeld">int SpielDaten::leseDatenfeld(int x, int y)</a>
+{
+   return spielBrettDaten[x][y];
+}
+
+<a name="getanzahlminen">int SpielDaten::getAnzahlMinen()</a>
+{
+   return anzahlMinen;
+}
+
+<a name="initialisierespieldaten">void SpielDaten::initialisiereSpielDaten(int anzahlMinenNeu)</a>
+{
+   anzahlMinen = anzahlMinenNeu;
+   int x,y,z;
+
+   //Spielbrett-Daten erst mal mit 0 fllen d.h. keine Minen in der Nachbarschaft
+   for(x=0;x&lt;5;x++)
+      for(y=0;y&lt;5;y++)
+         spielBrettDaten[x][y] = 0;
+
+   //dann Minen auf Spielbrett-Daten setzen d.h. -1 fr Minenfeld
+   z = 0;
+   do
+   {
+      //dieZufallsZahl = (rand()%(MaxZahl-MinZahl+1))+MinZahl;   //mind of ufg
+      x = (rand()%(4-0+1))+0;
+      y = rand()%5;
+      if(spielBrettDaten[x][y] == 0)z++;   //nur hochz�len, wenn nicht schon eine Mine da ist
+      spielBrettDaten[x][y] = -1;
+   }
+   while(z&lt;anzahlMinen);
+
+   //Daten der Felder berechnen (d.h. wieviele Minen sitzen in der Nachbarschaft)
+   //nach mind of ufg
+   //von links nach rechts und von oben nach unten durchlaufen
+   for(y=0;y&lt;5;y++)
+   {
+      for(x=0;x&lt;5;x++)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if(x&lt;4)   //d.h. rechts noch ein Feld
+            {
+               if(spielBrettDaten[x+1][y] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x+1][y] = spielBrettDaten[x+1][y] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //(zurueck) von rechts nach links und oben nach unten
+   for(y=0;y&lt;5;y++)
+   {
+      for(x=4;x&gt;=0;x--)   //rueckwaerts
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if(x&gt;0)   //d.h. links noch ein Feld
+            {
+               if(spielBrettDaten[x-1][y] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x-1][y] = spielBrettDaten[x-1][y] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //von oben nach unten und links nach rechts
+   for(x=0;x&lt;5;x++)
+   {
+      for(y=0;y&lt;5;y++)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if(y&lt;4)   //d.h. unten noch ein Feld
+            {
+               if(spielBrettDaten[x][y+1] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x][y+1] = spielBrettDaten[x][y+1] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //(zurueck) von unten nach oben und links nach rechts
+   for(x=0;x&lt;5;x++)
+   {
+      for(y=4;y&gt;=0;y--)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if(y&gt;0)   //d.h. oben noch ein Feld
+            {
+               if(spielBrettDaten[x][y-1] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x][y-1] = spielBrettDaten[x][y-1] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //jetzt schraeg (aber in Streifen)
+   //von links oben nach rechts unten
+   for(y=0;y&lt;5;y++)
+   {
+      for(x=0;x&lt;5;x++)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if( (x&lt;4) and (y&lt;4) )   //d.h. rechts-unten noch ein Feld
+            {
+               if(spielBrettDaten[x+1][y+1] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x+1][y+1] = spielBrettDaten[x+1][y+1] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //(zurueck) von rechts unten nach links oben
+   for(y=4;y&gt;=0;y--)
+   {
+      for(x=4;x&gt;=0;x--)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if( (x&gt;0) and (y&gt;0) )   //d.h. links-oben noch ein Feld
+            {
+               if(spielBrettDaten[x-1][y-1] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x-1][y-1] = spielBrettDaten[x-1][y-1] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //von links unten nach rechts oben ///
+   for(y=4;y&gt;=0;y--)
+   {
+      for(x=0;x&lt;5;x++)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if( (x&lt;4) and (y&gt;0) )   //d.h. rechts-oben noch ein Feld
+            {
+               if(spielBrettDaten[x+1][y-1] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x+1][y-1] = spielBrettDaten[x+1][y-1] + 1;
+               }
+            }
+         }
+      }
+   }
+
+   //(zurueck) von rechts oben nach links unten ///
+   for(y=0;y&lt;5;y++)
+   {
+      for(x=4;x&gt;=0;x--)
+      {
+         if(spielBrettDaten[x][y] == -1)   //d.h. Minenfeld
+         {
+            if( (x&gt;0) and (y&lt;4) )   //d.h. links-unten noch ein Feld
+            {
+               if(spielBrettDaten[x-1][y+1] != -1)   //d.h. keine Mine
+               {
+                  spielBrettDaten[x-1][y+1] = spielBrettDaten[x-1][y+1] + 1;
+               }
+            }
+         }
+      }
+   }
+   //fertig
+
+   //zur Kontrolle ausgeben
+   for(y=0;y&lt;5;y++)
+      {
+         //qWarning(&quot;(%i|%i)=%i&quot;,x,y,spielBrettDaten[x][y]);
+//         qWarning(&quot;%-2i | %-2i | %-2i | %-2i | %-2i&quot;,spielBrettDaten[0][y],spielBrettDaten[1][y],spielBrettDaten[2][y],spielBrettDaten[3][y],spielBrettDaten[4][y]);
+         printf(&quot;%-2i | %-2i | %-2i | %-2i | %-2i\n&quot;,spielBrettDaten[0][y],spielBrettDaten[1][y],spielBrettDaten[2][y],spielBrettDaten[3][y],spielBrettDaten[4][y]);
+      }
+}
+</pre>
+</body>
+</html>

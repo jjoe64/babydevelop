@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Einf&uuml;hrung in C++ - Kapitel 6 (Auszug Funktions&uuml;berladung in einer Klasse): Mehr &uuml;ber Zugriffsschutz</title>
+<meta name="author" content="Heinz Tschabitscher, Ulrich Gehring" />
+<meta name="keywords" content="c++ array objekte objects objekt variable deklaration zeichenkette interner zeiger dynamisch this linked list verbundene liste schachteln operator overloading überladen funktion kopierkonstruktor" />
+<meta name="description" content="Endlich ein praktisches Beispiel, und ein ganzer Haufen sehr sinnvolle objektorientierte Programmiertechnik." />
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta name="LANGUAGE" content="de" />
+</head>
+<body>
+
+<h2>Funktions&uuml;berladung in einer Klasse</h2>
+
+<hr size="1" noshade>
+
+<p>Beispielprogramm: <a href="funueber.cpp">FUNUEBER.CPP</a></p>
+
+<p>Das Programm <a href="funueber.cpp">FUNUEBER.CPP</a> gibt uns ein Beispiel f&uuml;r das 
+<b>&Uuml;berladen</b> von Funktionsnamen in einer Klasse. In dieser Klasse 
+<b>&uuml;berladen</b> wir den Konstruktor und eine der Methoden, um zu 
+demonstrieren, was gemacht werden kann.</p> 
+
+<p>Diese Datei zeigt einige der Verwendungsm&ouml;glichkeiten von 
+<b>&uuml;berladenen</b> Funktionsnamen und ein paar Regeln f&uuml;r ihre Anwendung. 
+Du wirst Dich erinnern, dass die Auswahl der Funktion allein nach 
+der Anzahl und dem Typ der formalen Parameter erfolgt. Der Typ des 
+R&uuml;ckgabewertes hat darauf keinen Einflu&szlig;.</p> 
+
+<p>In diesem Fall haben wir drei Konstruktoren. Welcher der Konstruktoren 
+aufgerufen wird, entscheidet sich anhand der Anzahl und der Typen der 
+Parameter in der Definition. In <b>Zeile 71</b> des Hauptprogrammes deklarieren wir 
+die drei Objekte, jedes mit einer anderen Anzahl an Parametern und wenn wir 
+uns das Ergebnis ansehen, k&ouml;nnen wir leicht erkennen, dass der 
+jeweils richtige Konstruktor aufgerufen wurde.</p> 
+
+<p>Bei den anderen <b>&uuml;berladenen</b> Methoden wird die passende Methode 
+genauso festgestellt. Eine der Nachrichten beinhaltet eine Variable 
+vom Typ <b>int</b>, eine andere eine Variable vom Typ 
+<b>float</b>, das System findet aber die passende Methode. Du 
+kannst eine Methode so oft <b>&uuml;berladen</b>, wie Du willst, solange die 
+Parameter eindeutig sind.</p>
+
+<p>Vielleicht denkst Du nun, dass das ganze nicht viel Sinn macht 
+und bist geneigt, es als Spielerei abzutun, das <b>&Uuml;berladen</b> ist aber 
+sehr wichtig. Die gesamte Einf&uuml;hrung hindurch haben wir einen 
+<b>&uuml;berladenen</b> Operator verwendet, ohne dass Du irgendetwas 
+Au&szlig;ergew&ouml;hnliches daran gefunden h&auml;ttest. Es handelt 
+sich um den Operator <b>&lt;&lt;</b>, der Teil der Klasse 
+<b>cout</b> ist. Dieser Operator ist <b>&uuml;berladen</b>, da die Form 
+der Ausgabe von der Eingabevariable abh&auml;ngt. Viele Programmiersprachen 
+haben <b>&uuml;berladene</b> Ausgabefunktionen, damit Du alle m&ouml;glichen Daten 
+mit ein und demselben Funktionsname ausgeben kannst.</p>
+
+<p>Kompiliere das Programm und f&uuml;hre es aus.</p>
+
+<hr size="1" noshade>
+
+&copy; 1997, 1998, 2001 Heinz Tschabitscher (die komplette Einf&uuml;hrung gibts bei: http://ladedu.com/cpp), &copy; 2003 Ulrich Gehring
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+<body>
+<pre>
+/* main.cpp */
+
+#include &lt;qapplication.h&gt;
+
+#include &quot;mine.h&quot;
+
+int main(int argc, char **argv)
+{
+   QApplication hauptfenster (argc, argv);
+   Mine *mine = new Mine();
+   hauptfenster.setMainWidget(mine);
+   mine-&gt;show();
+   return hauptfenster.exec();
+}
+</pre>
+</body>
+</html>

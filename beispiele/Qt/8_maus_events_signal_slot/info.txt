@@ -1,0 +1,10 @@
+81_drueck_mich_mouse_move
+
+   QLabel, mouseMoveEvent
+
+
+82_viele_objekte_maus_press_move
+
+   BildKlasse, viele Objekte, mouseMoveEvent, mousePressEvent
+   bewegen und verschieben ohne Maustaste gedrückt zu halten
+

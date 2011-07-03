@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>BabyDevelop FAQ - (c)ufg</title>
+</head>
+<body>
+<h1><b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-FAQ</h1>
+<hr size="1" noshade>
+
+<h3>Allgemeine Anmerkungen</h3>
+<ul>
+<li>Have a lot of fun :-)
+</ul>
+
+<h3>Was <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b> (nicht) sein will</h3>
+<ul>
+<li>Es soll nur die notwendigsten Funktionen bieten - small is beautyfull.
+<li>Es soll m&ouml;glicht wenig Automatismen enthalten - daf&uuml;r aber die notwendigen.
+<li>Es soll f&uuml;r JustForFun-Programmierer erweiterbar sein - macht fun :-)
+<li>Es soll f&uuml;r JustForFun-Programmierer &quot;griffige&quot; Hilfen beinhalten - andere gibts im Internet schon mehr als genug - macht noch mehr fun :-))
+<li>Es soll auf m&ouml;glichst vielen Plattformen zum Laufen gebracht weden k&ouml;nnen - ohne Spezialkenntnisse.
+<li>Es soll keine Entwicklungsumgebung sein wie z.B. KDevelop, Anjuta, Eclipse, usw. - daf&uuml;r aber schnell, zuverl&auml;ssig und transparent.
+</ul>
+
+<h3>babydevelop.rc-Datei</h3>
+<ul>
+Vorweg ein griffiges Suchbefehl-Beispiel: <tt><b>find /usr -iname qwidget.h</b></tt><br>
+<br>
+<li>Wie finde ich die <b>QtHilfePfadDatei</b>?<br>
+    Suchen Sie auf Ihrem System die Datei <b>mainclasses.html</b> - That's the way :-)<br>
+    In diesem Verzeichnis befinden sich noch viele weitere <b>Qt</b>-Hilfe-Dateien.<br>
+    Beispiel: <tt>QtHilfePfadDatei=/usr/share/qt4/doc/html/mainclasses.html</tt><br>
+    <br>
+<li>Wie finde ich das <b>QtDir</b>-Verzeichnis?<br>
+    Suchen Sie auf Ihrem System die Datei <b>qapplication.h</b>. Sie wird in einem Verzeichnis namens Qt sein.<br>
+    Eine Ebene h&ouml;her (in diesem Verzeichnis ist dieses Qt-Verzeichnis enthalten) befinden sich noch viele weitere 
+    <b>Qt*</b>-Verzeichnisse z.B. QtCore, QtGui, QtSql, ... - That's the way :-)<br>
+    Beispiel: <tt>QtDir=/usr/include/qt4</tt><br>
+    <br>
+<li>Wie finde ich das <b>QtLib</b>-Verzeichnis?<br>
+    Suchen Sie auf Ihrem System die Datei(en) <b>libqt.so</b>* oder <b>libqt-mt.so</b>* - That's the way :-)<br>
+    <br>
+<li>Ein Wort zu den <b>Libs</b>-Parametern<br>
+    Werden zum Linken weitere Bibliotheken ben&ouml;tigt, so geben Sie diese hier an.<br>
+    Beispiel: <tt>Libs=-lqt-mt -lutil</tt><br>
+    Projektspezifische Libraries werden unter:<br>
+    <b>Bearbeiten -&gt; Einstellungen -&gt; Projekt-Libraries</b><br>
+    eingetragen.<br>
+    Zum Linken von z.B. PostgreSQL-Libraries geben Sie <b>-lpq</b> an. Zum Linken von SDL-Programmen <b>-lSDL</b><br>
+    <br>
+<li>Wie finde ich das <b>MocDir</b>?<br>
+    Suchen Sie auf Ihrem System die Datei (Programm) <b>moc</b> - That's the way :-)<br>
+    Beispiel: <tt>MocDir=/usr/lib/qt3/bin</tt><br>
+    <br>
+<li><b>Begrenzungen</b><br>
+    In der Datei <b>babydevelop.h</b> findet sich die Zeile: <tt><b>const int maxKlassen=19;</b></tt><br>
+    Die Zahl gibt die maximale Anzahl erlaubter Klassen an. Wert ist beliebig.<br>
+    Beim &Uuml;berschreiten von <tt>maxKlassen</tt> wird das Programm <b>ohne</b> Vorwarnung 
+    beendet (Speicherzugriffsfehler).<br>
+    In der Datei <b>ufgdesigner.h</b> findet sich die Zeile: <tt><b>const int maxObjekte=15;</b></tt><br>
+    Die Zahl gibt die maximale Anzahl Objekte des GUI-Designers an. Wert ist beliebig.<br>
+    Beim &Uuml;berschreiten von <tt>maxObjekte</tt> wird das Programm <b>ohne</b> Vorwarnung 
+    beendet (Speicherzugriffsfehler).
+</ul>
+
+...
+<hr size="1" noshade>
+<table border="0" width="100%"><tr><td align="right">&copy;ufg@hosengummi.de</td></tr></table>
+</body>
+</html>

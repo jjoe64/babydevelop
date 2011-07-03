@@ -1,0 +1,35 @@
+ BabyDevelop-Installation - Voraussetzungen fuer Linux
+-------------------------------------------------------
+
+1. Installation als root
+   Das Installationsprogramm muss mit root-Rechten ausgefuehrt werden.
+
+2. Notwendige Pakete
+   Mit folgendem Befehl koennen alle notwendigen Pakete installiert werden:
+
+   apt-get install qt4-dev-tools qt4-doc-html qt4-qtconfig g++ make libqt4-dev gdb
+
+3. Installation im Terminal
+   Starte die Installation mit ./install_linux.sh
+
+
+---8<------------------------------------------------------------------------------
+
+
+ BabyDevelop-Installation - Voraussetzungen fuer Windows
+---------------------------------------------------------
+
+1. Der MinGW-Compiler muss installiert sein.
+   Den bekommst du hier: http://www.mingw.org/
+
+2. Qt muss installiert sein.
+   Qt bekommst du hier: http://qt.nokia.com/
+   Anmerkung: Mit Qt 4.6.3 sind _keine_ Anpassungen noetig.
+              Bei anderen Versionen sind vor der Installation
+              die Pfade anzupassen in:   win\babydevelop.rc        (Zeile 7, 9 und 10)
+                                         win\start_babydevelop.bat (Zeile 5 und  6)
+                                         makefiles\Makefile_Win32  (Zeile 9 und 15)
+   siehe auch readmeas/mingw_und_qt_und_babydevelop_auf_windows.txt fuer eine detaillierte Beschreibung
+
+3. Starte die Installation mit: install_windows.bat
+

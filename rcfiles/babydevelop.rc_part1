@@ -1,0 +1,12 @@
+BabyDevelopRC-File
+FensterStartGroesse=0,0,800,395
+MeldungsFensterStartGroesse=0,451,800,115
+Schriftart=Monospace
+n.c.=n.c.
+n.c.=n.c.
+QtHilfePfadDatei=/usr/share/qt4/doc/html/classes.html
+n.c.=n.c.
+QtDir=/usr/include/qt4
+QtLib=/usr/lib
+Libs=-lQtCore -lQtGui -lQt3Support -lutil
+MocDir=-/-

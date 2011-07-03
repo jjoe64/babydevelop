@@ -1,0 +1,127 @@
+##########################################
+# Win32/Qt4 makefile fuer BabyDevelop 10 #
+##########################################
+
+#-------------------------------#
+#          Qt-Dir               #
+#-------------------------------#
+# QTDIR muss bereits gesetzt sein
+QTDIR=C:/Qt/4.6.3
+
+#-------------------------------#
+#         moc-Dir               #
+#-------------------------------#
+# MOCDIR muss bereits gesetzt sein
+MOCDIR=C:/Qt/4.6.3/bin
+
+#-------------------------------#
+#          cFlags               #
+#-------------------------------#
+CFLAGS=-c -Wall -I$(QTDIR)/include -I$(QTDIR)/include/Qt -I$(QTDIR)/include/QtCore -I$(QTDIR)/include/QtGui
+
+#-------------------------------#
+#          lFlags               #
+#-------------------------------#
+LDFLAGS=-L$(QTDIR)/lib -lQtCore4 -lQtGui4 -lQt3Support4
+
+#-------------------------------#
+#   Verschiedene Definitionen   #
+#-------------------------------#
+CC=c:\MinGw\bin\mingw32-c++
+LD=c:\MinGw\bin\mingw32-c++
+MOC=$(MOCDIR)/moc
+RM=del
+BIN=babydevelop.exe
+
+OBJECTS=obj/main.o obj/babydevelop.o obj/babydevelop.moc.o obj/arbeiter.o obj/eingabe_1.o obj/eingabe_1.moc.o obj/importieren.o obj/importieren.moc.o obj/codeeditor.o obj/codeeditor.moc.o obj/einstellungen.o obj/einstellungen.moc.o obj/ufgi18n.o obj/ufgdesigner.o obj/ufgdesigner.moc.o obj/ufgbild.o obj/ufgbild.moc.o obj/ufgbasis.o obj/ufgpushbutton.o obj/ufgpushbutton.moc.o obj/ufglineedit.o obj/ufglineedit.moc.o obj/ufglabel.o obj/ufglabel.moc.o obj/ufgled.o obj/ufgled.moc.o obj/bled.o obj/bled.moc.o obj/debugger.o obj/debugger.moc.o
+
+all: clean arbeiter ufgi18n codeeditor eingabe_1 import einstellungen ufgdesigner ufgbasis ufgpushbutton ufglineedit ufglabel ufgled ufgbild debugger programmfenster bled main bdp linken
+
+clean:
+	-rm ../$(OUT)
+	-rm $(OBJ)/*
+
+arbeiter:
+	$(CC) $(CFLAGS) src/arbeiter.cpp -o obj/arbeiter.o
+
+ufgi18n:
+	$(CC) $(CFLAGS) src/ufgi18n.cpp -o obj/ufgi18n.o
+
+codeeditor:
+	$(CC) $(CFLAGS) src/codeeditor.cpp -o obj/codeeditor.o
+	$(MOC) src/codeeditor.h -o obj/codeeditor.moc.cpp
+	$(CC) $(CFLAGS) obj/codeeditor.moc.cpp -o obj/codeeditor.moc.o
+
+eingabe_1:
+	$(CC) $(CFLAGS) src/eingabe_1.cpp -o obj/eingabe_1.o
+	$(MOC) src/eingabe_1.h -o obj/eingabe_1.moc.cpp
+	$(CC) $(CFLAGS) obj/eingabe_1.moc.cpp -o obj/eingabe_1.moc.o
+
+import:
+	$(CC) $(CFLAGS) src/importieren.cpp -o obj/importieren.o
+	$(MOC) src/importieren.h -o obj/importieren.moc.cpp
+	$(CC) $(CFLAGS) obj/importieren.moc.cpp -o obj/importieren.moc.o
+
+einstellungen:
+	$(CC) $(CFLAGS) src/einstellungen.cpp -o obj/einstellungen.o
+	$(MOC) src/einstellungen.h -o obj/einstellungen.moc.cpp
+	$(CC) $(CFLAGS) obj/einstellungen.moc.cpp -o obj/einstellungen.moc.o
+
+ufgdesigner:
+	$(CC) $(CFLAGS) src/ufgdesigner.cpp -o obj/ufgdesigner.o
+	$(MOC) src/ufgdesigner.h -o obj/ufgdesigner.moc.cpp
+	$(CC) $(CFLAGS) obj/ufgdesigner.moc.cpp -o obj/ufgdesigner.moc.o
+
+ufgbasis:
+	$(CC) $(CFLAGS) src/ufgbasis.cpp -o obj/ufgbasis.o
+
+ufgpushbutton:
+	$(CC) $(CFLAGS) src/ufgpushbutton.cpp -o obj/ufgpushbutton.o
+	$(MOC) src/ufgpushbutton.h -o obj/ufgpushbutton.moc.cpp
+	$(CC) $(CFLAGS) obj/ufgpushbutton.moc.cpp -o obj/ufgpushbutton.moc.o
+
+ufglineedit:
+	$(CC) $(CFLAGS) src/ufglineedit.cpp -o obj/ufglineedit.o
+	$(MOC) src/ufglineedit.h -o obj/ufglineedit.moc.cpp
+	$(CC) $(CFLAGS) obj/ufglineedit.moc.cpp -o obj/ufglineedit.moc.o
+
+ufglabel:
+	$(CC) $(CFLAGS) src/ufglabel.cpp -o obj/ufglabel.o
+	$(MOC) src/ufglabel.h -o obj/ufglabel.moc.cpp
+	$(CC) $(CFLAGS) obj/ufglabel.moc.cpp -o obj/ufglabel.moc.o
+
+ufgled:
+	$(CC) $(CFLAGS) src/ufgled.cpp -o obj/ufgled.o
+	$(MOC) src/ufgled.h -o obj/ufgled.moc.cpp
+	$(CC) $(CFLAGS) obj/ufgled.moc.cpp -o obj/ufgled.moc.o
+
+ufgbild:
+	$(CC) $(CFLAGS) src/ufgbild.cpp -o obj/ufgbild.o
+	$(MOC) src/ufgbild.h -o obj/ufgbild.moc.cpp
+	$(CC) $(CFLAGS) obj/ufgbild.moc.cpp -o obj/ufgbild.moc.o
+
+debugger:
+	$(CC) $(CFLAGS) src/debugger.cpp -o obj/debugger.o
+	$(MOC) src/debugger.h -o obj/debugger.moc.cpp
+	$(CC) $(CFLAGS) obj/debugger.moc.cpp -o obj/debugger.moc.o
+
+programmfenster:
+	$(CC) $(CFLAGS) src/programmfenster.cpp -o obj/programmfenster.o
+	$(MOC) src/programmfenster.h -o obj/programmfenster.moc.cpp
+	$(CC) $(CFLAGS) obj/programmfenster.moc.cpp -o obj/programmfenster.moc.o
+
+bled:
+	$(CC) $(CFLAGS) src/bled.cpp -o obj/bled.o
+	$(MOC) src/bled.h -o obj/bled.moc.cpp
+	$(CC) $(CFLAGS) obj/bled.moc.cpp -o obj/bled.moc.o
+
+main:
+	$(CC) $(CFLAGS) src/main.cpp -o obj/main.o
+
+bdp:
+	$(CC) $(CFLAGS) src/babydevelop.cpp -o obj/babydevelop.o
+	$(MOC) src/babydevelop.h -o obj/babydevelop.moc.cpp
+	$(CC) $(CFLAGS) obj/babydevelop.moc.cpp -o obj/babydevelop.moc.o
+
+linken:
+	$(LD) $(OBJECTS) $(LDFLAGS) -o $(BIN)

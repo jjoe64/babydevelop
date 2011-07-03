@@ -1,0 +1,52 @@
+<html>
+<body>
+<pre>
+/* spieloberflaeche.h */
+
+#ifndef SPIELOBERFLAECHE_H
+#define SPIELOBERFLAECHE_H
+
+#include &lt;qwidget.h&gt;
+
+#include &lt;qtable.h&gt;
+#include &lt;qpushbutton.h&gt;
+#include &lt;qmessagebox.h&gt;
+#include &lt;qpoint.h&gt;
+
+#include &lt;qstring.h&gt;
+
+class SpielOberflaeche : public QWidget
+{
+   Q_OBJECT
+public: 
+   SpielOberflaeche(QWidget *parent=0, const char *name=0);
+  ~SpielOberflaeche();
+
+private:   //Objekte
+   QTable      *spielBrett;
+   QPushButton *keyEnde;
+   QPushButton *keyNeuesSpiel;
+
+public:   //Methoden
+   void loescheSpielbrett();
+   void schreibeAufFeld(int,int,QString);
+   void zeigeMeldung(int);
+   int  getStatus(int,int);   //noch nicht geklicktes Feld, X-gesetzt, aufgedeckt
+   void nextAufgedeckt();     //weiteres Feld aufgedeckt melden
+   int  getAnzAufgedeckt();   //Anzahl der aufgedeckten Felder zurckgeben
+
+private:   //Attribute, Member
+   int anzAufgedeckt;   //Anzahl der aufgedeckten Felder
+
+private slots:   //Methoden die eigene Signale aussenden
+   void mausKlickAufFeld(int, int, int);   //x, y, Mausknopf
+   void sende_ende();
+   void sende_neuesSpiel();
+
+signals:   //eigene Signale
+   void spieleZugClicked(int,int,int);   //x, y, Mausknopf
+   void keyEndeClicked();
+   void keyNeuesSpielClicked(int);
+};
+
+#endif

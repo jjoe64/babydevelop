@@ -1,0 +1,88 @@
+ BabyDevelop 10 für Linux und Windows
+--------------------------------------
+
+++++++++++++++++
+ Teil 1 - Linux
+++++++++++++++++
+
+Folgende Pakete werden benötigt:
+   qt4-dev-tools qt4-doc qt4-qtconfig g++ make libqt4-dev
+
+dann BabyDevelop Installieren mit:
+   install_linux.sh -> "Im Terminal ausfuehren"
+
+- das wars -
+
+
+++++++++++++++++++
+ Teil 2 - Windows
+++++++++++++++++++
+
+Benoetigt wird der "MinGW" und die (freie LGPL-Version) "Qt-Libraries fuer Windows".
+
+
+
+ 1. MinGW installieren (http://www.mingw.org/)
+-----------------------------------------------
+
+MinGW Version 5.1.6 (mingw-5.1.6.exe)
+Andere Versionen benötigen Anpassungen (siehe LiesMich.txt)
+-> einfach doppelklick und zusätzlich "g++" + "mingw make" auswählen und laufen lassen
+
+-> Umgebungsvariablen erweitern um:
+      C:\MinGW\bin
+
+
+
+
+ 2. Qt Binaries installieren (http://qt.nokia.com/)
+----------------------------------------------------
+
+Qt libraries 4.6.3 for windows (minGW 4.4, 280 mb)
+-> qt-win-opensource-4.6.3-mingw.exe
+
+-> Bei "Problem-Meldung" bei der minGW-Installation
+      dennoch weiter laufen lassen
+   Doku und Beispiele laufen - also ist doch alles i.o. :)
+
+Danach gibts:
+->Start
+     ->Programme
+          ->Qt by Nokia v4.6.3 (Open Source)
+               ->Qt 4.6.3 (Build Debug Libraries) <===STARTEN===
+
+ verschiedene Meldungen
+------------------------
+Setting up a MinGW/Qt only environment...
+-- QTDIR set to C:\Qt\4.6.3
+-- PATH set to C:\Qt\4.6.3\bin
+-- Adding C:\MinGW\bin to PATH
+-- Adding C:\WINDOWS\System32 to PATH
+-- QMAKESPEC set to win32-g++
+This will configure and compile qt in debug.
+The release libraries will not be recompiled.
+Drücken Sie eine beliebige Taste . . .
+
+Which edition of Qt do you want to use ?
+Type 'o' if you want to use Open Source Edition.
+->o
+
+This is the Qt for Windows Open Source Edition.
+You are licensed to use this software...
+...
+Type 'y' to accept this license offer.
+Do you accept the terms of the license?
+->y
+ 
+Anmerkung: Das dauert jetzt etwas *grins*
+ 
+
+ 
+
+3. BabyDevelop installieren
+----------------------------
+->install_windows.bat
+
+----------------------------------------------------------------------------------------------------
+                                                                                              (c)ufg
+

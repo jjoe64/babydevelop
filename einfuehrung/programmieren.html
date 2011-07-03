@@ -1,0 +1,329 @@
+<html>
+<head>
+<title>BabyDevelop Einf&uuml;hrung - (c)ufg</title>
+</head>
+<body>
+<center>
+<h1><b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-Einf&uuml;hrung</h1>
+</center>
+<hr size="1" "noshade">
+<center>
+<table border="0" width="80%"><tr><td>
+<h2>Programmieren mit <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b></h2>
+</td><td align="right">
+<a href="projekt.html">Die Men&uuml;s</a> von <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+</td></tr>
+</table>
+</center>
+<hr size="1" "noshade">
+
+<font size="4">
+<pre>
+<b>Programmieren mit <font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font>Develop</b>
+<ul>
+<li>Teil I   - <a href="#teil1">Hinweise</a> zur Arbeitsweis mit <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+</ul>
+<b>Objektorientierte Programmierung mit <font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font>Develop und den Qt Bibliotheken</b>
+<ul>
+<li>Teil II  - <a href="#teil2">Einfache</a> Programme
+<li>Teil III - <a href="#teil3">Objektorientierter</a> Entwurf von Programmen
+</ul>
+<b>JustForFun - Eine Einf&uuml;hrung in <a href="#sdl">SDL</a> :-)</b>
+<ul>
+<li>Teil <a href="#sdl1">1</a> - Das Programmfenster
+<li>Teil <a href="#sdl2">2</a> - Ein (Hintergrund)Bild
+<li>Teil <a href="#sdl3">3</a> - Trennung von Programm<u>Logik</u>-Funktionen und Programm<u>Grafik</u>-Funktionen
+<li>Teil <a href="#sdl4">4</a> - Dynamik
+<li>Teil <a href="#sdl5">5</a>
+<li>Teil <a href="#sdl6">6</a>
+<li>Teil <a href="#sdl7">7</a>
+<li>Teil <a href="#sdl8">8</a>
+</ul>
+</pre>
+</font>
+
+<a name="teil1">
+<h4>Teil I - Hinweise zur Arbeitsweis mit <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b></h4>
+</a>
+<ol>
+<li>Gegen das &quot;Vergessen&quot;<br>
+    Das bedeutet: <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+    trifft <u>keine</u> selbst&auml;ndigen Entscheidungen. Alles soll im Bewusstsein und in der vollen
+    Entscheidungskompetenz des Programmierers liegen. Wird eine Datei ver&auml;ndert m&uuml;ssen
+    Sie also selbst entscheiden ob ein Speichern vor dem n&auml;chsten Kompilerlauf notwendig ist.<br>
+    <ol>
+       <u>Hierzu ein Beispiel</u><br>
+       Sie haben ein einfaches Projekt mit dem Namen <b>Hallo</b>. Es besteht aus den Dateien
+       <b>main.cpp</b>, <b>hallo.h</b> und <b>hallo.cpp</b>. &Auml;ndern Sie etwas an der Datei
+       <b>hallo.cpp</b> und wechseln Sie den Reiter (z.B. auf die Datei <b>hallo.h</b>) wird 
+       <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+       die ver&auml;nderte Datei <b>hallo.cpp</b> <u>nicht</u> speichern - auch nicht, wenn <b>Automatisch speichern</b> aktiviert ist.
+       Es wird nur der aktive Reiter automatisch gespeichert.<br>
+       Sie m&uuml;ssen also zun&auml;chst bei aktivem Reiter <b>hallo.cpp</b> diese
+       Datei <b>speichern</b> (Men&uuml;: Projekt -&gt; Datei speichern) erst dann ist das 
+       Kompilieren (Men&uuml;: Bearbeiten -&gt; Kompilieren) dieses Dateipaares wieder sinnvoll.
+       Danach <b>linken</b> (Men&uuml;: Bearbeiten -&gt; Linken) und schlie&szlig;lich <b>ausf&uuml;hren</b>
+       (Men&uuml;: Bearbeiten -&gt; Ausf&uuml;hren) - ist ja logisch :-)<br>
+       Sollten Sie nicht verstehen warum diese Reihenfolge - so haben Sie schon etwas vergessen :-(<br>
+       W&auml;hlen Sie in diesem Fall <b>Rundschlag</b> aus dem Men&uuml; Bearbeiten. Das bewusste
+       Speichern bleibt Ihnen jedoch nur dann erspart, wenn <b>Automatisch speichern</b> auf <b>Ein</b> (Standard) gestellt ist.
+   </ol>
+   <u>Anmerkung</u><br>
+      Standardeinstellung f&uuml;r <b>Automatisch speichern</b> ist <b>Ein</b> (siehe Men&uuml;: Bearbeiten, Einstellungen).
+      Dadurch wird vor jedem Kompilerlauf (nur) die zu kompilierende Dateien automatisch gespeichert.<br>
+      Wenn mit <b>Rundschlag</b> alle Dateien kompiliert werden, werden alle Dateien automatisch gespeichert.<br>
+   <br>
+
+<li>Kompilieren, Linken, Ausf&uuml;hen<br>
+    Zum Ausf&uuml;hren eines Programms w&auml;hlen Sie <b>Rundschlag</b> aus dem Man&uuml; Bearbeiten. 
+    Sie k&ouml;nnen die einzelnen Schritte zum Ausf&uuml;hren eines Programms auch selbst starten. 
+    Also erst (die entsprechende Datei) <b>kompilieren</b>, dann <b>linken</b> und dann <b>ausf&uuml;hren</b>.<br>
+    Wenn Sie nur an einer Datei &Auml;nderungen gemacht haben gen&uuml;gt es ja nur diese zu kompilieren 
+    und dann zu linken und schon kann das Programm wieder ausgef&uuml;hrt werden.<br>
+    Warten Sie aber auf jeden Fall das Beenden des jeweiligen Vorgangs ab bevor Sie den n&auml;chsten 
+    Vorgang starten.<br>
+    <br>
+
+<li>Die UML (<b>U</b>nified <b>M</b>odelling <b>L</b>anguage)<br>
+    <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>    
+    h&auml;lt sich an die UML. D.h. KlassenNamen beginnen mit einem Gro&szlig;buchstaben.
+    Sollten Sie sich nicht daran halten wird <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>
+    dies selbst&auml;ndig &auml;ndern (der einzigste Automatismus :-) und Sie h&ouml;flich darauf hinweisen.<br>
+    Weiterhin werden Dateinamen stets in Kleinbuchstaben geschrieben. Bei der Benennung von Objekten und Methoden ist
+    der erste Buchstabe klein zu schreiben.<br>
+    <br>
+
+<li>Transportieren von 
+<b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-Dateien<br>
+    Wollen Sie ein Projekt auf einen anderen Rechner &uuml;bertragen, werden nur die *.<b>h</b>/*.<b>c|cpp</b>-Dateien (Qullcodes), die *.<b>bdp</b>-Datei 
+    (<b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-Steuerparameter) 
+    und, falls vorhanden, die <b>bdpProjekt.rc</b>-Datei (Projekt-Steuerparameter) ben&ouml;tigt.
+    Alle anderen Dateien (*.sh-Dateien - das sind Compiler- und Linkerscripte) werden beim &Ouml;ffnen eines Projektes (ohnehin) neu geschrieben.<br>
+    <br>
+
+<li>Wichtig!<br>
+    Benennen Sie <u>niemals</u> die Dateinamen in Ihrem Projektverzeichnis um! 
+    <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b> 
+    ist eine Projektverwaltung und wird es Ihnen nicht verzeihen ;-)
+
+</ol>
+
+<a name="teil2">
+<h4>Teil II - Einfache Programme</h4>
+</a>
+Den Quellcode dieser Beispiele finden Sie bei
+<ul>
+   <li>Mac OS X<br>
+       in /Developer/babyDevelop/beispiele<br>
+       <br>
+   <li>Linux<br>
+       in /opt/babyDevelop/beispiele<br>
+<br>
+<table border="0" cellspacing="0" cellpadding="10" bgcolor="lightgrey"><tr><td>
+<table border="0" cellspacing="0" cellpadding="2">
+<tr><th rowspan="7" valign="bottom" bgcolor="lightgrey">Programm</th><th rowspan="7" valign="bottom" bgcolor="lightgrey">Verzeichnis</th><th colspan="7" align="left" bgcolor="magenta">QLabel</th></tr>
+<tr><td rowspan="6" bgcolor="magenta">&nbsp;</td>   <th colspan="6" align="left" bgcolor="lightblue">QPushButton</th></tr>
+<tr><td rowspan="5" bgcolor="lightblue">&nbsp;</td> <th colspan="5" align="left" bgcolor="yellow">QLineEdit</th></tr>
+<tr><td rowspan="4" bgcolor="yellow">&nbsp;</td>    <th colspan="4" align="left" bgcolor="lightgreen">QMessageBox</th></tr>
+<tr><td rowspan="3" bgcolor="lightgreen">&nbsp;</td><th colspan="3" align="left" bgcolor="grey">QTimer</th></tr>
+<tr><td rowspan="2" bgcolor="grey">&nbsp;</td>      <th colspan="2" align="left" bgcolor="lightgrey">BLed</th></tr>
+<tr><td rowspan="1" bgcolor="lightgrey">&nbsp;</td> <th colspan="1" bgcolor="black"><font color="white">Anmerkung</font></th></tr>
+<tr><td bgcolor="white">1. Hello World</td><td bgcolor="lightgrey">hello_world</td><th bgcolor="magenta">x</th><th bgcolor="lightblue">-</th><th bgcolor="yellow">-</th><th bgcolor="lightgreen">-</th><th bgcolor="grey">-</th><th bgcolor="lightgrey">-</th><td bgcolor="white">&nbsp;</td></tr>
+<tr><td bgcolor="white">2. Taste Ende</td><td bgcolor="lightgrey">ende</td>                <th bgcolor="magenta">-</th><th bgcolor="lightblue">x</th><th bgcolor="yellow">-</th><th bgcolor="lightgreen">-</th><th bgcolor="grey">-</th><th bgcolor="lightgrey">-</th><td bgcolor="white">&nbsp;</td></tr>
+<tr><td bgcolor="white">3. Blatt und Taste</td><td bgcolor="lightgrey">blatt_und_taste</td><th bgcolor="magenta">x</th><th bgcolor="lightblue">x</th><th bgcolor="yellow">-</th><th bgcolor="lightgreen">-</th><th bgcolor="grey">-</th><th bgcolor="lightgrey">-</th><td bgcolor="white">&nbsp;</td></tr>
+<tr><td bgcolor="white">4. Eingabezeile</td><td bgcolor="lightgrey">eingabezeile</td>      <th bgcolor="magenta">x</th><th bgcolor="lightblue">x</th><th bgcolor="yellow">x</th><th bgcolor="lightgreen">-</th><th bgcolor="grey">-</th><th bgcolor="lightgrey">-</th><td bgcolor="white">&nbsp;</td></tr>
+<tr><td bgcolor="white">5. Meldung</td><td bgcolor="lightgrey">meldung</td>                <th bgcolor="magenta">-</th><th bgcolor="lightblue">x</th><th bgcolor="yellow">x</th><th bgcolor="lightgreen">x</th><th bgcolor="grey">-</th><th bgcolor="lightgrey">-</th><td bgcolor="white">&nbsp;</td></tr>
+<tr><td bgcolor="white">6. Timer</td><td bgcolor="lightgrey">timer</td>                    <th bgcolor="magenta">-</th><th bgcolor="lightblue">x</th><th bgcolor="yellow">-</th><th bgcolor="lightgreen">x</th><th bgcolor="grey">x</th><th bgcolor="lightgrey">-</th><td bgcolor="white">&nbsp;</td></tr>
+<tr><td bgcolor="white">7. Blinklicht</td><td bgcolor="lightgrey">blinklicht</td>          <th bgcolor="magenta">-</th><th bgcolor="lightblue">-</th><th bgcolor="yellow">-</th><th bgcolor="lightgreen">-</th><th bgcolor="grey">x</th><th bgcolor="lightgrey">x</th><td bgcolor="white">mit importierter Klasse <b>BLed</b></td></tr>
+<tr><td bgcolor="white">8. Lauflicht</td><td bgcolor="lightgrey">lauflicht</td>            <th bgcolor="magenta">-</th><th bgcolor="lightblue">x</th><th bgcolor="yellow">-</th><th bgcolor="lightgreen">-</th><th bgcolor="grey">x</th><th bgcolor="lightgrey">x</th><td bgcolor="white">mit importierter Klasse <b>BLed</b></td></tr>
+<tr><td bgcolor="white">...</td><td bgcolor="lightgrey">...</td>            <th bgcolor="magenta">?</th><th bgcolor="lightblue">?</th><th bgcolor="yellow">?</th><th bgcolor="lightgreen">?</th><th bgcolor="grey">?</th><th bgcolor="lightgrey">?</th><td bgcolor="white">?</td></tr>
+</table>
+</td></tr></table><br>
+Diese und weitere Beispiele finden Sie im Verzeichnis der Installation (siehe Men&uuml;: Bearbeiten -&gt; Einstellungen -&gt; Verzeichnis der Installation).<br>
+<ul>
+<li>F&uuml;r Linux <a href="/opt/babyDevelop/beispiele">hier</a>
+<li>F&uuml;r Mac OS X <a href="/Developer/babyDevelop/beispiele">hier</a>
+</ul>
+</ul>
+
+<a name="teil3">
+<h4>Teil III - Objektorientierter Entwurf von Programmen</h4>
+</a>
+<ol>
+<h4>Einf&uuml;hrung</h4>
+<li><b>&Uuml;berladen</b> - Funktions&uuml;berladung / Methoden&uuml;berladung<br>
+    - Aufgabenstellung der Programmiererin als Konsoleprogramm - <a href="../c++Einfuehrung_programmiererin/auszug_ueberladen_fn/kapitel6.html">hier</a><br>
+    - L&ouml;sung von <tt>FUNUEBER.CPP</tt> f&uuml;r <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b> (Projekt: <tt>Steuerung</tt>) - 
+      <a href="../beispiele/funktionsueberladung">hier</a><br>
+      <br>
+<li><b>Virtuelle Funktionen</b><br>
+    - Aufgabenstellung der Programmiererin als Konsoleprogramm - <a href="../c++Einfuehrung_programmiererin/auszug_virtuelle_fn/kapitel10.html">hier</a><br>
+    - L&ouml;sung von <tt>VIRTL6.CPP</tt> f&uuml;r <b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b> (Projekt: <tt>Steuerung</tt>) - 
+      <a href="../beispiele/virtuelle_fn">hier</a>
+<h4>Beispiele</h4>
+<li>Fl&auml;chen
+<li>W&uuml;rfelspiel
+<li>Kasino
+<li><a href="mine/mine.html">Mine</a> - Eine etwas vereinfachte Variante des LinuxMinenSuchSpiels :-)
+<li>...
+</ol>
+
+<a name="sdl">
+<h4>JustForFun - Eine Einf&uuml;hrung in SDL :-)</h4>
+</a>
+<ul>
+<li><a name="sdl1">Teil 1 - Das Programmfenster</a> (<a href="../beispiele/sdl/lektion_1">Programmbeispiel</a>)<br>
+    <br>
+    Inhalt: SDL-Initialisierung, Spielfeldgr&ouml;&szlig;e festlegen, Fenster&uuml;berschrift, Haupteventschleife, SDL beenden<br>
+    <ul>
+    <li><u>SDL-Initialisierung</u><br>
+        <tt>int <b>SDL_Init(SDL_INIT_VIDEO);</b></tt><br>
+        R&uuml;ckgabewert = 0, wenn alles in Ordnung.
+    <li><u>Spielfeldgr&ouml;&szlig;e festlegen</u> (und Bilder anzeigen)<br>
+        <tt><b>SDL_Surface*</b> screen <b>= SDL_SetVideoMode (</b>640<b>,</b> 480<b>,</b> 16<b>, SDL_HWSURFACE);</b></tt><br>
+        R&uuml;ckgabewert = Adresse des Spielfeldes.
+    <li><u>Fenstertitelleisten&uuml;berschrift</u><br>
+        <tt>void <b>SDL_WM_SetCaption (&quot;</b>Text<b>&quot;, NULL);</b></tt><br>
+        Kein R&uuml;ckgabewert.
+    <li><u>Ereignisverarbeitung</u> (nicht vergessen: es sind Macros)<br>
+        <tt><b>SDL_Event</b>, <b>SDL_WaitEvent</b>, <b>SDL_PollEvent</b>, event<b>.type</b>, <b>SDL_KEYDOWN</b>, <b>SDL_QUIT</b>, ...</tt><br>
+        Events treten nur auf, wenn z.B. die Maus bewegt oder eine Taste gedr&uuml;ckt wird.<br>
+        <tt><b>SDL_WaitEvent</b></tt> wartet bis ein Ereignis eintritt. Erst dann l&auml;uft das Programm weiter.<br>
+        <tt><b>SDL_PollEvent</b></tt> &quot;schaut&quot; in der Queue nach ob ein Ereignis gespeichert ist und l&auml;uft unverz&uuml;glich weiter.
+    <li><u>SDL beenden</u><br>
+        <tt><b>SDL_Quit();</tt></b><br>
+    <li><u>Haupteventschleife und SDL beenden</u>
+<pre>
+   ...
+   /* Haupteventschleife */
+   SDL_Event event;
+   running = 1;
+   while(running == 1)
+   {
+      SDL_WaitEvent(&event);
+      switch(event.type)
+      {
+      case SDL_KEYDOWN:
+        printf("Taste wurde gedr&uuml;ckt.\n");
+	break;
+      case SDL_QUIT:   // [X]-Symbol (Titelleiste oben rechts)
+         printf("Programmabbruch durch [x] (Titelleiste oben rechts).\n");
+	 running = 0;
+         break;
+      default:
+         break;
+      }
+   }
+   printf("SDL wird beendet.\n");
+   SDL_Quit();   //aufr&auml;umen
+   printf("SDL ist beendet.\n");
+   ...
+</pre>
+    </ul>
+
+<li><a name="sdl2">Teil 2 - Ein (Hintergrund)Bild anzeigen</a> (<a href="../beispiele/sdl/lektion_2">Programmbeispiel</a>)<br>
+    <br>
+    Inhalt: (Hintergrund)Bild laden, Bild in Programmfensterspeicher kopieren, Programmfenster neu aufbauen, Tastendruck verarbeiten<br>
+<pre>
+   <b>(Hintergrund)Bild laden</b>
+      SDL_Surface* hintergrund;
+      hintergrund = SDL_LoadBMP("images/hintergrund.bmp");
+
+   <b>Ein Bild &uuml;ber ein anderes Bild legen</b> (Bild in Programmfensterspeicher kopieren)
+      SDL_BlitSurface (Quelle, QuellBereich, Ziel, ZielBereich);
+      Beispiel
+         SDL_BlitSurface (hintergrund , NULL, screen, NULL);  //hintergrund auf screen legen
+                                                              //alle (weil NULL) Bytes von hintergrundbild
+                                                              //in ganzen (weil NULL) screen-Speicher kopieren
+   <b>Programmfenster neu aufbauen/tauschen</b>
+      SDL_Flip(screen);
+   <u>Anmerkung</u>
+   Man stelle es sich folgenderma&szlig;en vor:
+      Der Bildspeicher ist zweimal vorhanden.
+      Es ist stets nur einer der beiden Bildspeicher sichtbar.
+      Alle Zeichenoperationen werden im <u>nicht</u> sichtbaren Bildspeicher durchgef&uuml;hrt.
+      <b>SDL_Flip</b> schaltet jeweils zwischen den beiden Bildspeichern um, so dass der nicht sichtbare Bildspeicher
+      zum sichtbaren wird (und umgekehrt). Das Umschalten nennt man <b>flipping</b>.
+      Dann wird der nun nicht sichtbare Bildspeicher (er hat ja noch den &quot;alten&quot; Zustand) mit dem
+      sichtbaren abgeglichen (beide Bildspeicher sind dann identisch) und neue Zeichenoperationen k&ouml;nnen beginnen.
+      Diese Technik nennt man <b>DoubleBuffering</b>.
+
+   <b>Tastendruck verarbeiten</b>
+   <u>Beispiel</u>
+      if (event.type == SDL_KEYDOWN)
+      {
+         switch (event.key.keysym.sym)
+         {
+         case SDLK_q:
+            ...
+         case SDLK_ESCAPE:
+            ...
+</pre>
+
+
+<li><a name="sdl3">Teil 3 - Trennung von Programm<u>Logik</u>-Funktionen und Programm<u>Grafik</u>-Funktionen</a> (<a href="../beispiele/sdl/lektion_3">Programmbeispiel</a>)<br>
+    <br>
+    Inhalt
+<pre>
+    Transparente Farbe bestimmen:                <b><tt>SDL_SetColorKey</tt></b>
+    Variable f&uuml;r einen rechteckigen Bildbereich: <b><tt>SDL_Rect</tt></b>
+    Bildschirm-Bereich auffrischen:              <b><tt>SDL_UpdateRect</tt></b>
+    Programmverz&ouml;gerung:                         <b><tt>SDL_Delay</tt></b>
+</pre>
+<pre>
+   <b>Transparente Farbe bestimmen</b>
+      <u>Beispiel</u>
+      a) SDL_SetColorKey(image, SDL_SRCCOLORKEY, SDL_MapRGB(image-&gt;format, 255, 0, 255)); // schweinchenrosa wird Transparent
+      b) #define MASK 255, 0, 255
+         SDL_SetColorKey(ball-&gt;ballbild, SDL_SRCCOLORKEY, SDL_MapRGB (ball-&gt;ballbild-&gt;format, MASK));
+   <b>Variable f&uuml;r einen rechteckigen Bildbereich</b>
+      SDL_Rect
+      <u>Beispiel</u>
+         SDL_Rect dirty = {0, 0, 0, 0};
+   <b>Einen ver&auml;nderten Bildschirm-Bereich auffrischen</b>
+      SDL_UpdateRect (Ziel, Bereich);
+      <u>Beispiel</u>
+         SDL_UpdateRect (screen, dirty.x, dirty.y, dirty.w, dirty.h);
+   <b>Programmverz&ouml;gerung</b>
+      SDL_Delay (Verz&ouml;gerung in ms)
+      <u>Beispiel</u>
+         SDL_Delay (20);
+</pre>
+
+
+<li><a name="sdl1">Teil 4 - Dynamik</a> (<a href="../beispiele/sdl/lektion_4">Programmbeispiel</a>)<br>
+    <br>
+    Inhalt
+<pre>
+    Spielgeschwindigkeit dynamisch an Rechnergeschwindigkeit anpassen: <b><tt>SDL_GetTicks</tt></b>
+</pre>
+<pre>
+   <b>Spielgeschwindigkeit dynamisch an Rechnergeschwindigkeit und Programmablauf anpassen</b>
+      Wenn Ereignisse verarbeitet werden, wird mehr Zeit ben&ouml;tigt bis der n&auml;chste
+      Grafikzyklus angezeigt werden kann. Dadurch wird der Spielflu&szlig; unregelm&auml;&szlig;ig.
+      Um dies zu verhindern wird die Bremsschleife dynamisch an den Programmablauf
+      anpa&szlig;t.
+</pre>
+
+
+
+
+
+
+
+
+
+<li><a name="sdl4">Teil 5 - Das Programmfenster</a> (<a href="../beispiele/sdl/lektion_5">Programmbeispiel</a>)
+<li><a name="sdl5">Teil 6 - Das Programmfenster</a> (<a href="../beispiele/sdl/lektion_6">Programmbeispiel</a>)
+<li><a name="sdl6">Teil 7 - Das Programmfenster</a> (<a href="../beispiele/sdl/lektion_7">Programmbeispiel</a>)
+<li><a name="sdl7">Teil 8 - Das Programmfenster</a> (<a href="../beispiele/sdl/lektion_8">Programmbeispiel</a>)
+</ul>
+
+
+
+
+
+<hr size="1" "noshade">
+<table border="0" width="100%"><tr><td align="right">&copy; ufg@hosengummi.de</td></tr></table>
+</body>
+</html>

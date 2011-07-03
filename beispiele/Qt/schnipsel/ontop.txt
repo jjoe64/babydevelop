@@ -1,0 +1,17 @@
+google: bild qt programmierung vordergrund
+
+ich habe das jetzt aber so gemacht, dass ich beide als staysontop definiere und beim popup noch das toplevel. dann klappt das auch so wie ich es will.
+
+unsigned long state = NET::StaysOnTop | NET::Sticky;
+KWin::setState(test->winId(),NET::StaysOnTop);
+KWin::setState(test->winId(),Qt::WStyle_NoBorder); ...
+
+setWFlags(getWFlags() | Qt::WStyle_StaysOnTop);
+
+Perhaps try      void QWidget::raise () [slot]        
+
+I'm not sure why your method didn't work, perhaps you need to replace 
+"WStyle_StaysOnTop" by "WStyle_Customize|WStyle_StaysOnTop".
+
+WStyle_Customize|WStyle_StaysOnTop
+

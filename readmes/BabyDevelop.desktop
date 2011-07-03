@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=BabyDevelop
+Type=Application
+Exec=babydevelop %U
+TryExec=
+Icon=/usr/share/pixmaps/babydevelop-icon.png
+X-GNOME-DocPath=
+Terminal=false
+Name[de_DE]=BabyDevelop
+GenericName[de_DE]=BabyDevelop
+Comment[de_DE]=BabyDevelop ich komme :-)
+GenericName=BabyDevelop
+Comment=BabyDevelop ich komme :-)

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Einf&uuml;hrung in C++ - Kapitel 10 - Virtuelle Funktionen</title>
+<meta name="author" content="Heinz Tschabitscher, Ulrich Gehring" />
+<meta name="keywords" content="c++ virtuelle funktionen funktion virtuell vererbung virtual" />
+<meta name="description" content="Der interessanteste Aspekte objektorientierten Programmierens ist auch einer der sinnvollsten." />
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1" />
+<meta name="LANGUAGE" content="de" />
+</head>
+<body>
+
+<h1>Virtuelle Funktionen</h1>
+
+<hr size="1">
+
+<p>Hier betreten wir wieder v&ouml;lliges Neuland mit einer neuen Sprache.
+Wenn objektorientiertes Programmieren noch (relativ) neu f&uuml;r Dich
+ist, solltest Du dieses Kapitel sehr sorgf&auml;ltig durchgehen. Wir haben
+versucht, die Details dieses neuen und ein wenig einsch&uuml;chternden Themas
+klar darzulegen. Solltest Du aber schon Erfahrung im objektorientierten
+Programmieren besitzen und nur C++ als Programmiersprache erlernen wollen,
+kannst Du die ersten vier Beispielprogramme getrost &uuml;berspringen und
+gleich zum Programm mit dem Namen VIRTL5.CPP gehen.</p>
+
+<p>Ein Ausdruck, der dringend einer Definition bedarf, ist <b>Polymorphismus</b>. Auf
+deutsch hei&szlig;t das soviel wie "Vielgestaltigkeit", im Kontext des OOP aber eher
+"&Auml;hnlichkeit". Objekte sind polymorph, wenn sie sich zwar &auml;hnlich,
+aber eben doch verschieden sind. Was das genau hei&szlig;t, werden wir im
+Laufe dieses Kapitels feststellen.</p>
+
+<p>Wir haben in dieser Einf&uuml;hrung schon das &Uuml;berladen von Operatoren
+und Funktionen studiert. Das ist in beiden F&auml;llen eine einfache Form von
+Polymorphismus, da sich eine Einheit auf zwei oder mehrere Dinge bezieht. Die
+Verwendung von virtuellen Funktionen kann bei gewissen Programmieraufgaben
+eine gro&szlig;e Hilfe sein, wie Du in den n&auml;chsten beiden Kapiteln sehen
+wirst.</p>
+
+<h2>Ein einfaches Programm mit Vererbung</h2>
+
+<p>Beispielprogramm: <a href="virtl1.cpp">VIRTL1.CPP</a></p>
+
+<p>Das Programm <a href="virtl1.cpp">VIRTL1.CPP</a> soll Ausgangspunkt unserer virtuellen Tour sein.
+Da dieses Programm nichts mit virtuellen Funktionen zu tun hat, mag der
+Name ein wenig in die Irre f&uuml;hren. Wir haben es so genannt, weil es
+Teil einer Serie von Programmen ist, die die Verwendung von virtuellen
+Funktionen illustrieren soll. Das letzte Programm dieses Kapitels wird dann
+die "richtige" Verwendung von virtuellen Funktionen zeigen.</p>
+
+<p>Das erste Programm ist sehr einfach und wie Du sicher bemerkt hast, ist
+es einem Programm, das wir fr&uuml;her in dieser Einf&uuml;hrung besprochen
+haben, &auml;hnlich. Allein, es ist radikal vereinfacht, damit wir uns auf die
+virtuellen Funktionen konzentrieren k&ouml;nnen. Die meisten der Funktionen
+des letzten Kapitels haben wir aus diesem Grund komplett weggelassen, und
+eine neue Methode haben wir der Elternklasse in <a href="virtl1.cpp">Zeile 9</a> hinzugef&uuml;gt:
+<span class="funktion">Nachricht()</span>. Das Studium dieser Funktion in der Basisklasse und
+den abgeleiteten Klassen wird uns das gesamte Kapitel hindurch begleiten.
+Aus diesem Grund gibt es eine Methode mit dem Namen <span class="funktion">Nachricht()</span>
+auch in der Klasse <var>Auto</var> und in der neuen Klasse mit dem Namen
+<var>Boot</var>, die wir in den <a href="virtl1.cpp">Zeilen 30 bis 36</a> definieren.</p>
+
+<p>Dir ist sicherlich aufgefallen, dass die Klasse <var>Laster</var>
+keine Methode mit dem Namen <span class="funktion">Nachricht()</span> hat. Das ist nat&uuml;rlich aus
+Absicht geschehen (haha), um die Verwendung einer virtuellen Methode (oder,
+wenn Dir das besser gef&auml;llt, einer virtuellen Funktion) illustrieren
+zu k&ouml;nnen. Da die Methoden der Basisklasse mit dem Schl&uuml;sselwort
+<b>public</b> &uuml;bernommen werden, ist die Methode mit dem
+Namen <b>Nachricht()</b> der Basisklasse in der Klasse <var>Laster</var>
+verf&uuml;gbar.</p>
+
+<p>Die Methode <span class="funktion">Nachricht()</span> wurde auch absichtlich so einfach
+gehalten. Wir sind eben an virtuellen Funktionen interessiert und nicht an
+Funktionen mit langem, kompliziertem Code.</p>
+
+<p>Das Hauptprogramm ist so einfach wie die Klassen. Wir deklarieren ein
+Objekt jeder der vier Klassen in den <a href="virtl1.cpp">Zeilen 41 bis 44</a> und rufen die Methode
+mit dem Namen <span class="funktion">Nachricht()</span> f&uuml;r jedes Objekt einmal auf. Die
+Ausgabe auf dem Bildschirm zeigt uns, dass die Methode f&uuml;r jedes
+Objekt aufgerufen wird mit Ausnahme des <var>Sattelschlepper</var>s, dessen
+Klasse keine Methode diesen Namens hat. Wie wir im letzten Kapitel gesehen
+haben, wird die Methode mit dem Namen <span class="funktion">Nachricht()</span> der Elternklasse
+aufgerufen. Das beweist auch die Ausgabe auf dem Bildschirm, wo f&uuml;r das
+Objekt mit dem Namen <var>Sattelschlepper</var> "Nachricht vom Vehikel" zu
+lesen ist.</p>
+
+<p>Die Daten der Objekte sind in diesem Kapitel von keinem Belang, also
+sind alle standardm&auml;&szlig;ig <span class="schluessel">private</span> und werden in
+die abgeleiteten Klassen nicht &uuml;bernommen. Einiges haben wir dennoch
+&uuml;brig gelassen, damit die Klassen zumindest wie Klassen aussehen.</p>
+
+<p>Wenn Du dieses Programm verstanden hast, kompiliere es und f&uuml;hre es
+aus.</p>
+
+<h2>Das Schl&uuml;sselwort virtual</h2>
+
+<p>Beispielprogramm: <a href="virtl2.cpp">VIRTL2.CPP</a></p>
+
+<p>Beim Durchsehen des n&auml;chsten Programmes, <a href="virtl2.cpp">VIRTL2.CPP</a> wird Dir eine
+kleine &Auml;nderung in <a href="virtl2.cpp">Zeile 9</a> auffallen. Wir haben der Deklaration der
+Methode <span class="funktion">Nachricht()</span> in der Elternklasse das Schl&uuml;sselwort
+<span class="schluessel">virtual</span> hinzugef&uuml;gt.</p>
+
+<p>Du bist wahrscheinlich ein wenig entt&auml;uscht, wenn Du feststellst,
+dass sich dieses Programm nicht anders verh&auml;lt als das letzte. Das
+ist deshalb der Fall, weil wir direkt mit Objekten arbeiten und virtuelle
+Methoden nichts mit Objekten zu tun haben, sondern nur mit Zeigern auf
+Objekt, wie wir gleich sehen werden. In <a href="virtl2.cpp">Zeile 50</a> haben wir noch einen
+zus&auml;tzlichen Kommentar hinzugef&uuml;gt, der illustriert, dass
+es nicht m&ouml;glich ist, die Objekte einander zuzuweisen. Sie sind ja
+Objekte von verschiedenen Klassen. Wir werden gleich sehen, dass einige
+Zeigerzuweisungen zwischen Objekten verschiedener Klassen erlaubt sind.</p>
+
+<p>Nachdem Du Dir sicher bist, dass virtuelle Funktionen oder Methoden
+nichts mit den Objekten direkt zu tun haben, kompiliere das Programm und
+f&uuml;hre es aus.</p>
+
+<h2>Wir verwenden Zeiger auf Objekte</h2>
+
+<p>Beispielprogramm: <a href="virtl3.cpp">VIRTL3.CPP</a></p>
+
+<p>Sieh Dir das Programm <a href="virtl3.cpp">VIRTL3.CPP</a> an, und Du wirst darin eine Wiederholung
+des vorigen Beispielprogrammes erkennen, allerdings mit einem anderen
+Hauptprogramm.</p>
+
+<p>In diesem Programm haben wir das Schl&uuml;sselwort
+<b>virtual</b> wieder aus der Methodendeklaration der Elternklasse
+in <a href="virtl3.cpp">Zeile 9</a> entfernt. Das Hauptprogramm definiert in den <a href="virtl3.cpp">Zeilen 41 bis 44</a>
+Zeiger auf die Objekte statt der Objekte selbst. Da wir nur Zeiger auf Objekte
+definiert haben, m&uuml;ssen wir in den <a href="virtl3.cpp">Zeilen 46 bis 53</a> zun&auml;chst
+die Objekte mit dem Operator <b>new</b> erzeugen, bevor wir sie
+verwenden k&ouml;nnen. Beim Ausf&uuml;hren des Programmes stellen wir fest,
+dass sich durch die Verwendung von Zeigern, an dem was das Programm tut,
+nichts ge&auml;ndert hat. Es operiert genauso wie das erste Programm in
+diesem Kapitel. Das sollte Dich aber nicht &uuml;berraschen, da ein Zeiger auf
+eine Methode mit einem Objekt genauso arbeiten kann wie wir mit dem Objekt
+selbst arbeiten k&ouml;nnen.</p>
+
+<p>Kompiliere dieses Beispielprogramm und f&uuml;hre es aus, bevor Du zum
+n&auml;chsten weitergehst. Dir wird wahrscheinlich wieder (unangenehm)
+aufgefallen sein, dass wir die Beschaffung der Objekte nicht kontrolliert
+haben, ja sie nicht einmal gel&ouml;scht haben. Wie immer spielt das aber in
+einem so kleinen Programm keine Rolle, da der Speicher mit der R&uuml;ckkehr
+zum Betriebssystem automatisch freigegeben wird.</p>
+
+<h2>Ein Zeiger und eine virtuelle Funktion</h2>
+
+<p>Beispielprogramm: <a href="virtl4.cpp">VIRTL4.CPP</a></p>
+
+<p>Das Programm mit dem Namen <a href="virtl4.cpp">VIRTL4.CPP</a> ist mit dem letzten identisch, nur
+haben wir in <a href="virtl4.cpp">Zeile 9</a> das Schl&uuml;sselwort <b>virtual</b> wieder
+hinzugef&uuml;gt.</p>
+
+<p>Ich hoffe, Du bist jetzt nicht ganz am Boden zerst&ouml;rt, wenn Du
+herausfindest, dass dieses Programm -- nun mit dem Schl&uuml;sselwort
+<b>virtual</b> -- immer noch dasselbe Ergebnis liefert wie das
+erste. Wir verwenden einfach Zeiger auf die Objekte, wobei in jedem Fall der
+Typ des Zeigers mit dem des Objektes, auf das er zeigt, &uuml;bereinstimmt.
+Die ersten Ver&auml;nderungen werden wir im n&auml;chsten Beispielprogramm
+bemerken, harre also aus, wir sind fast am Ziel.</p>
+
+<p>Auch dieses Programm solltest Du kompilieren und ausf&uuml;hren.</p>
+
+<p>Die letzten vier Programme haben gezeigt, was virtuelle Funktionen <u>nicht</u>
+tun. Die n&auml;chsten beiden sollen zeigen, was sie tun.</p>
+
+<h2>Ein einfacher Zeiger auf die Elternklasse</h2>
+
+<p>Beispielprogramm: <a href="virtl5.cpp">VIRTL5.CPP</a></p>
+
+<p>Im Beispielprogramm <a href="virtl5.cpp">VIRTL5.CPP</a> verwenden wir schon fast eine virtuelle
+Methode. Habe noch ein ganz wenig Geduld, wir sind beinahe so weit.</p>
+
+<p>Dieses Beispielprogramm ist eine weiter Variante unseres Programmes ohne
+das Schl&uuml;sselwort <b>virtual</b>, aber mit einem komplett
+ver&auml;nderten Hauptprogramm. Hier definieren wir nur einen einzigen
+Zeiger auf eine Klasse, und diese Klasse ist die Basisklasse unserer
+Klassenhierarchie. Wir verwenden den Zeiger mit jeder der vier Klassen und
+achten auf die Ausgabe der Methode <b>Nachricht()</b>.</p>
+
+<p>Ein kurzer Exkurs soll uns erkl&auml;ren, warum ein Zeiger, den wir als
+auf eine spezifische Klasse zeigend deklariert haben, pl&ouml;tzlich auf
+eine andere zeigen kann. Wenn wir von einem Vehikel sprechen (zugegeben: wir
+tun das nicht allzu oft :-) ), kann es sich dabei um ein Auto, einen Lastwagen,
+ein Motorrad oder alles m&ouml;gliche, das der Fortbewegung dient, handeln.
+Wir beziehen uns auf eine sehr umfassende Form eines Objektes. Wenn wir aber
+von einem Auto sprechen, meinen wir eben keinen Lastwagen, kein Motorrad
+oder irgendetwas anderes, diese M&ouml;glichkeiten sind ausgeschlossen.
+Der umfassendere Begriff des Vehikels kann sich also auf viele Arten von
+Fortbewegungsmitteln beziehen, der spezifischere Terminus des Autos bezieht
+sich nur auf eine Art von Vehikel, n&auml;mlich ein Auto.</p>
+
+<p>Denselben Gedankengang k&ouml;nnen wir nun auf C++ &uuml;bertragen. Wenn
+wir demnach einen Zeiger auf ein <b>Vehikel</b> haben, kann dieser Zeiger
+auf alle die spezielleren Objekte zeigen, und das ist in der Tat erlaubt in
+C++. Ebenso k&ouml;nnen wir aber einen Zeiger auf ein <b>Auto</b> nicht
+benutzen, um auf eine der anderen Klassen zu zeigen, auch nicht auf die Klasse
+<b>Vehikel</b>, da der Zeiger der Klasse <b>Auto</b> zu spezifisch und
+eingeschr&auml;nkt ist.</p>
+
+<h2>Die C++ Zeiger Regel</h2>
+
+<p>Die Regel ist folgende. Ein Zeiger, der per Deklaration auf die Basisklasse
+zeigt, kann auf ein Objekt einer von der Basisklasse abgeleiteten Klasse
+zeigen, aber ein Zeiger auf eine abgeleitete Klasse kann nicht auf ein
+Objekt der Basisklasse oder einer anderen von der Basisklasse abgeleiteten
+Klasse zeigen. In unserem Programm d&uuml;rfen wir also einen Zeiger auf
+<b>Vehikel</b>, die Basisklasse, deklarieren und diesen Zeiger auf Objekte
+der Basisklasse oder einer der abgeleiteten Klasse zeigen lassen.</p>
+
+<p>Genau das tun wir im Hauptprogramm. Wir definieren einen einzelnen
+Zeiger, der auf die Klasse <b>Vehikel</b> zeigt und verwenden ihn, um
+auf Objekte aller Klassen zu zeigen, in derselben Reihenfolge wie in den
+letzten Beispielprogrammen. In jedem Fall erzeugen wir das Objekt, senden eine
+Nachricht an die Methode mit dem Namen <b>Nachricht()</b> und l&ouml;schen
+das Objekt, bevor wir zur n&auml;chsten Klasse weitergehen. Wie Du sicher
+bemerkt hast, senden wir die Nachricht immer an dieselbe Methode, n&auml;mlich
+die Methode mit dem Namen <b>Nachricht()</b>, die Teil der Basisklasse
+<b>Vehikel</b> ist. Das ist der Fall, weil der Zeiger mit einer Klasse
+verbunden ist. Obwohl der Zeiger eigentlich auf Objekte von vier verschiedenen
+Klassen zeigt, verh&auml;lt sich das Programm als w&uuml;rde er immer auf ein
+Objekt der Basisklasse zeigen, da der Zeiger von diesem Typ ist.</p>
+
+<p>Das n&auml;chste Programm wird schlie&szlig;lich und endlich etwas tun, was
+Du in keinem C Programm oder C++ Programm in dieser Einf&uuml;hrung gesehen
+hast. Wenn Du also dieses Programm kompiliert und ausgef&uuml;hrt hast, werden
+wir uns unserer ersten virtuellen Funktion widmen.</p>
+
+<h2>Eine wirkliche virtuelle Funktion</h2>
+
+<p>Beispielprogramm: <a href="virtl6.cpp">VIRTL6.CPP</a></p>
+
+<p>Schlie&szlig;lich sind wir doch zu einem Programm mit einer virtuellen
+Funktion, die sich auch wie eine virtuelle Funktion benimmt und den
+Polymorphismus illustriert, vorgedrungen. Es ist das Programm mit dem Namen
+<a href="virtl6.cpp">VIRTL6.CPP</a>.</p>
+
+<p>Das Programm ist mit dem letzten identisch, nur haben wir in <a href="virtl6.cpp">Zeile 9</a>
+das Schl&uuml;sselwort <b>virtual</b> wieder eingef&uuml;gt, um
+die Methode <b>Nachricht()</b> zu einer virtuellen Methode zu machen.
+Es gen&uuml;gt, das Schl&uuml;sselwort <b>virtual</b> in der
+Basisklasse zu verwenden, die entsprechende Methode in den abgeleiteten
+Klassen wird vom System automatisch als <b>virtual</b> deklariert.
+In diesem Programm verwenden wir wieder den einzelnen Zeiger auf die
+Basisklasse, um Objekte zu erzeugen, zu verwenden, und zu l&ouml;schen.
+Dies tun wir mit demselben Code wie im letzten Programm. Allein durch das
+Schl&uuml;sselwort <b>virtual</b> in <a href="virtl6.cpp">Zeile 9</a> ist dieses Programm
+aber vom vorigen komplett verschieden.</p>
+
+<p>Da die Methode <b>Nachricht()</b> in der Basisklasse als virtuelle
+Methode deklariert worden ist, wird jedesmal, wenn wir diese Methode mit
+einem Zeiger auf die Basisklasse aufrufen, eigentlich die Methode einer der
+abgeleiteten Klassen ausgef&uuml;hrt. Das ist aber nur der Fall, wenn in der
+abgeleiteten Klasse eine Methode mit diesem Namen existiert und der Zeiger auf
+ein Objekt dieser Klasse zeigt. Beim Ausf&uuml;hren des Programmes erhalten
+wir das gleich Ergebnis wie in den Programmen, in denen wir die Methoden der
+abgeleiteten Klassen direkt aufgerufen haben. Jetzt aber verwenden wir einen
+Zeiger auf den Typ der Basisklasse f&uuml;r die Methodenaufrufe.</p>
+
+<p>Obwohl also der Code in den <a href="virtl6.cpp">Zeilen 44</a>, <a href="virtl6.cpp">48</a>, <a href="virtl6.cpp">52</a> und <a href="virtl6.cpp">56</a> derselbe ist,
+entscheidet das System anhand des Typs, auf den der Zeiger zeigt, welche
+Methode ausgef&uuml;hrt wird. Diese Entscheidung f&auml;llt nicht beim
+Kompilieren, sondern erst beim Ausf&uuml;hren des Programmes. Das kann in
+manchen Programmiersituationenen sehr n&uuml;tzlich sein. Eigentlich passieren
+hier nur drei verschiedene Aufrufe, da die Klasse <b>Laster</b> keine
+Methode mit dem Namen <b>Nachricht()</b> hat und das System einfach die
+Methode der Basisklasse verwendet. Aus diesem Grund muss eine virtuelle
+Funktion eine Implementation in der Basisklasse haben, die verwendet werden
+kann, wenn f&uuml;r eine oder mehrere abgeleitete Klassen <b>k</b>eine verf&uuml;gbar
+ist. Beachte, dass die Nachricht eigentlich an einen Zeiger auf das
+Objekt gesendet wird, aber das ist eine gewisse Haarspalterei, die uns jetzt
+nicht allzu wichtig sein sollte.</p>
+
+<p>Es ist vielleicht nicht offensichtlich, Du hast aber wahrscheinlich
+bemerkt, dass die Struktur der virtuellen Funktion in der Basisklasse
+und in jeder der abgeleiteten Klassen identisch ist. Der R&uuml;ckgabetyp und
+die Anzahl sowie die Typen der Parameter m&uuml;ssen f&uuml;r alle Funktionen
+identisch sein, da wir ja mit der gleichen Anweisung eine jede der Funktionen
+aufrufen k&ouml;nnen.</p>
+
+<h2>Ist das wirklich wichtig?</h2>
+
+<p>Auf den ersten Blick mag dieses Programm nichts Weltbewegendes tun,
+virtuelle Funktionen sind aber ein sehr n&uuml;tzliches Konstrukt, wie wir
+noch in anderen Beispielen sehen werden.</p>
+
+<p>Bei der Verwendung des Schl&uuml;sselwortes <b>virtual</b> bindet
+das System die Methodenaufrufe <u>erst zur Laufzeit</u>, wird es nicht verwendet,
+geschieht dies beim Kompilieren. Im ersteren Fall wei&szlig; der Compiler
+nicht, welche Methode schlu&szlig;endlich auf die Nachricht reagieren wird,
+da der Typ des Zeigers beim Kompilieren nicht bekannt ist. Im zweiten Fall
+entscheidet der Compiler bei der Kompilation welche Methode auf die Nachricht,
+die er an den Zeiger schickt, antworten wird.</p>
+
+<p>Kompiliere dieses Programm und f&uuml;hre es aus.</p>
+
+<h2>Programmieraufgaben</h2>
+
+<ol>
+<li>&Auml;ndere VIRTL3.CPP so, dass die Objekte vor dem Programmende
+gel&ouml;scht werden.</li>
+
+<li>Erweitere VIRTL6.CPP um eine Methode <b>Nachricht()</b> f&uuml;r die
+Klasse <b>Laster</b> und beachte, dass nun diese Methode anstatt der
+der Elternklasse verwendet wird.</li>
+
+</ol>
+
+<hr size="1">
+&copy; 1997, 1998, 2001 Heinz Tschabitscher (die komplette Einf&uuml;hrung gibts bei: http://ladedu.com/cpp), &copy; 2003 Ulrich Gehring
+
+</body>
+</html>

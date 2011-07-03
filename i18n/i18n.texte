@@ -1,0 +1,225 @@
+@de@geladen$de$@en@loaded$en$@es@loaded$es$@dd@geladen$dd$
+@de@Verzeichnis$de$@en@directory$en$@es@directory$es$@dd@Verzeichnis$dd$
+@de@Basisklasse geladen$de$@en@Basis classe geladen$en$@es@Basis class geladen$es$@dd@Basisklasse geladen$dd$
+@de@Neues Projekt...$de$@en@New project...$en$@es@New project...$es$@dd@Neues Projekt...$dd$
+@de@Ein Konsole-C-Projekt erstellen.$de$@en@Create an C project for a console.$en$@es@Create an C project for a console.$es$@dd@Ein Konsole-C-Projekt erstellen.$dd$
+@de@Ein Konsole-C++-Projekt erstellen.$de$@en@Create an C++ project for a console.$en$@es@Create an C++ project for a console.$es$@dd@Ein Konsole-C++-Projekt erstellen.$dd$
+@de@Ein grafisches Qt-Projekt erstellen.$de$@en@Create an graphical Qt project.$en$@es@Create an graphical Qt project.$es$@dd@Ein grafisches Qt-Projekt erstellen.$dd$
+@de@Ein C-SDL-Projekt fuer den GP2X erstellen.$de$@en@Create a C-SDL-Project.$en$@es@Create a C-SDL project for the GP2X.$es$@dd@Ein C-SDL-Projekt für den GP2X erstellen.$dd$
+@de@Ein C++-SDL-Projekt fuer den GP2X erstellen.$de$@en@Create a C++-SDL-Project.$en$@es@Create a C++-Project for the GP2X.$es$@dd@Ein C-SDL-Projekt für den GP2X erstellen.$dd$
+@de@Ein vorhandenes Projekt oeffnen.$de$@en@Open an existing project.$en$@es@Open an existing project.$es$@dd@Ein vorhandenes Projekt öffnen.$dd$
+@de@Alle Projektdateien speichern.$de$@en@Save all files from the project.$en$@es@Save all files from the project.$es$@dd@Alle Projektdateien speichern.$dd$
+@de@Das Projekt in einem anderen Verzeichnis speichern.$de$@en@Save the projec in an other directory.$en$@es@Save the projec in an other directory.$es$@dd@Das Projekt in einem anderen Verzeichnis speichern.$dd$
+@de@Die aktive Datei speichern.$de$@en@Save the activated file.$en$@es@Save the activated file.$es$@dd@Die aktive Datei speichern.$dd$
+@de@Das Projekt schliessen.$de$@en@Close the project.$en$@es@Close the project.$es$@dd@Das Projekt schliessen.$dd$
+@de@Das liebe BabyDevelop beenden :-($de$@en@To quit the lovely BabaDevelop :-($en$@es@To quit the lovely BabaDevelop :-($es$@dd@Das liebe BabyDevelop beenden :-($dd$
+@de@Das komplettes Projekt kompilieren und linken.$de$@en@The complete project compile and link.$en$@es@The complete project compile and link.$es$@dd@Das komplettes Projekt kompilieren und linken.$dd$
+@de@Nur die aktive Datei kompilieren.$de$@en@Only compile the activated file.$en$@es@Only compile the activated file.$es$@dd@Nur die aktive Datei kompilieren.$dd$
+@de@Die Objektdateien zusammenlinken.$de$@en@Links together the object files.$en$@es@Links together the object files.$es$@dd@Die Objektdateien zusammenlinken.$dd$
+@de@Das Projekt ausfuehren.$de$@en@Starts the project.$en$@es@Starts the project.$es$@dd@Das Projekt ausführen.$dd$
+@de@Alle Dateien kompilieren.$de$@en@Compile all files.$en$@es@Compile all files.$es$@dd@Alle Dateien kompilieren.$dd$
+@de@Einen neuen Prototyp anlegen.$de$@en@Create a new prototyp.$en$@es@Create a new prototyp.$es$@dd@Einen neuen Prototyp anlegen.$dd$
+@de@Eine neue allgemeine Klasse anlegen.$de$@en@Create a new generic class.$en$@es@Create a new generic class.$es$@dd@Eine neue allgemeine Klasse anlegen.$dd$
+@de@Eine neue grafische Klasse anlegen.$de$@en@Create a new graphical class.$en$@es@Create a new graphical class.$es$@dd@Eine neue allgemeine Klasse anlegen.$dd$
+@de@Einen Prototyp importieren...$de$@en@Import a prototyp.$en$@es@Import a prototyp.$es$@dd@Einen Prototyp importieren...$dd$
+@de@Eine Klasse importieren.$de$@en@Import a class.$en$@es@Import a class.$es$@dd@Eine Klasse importieren.$dd$
+@de@Eine Prototyp-Datei loeschen.$de$@en@Delete a prototyp-file.$en$@es@Delete a prototyp-file.$es$@dd@Eine Prototyp-Datei löschen.$dd$
+@de@Eine Klassen-Datei loeschen.$de$@en@Delete a class-file.$en$@es@Delete a class-file.$es$@dd@Eine Klassen-Datei löschen.$dd$
+@de@Einstellungen fuer BabyDevelop und das Projekt.$de$@en@Settings for BabyDevelop and the project.$en$@es@Settings for BabyDevelop and the project.$es$@dd@Einstellungen für BabyDevelop und das Projekt.$dd$
+@de@Ich zeige Ihnen wer ich bin.$de$@en@I will show you about BabyDevelop.$en$@es@I will show you about BabyDevelop.$es$@dd@Ich zeige Ihnen wer ich bin.$dd$
+@de@Zeigt eine kleine Einfuehrung in BabyDevelop.$de$@en@Shows a little introduction over BabyDevelop.$en$@es@Shows a little introduction over BabyDevelop.$es$@dd@Zeigt eine kleine Einführung in BabyDevelop.$dd$
+@de@Zeigt die Eigenschaften des geoeffneten Projekts.$de$@en@Shows the properties from the opened project.$en$@es@Shows the properties from the opened project.$es$@dd@Zeigt die Eigenschaften des geöffneten Projekts.$dd$
+@de@Es gibt viel zu tun - lassen wirs liegen :-)$de$@en@There is a lot to be done - let it leave :-)$en$@es@There is a lot to be done - let it leave :-)$es$@dd@Es gibt viel zu tun - lassen wirs liegen :-)$dd$
+@de@BabyDevelop-Hilfen fuer Qt-Widgets.$de$@en@BabyDevelop-Support for Qt-Widgets.$en$@es@BabyDevelop-Support for Qt-Widgets.$es$@dd@BabyDevelop-Hilfen fuer Qt-Widgets.$dd$
+@de@Referenzdokumentation, Hilfen und Beispiele zu besonderen Widgets.$de$@en@Referencedocumentation, support and examples for special widgets.$en$@es@Referencedocumentation, support and examples for special widgets.$es$@dd@Referenzdokumentation, Hilfen und Beispiele zu besonderen Widgets.$dd$
+@de@SyntaxHighlighting ein-/ausschalten.$de$@en@Turn on or off SyntaxHighlighting.$en$@es@Turn on or off SyntaxHighlighting.$es$@dd@SyntaxHighlighting ein-/ausschalten.$dd$
+@de@Meldungsfenster ein-/ausschalten.$de$@en@Turn on or off message windows.$en$@es@Turn on or off message windows.$es$@dd@Meldungsfenster ein-/ausschalten.$dd$
+@de@GUI-Designer starten.$de$@en@Starts the GUI-Designer.$en$@es@Starts the GUI-Designer.$es$@dd@GUI-Designer starten.$dd$
+@de@GP2X-Dateien$de$@en@GP2X files$en$@es@GP2X files$es$@dd@GP2X-Dateien$dd$
+@de@Dateien fuer den GP2X erzeugen.$de$@en@Create the files for the GP2X.$en$@es@Create the files for the GP2X.$es$@dd@Dateien für den GP2X erzeugen.$dd$
+@de@Willkommen zu BabyDevelop :-)$de$@en@Wellcome to BabyDevelop :-)$en$@es@Wellcome to BabyDevelop :-)$es$@dd@Willkommen zu BabyDevelop :-)$dd$
+@de@Projekt$de$@en@Project$en$@es@Proyecto$es$@dd@Projekt$dd$
+@de@Neu...$de$@en@New...$en$@es@Nuevo...$es$@dd@Neu...$dd$
+@de@Oeffnen...$de$@en@Open...$en$@es@Abrir...$es$@dd@Öffnen...$dd$
+@de@Speichern$de$@en@Save$en$@es@Guardar$es$@dd@Speichern$dd$
+@de@Speichern unter...$de$@en@Save as...$en$@es@Guardar como...$es$@dd@Speichern unter...$dd$
+@de@Datei speichern$de$@en@File save$en$@es@Guardar este archivo$es$@dd@Datei speichern$dd$
+@de@Schliessen$de$@en@Close$en$@es@Cerrar$es$@dd@Schliessen$dd$
+@de@Beenden$de$@en@Quit$en$@es@Terminar$es$@dd@Beenden$dd$
+@de@Bearbeiten$de$@en@Edit$en$@es@Editar$es$@dd@Bearbeiten$dd$
+@de@Rundschlag$de$@en@Round-Knock$en$@es@Golpe en cadena$es$@dd@Rundschlag$dd$
+@de@Kompilieren$de$@en@Compile$en$@es@Compilar$es$@dd@Kompilieren$dd$
+@de@Linken$de$@en@Link$en$@es@Link$es$@dd@Linken$dd$
+@de@Ausfuehren$de$@en@Run$en$@es@Activar$es$@dd@Ausführen$dd$
+@de@Alle kompilieren$de$@en@Compile all$en$@es@Compilar todo$es$@dd@Alle kompilieren$dd$
+@de@Neue allgemeine Klasse...$de$@en@New generic class...$en$@es@Nueva clase general...$es$@dd@Neue allgemeine Klasse...$dd$
+@de@Neue grafische Klasse...$de$@en@New grafical class...$en$@es@Nueva clase grafica...$es$@dd@Neue grafische Klasse...$dd$
+@de@Klasse Importieren...$de$@en@Import class...$en$@es@Importar clase...$es$@dd@Klasse Importieren...$dd$
+@de@Klasse loeschen$de$@en@Delete class$en$@es@Borrar clase$es$@dd@Klasse löschen$dd$
+@de@Einstellungen...$de$@en@Settings...$en$@es@Preferencias...$es$@dd@Einstellungen...$dd$
+@de@Neuer Prototyp...$de$@en@New prototype...$en$@es@Nuevo Prototipo...$es$@dd@Neuer Prototyp...$dd$
+@de@Prototyp importieren...$de$@en@Import prototype...$en$@es@Importar Prototipo...$es$@dd@Prototyp importieren...$dd$
+@de@Prototyp loeschen$de$@en@Delete prototype$en$@es@Borrar prototipo$es$@dd@Prototyp löschen$dd$
+@de@Info$de$@en@Info$en$@es@Info$es$@dd@Info$dd$
+@de@Ueber BabyDevelop$de$@en@About BabyDevelop$en$@es@Sobre BabyDevelop$es$@dd@Über BabyDevelop$dd$
+@de@Einfuehrung$de$@en@Entering guide$en$@es@Anadir$es$@dd@Einführung$dd$
+@de@ToDo$de$@en@ToDo$en$@es@ToDo$es$@dd@ToDo$dd$
+@de@Hilfe$de$@en@Help$en$@es@Ayuda$es$@dd@Hilfe$dd$
+@de@Baby-Qt-Hilfe$de$@en@Baby-Qt-Help$en$@es@Baby-Qt-Ayuda$es$@dd@Baby-Qt-Hilfe$dd$
+@de@Qt-Hilfe$de$@en@Qt-Help$en$@es@Qt-Ayuda$es$@dd@Qt-Hilfe$dd$
+@de@FAQ$de$@en@FAQ$en$@es@FAQ$es$@dd@FAQ$dd$
+@de@SyntaxHighlighting$de$@en@SyntaxHighlighting$en$@es@SyntaxHighlighting$es$@dd@SyntaxHighlighting$dd$
+@de@Meldungsfenster$de$@en@Message window$en$@es@Ventanilla de informacion$es$@dd@Meldungsfenster$dd$
+@de@-Eingabe_1(5,1)-$de$@en@-Eingabe_1-$en$@es@-Eingabe_1-$es$@dd@-Eingabe_1(5,1)-$dd$
+@de@KlassenName eingeben...$de$@en@Input className...$en$@es@Inroducir tipode nombre...$es$@dd@KlassenName eingeben...$dd$
+@de@KlassenName$de$@en@ClassName$en$@es@Nombre de la clase$es$@dd@KlassenName$dd$
+@de@Abbrechen$de$@en@Cancel$en$@es@Cancelar$es$@dd@Abbrechen$dd$
+@de@Ok$de$@en@Ok$en$@es@Ok$es$@dd@Ok$dd$
+@de@PrototypName eingeben...$de$@en@Input PrototypName...$en$@es@NombrePrototipo entrada...$es$@dd@PrototypName eingeben...$dd$
+@de@PrototypName$de$@en@PrototypName$en$@es@NombrePrototipo$es$@dd@PrototypName$dd$
+@de@-Importieren-$de$@en@-Importieren-$en$@es@-Importieren-$es$@dd@-Importieren-$dd$
+@de@Klasse importieren...$de$@en@Import Class...$en$@es@Importar clase...$es$@dd@Klasse importieren...$dd$
+@de@Welche KlassenArt soll importiert werden?$de$@en@Which type of class is to be imported?$en$@es@Que tipologia desea importar?$es$@dd@Welche KlassenArt soll importiert werden?$dd$
+@de@KlassenArt$de$@en@Class type$en$@es@Tipo de la clase$es$@dd@KlassenArt$dd$
+@de@Grafische Klasse )*$de$@en@Grafical class )*$en$@es@Grafical clase )*$es$@dd@Grafische Klasse )*$dd$
+@de@Allgemeine Klasse$de$@en@Generic class$en$@es@Tipo en general de clase$es$@dd@Allgemeine Klasse$dd$
+@de@ )* enthaelt SIGNAL-SLOT-Methoden$de$@en@ )* contained SIGNAL-SLOT-Methods$en$@es@ )* Una Qt-Clase tiene metodosde SIGNAL-SLOT$es$@dd@ )* enthält SIGNAL-SLOT-Methoden$dd$
+@de@- Einstellungen -$de$@en@- Einstellungen -$en$@es@- Einstellungen -$es$@dd@- Einstellungen -$dd$
+@de@Einstellungen$de$@en@Settings$en$@es@Preferencias$es$@dd@Einstellungen$dd$
+@de@Startgroesse$de$@en@Starting size$en$@es@Tamano para comenzar$es$@dd@Startgröße$dd$
+@de@Breite$de$@en@Width$en$@es@Anchura$es$@dd@Breite$dd$
+@de@Hoehe$de$@en@Height$en$@es@Altura$es$@dd@Höhe$dd$
+@de@Meldungsfenster Startgroesse$de$@en@Message window starting size$en$@es@Ventanilla de informacion dimension inicial$es$@dd@Meldungsfenster Startgröße$dd$
+@de@Schriftart$de$@en@Typeface$en$@es@Tipo grafia$es$@dd@Schriftart$dd$
+@de@Verzeichnis der Installation$de$@en@Directory of installation$en$@es@Directorio de instalacion$es$@dd@Verzeichnis der Installation$dd$
+@de@Browserbefehl mit oder ohne Pfad$de$@en@Browser command with or without path$en$@es@Orden para Browser con trayectoria$es$@dd@Browserbefehl mit oder ohne Pfad$dd$
+@de@Qt Hilfedatei mit Pfad$de$@en@Qt help file with path$en$@es@Qt archivo de ayuda con trayectoria$es$@dd@Qt Hilfedatei mit Pfad$dd$
+@de@Betriebssystem$de$@en@Operating system$en$@es@Sistema operatorio$es$@dd@Betriebssystem$dd$
+@de@Verzeichnis der Qt-Libraries$de$@en@Directory of Qt-Libraries$en$@es@Trayectoria del Qt-Libraries$es$@dd@Verzeichnis der Qt-Libraries$dd$
+@de@Libraries fuer den Linker$de$@en@Libraries for the Linker$en$@es@Librarias para el linker$es$@dd@Libraries fuer den Linker$dd$
+@de@Verzeichnis des MetaObjektCompilers$de$@en@Directory of MetaObjectCompilers$en$@es@Trayectoria del MetaObjectCompiler$es$@dd@Verzeichnis des MetaObjektCompilers$dd$
+@de@Projekt-Libraries$de$@en@Project-Libraries$en$@es@Proyecto-Libraries$es$@dd@Projekt-Libraries$dd$
+@de@CompilerFlags und LinkerFlags geladen.$de$@en@CompilerFlags and LinkerFlags loaded.$en$@es@CompilerFlags and LinkerFlags loaded.$es$@dd@CompilerFlags und LinkerFlags geladen.$dd$
+@de@Courier$de$@en@Courier$en$@es@Courier$es$@dd@Courier$dd$
+@de@Projekt-Einstellungen$de$@en@Project-Settings$en$@es@Proyecto-Preferencias$es$@dd@Projekt-Einstellungen$dd$
+@de@BabyDevelop-Einstellungen$de$@en@BabyDevelop-Settings$en$@es@BabyDevelop-Preferencias$es$@dd@BabyDevelop-Einstellungen$dd$
+@de@Verzeichnis der Qt-Header-Dateien$de$@en@Directory of Qt-Header-Files$en$@es@Trayectoria del Qt-Header-Archivo$es$@dd@Verzeichnis der Qt-Header-Dateien$dd$
+@de@Automatisch speichern$de$@en@Autosave$en$@es@salve automaticamente$es$@dd@Automatisch speichern$dd$
+@de@-Restliche Texte(8,1)-$de$@en@-Restliche Texte-$en$@es@-Restliche Texte-$es$@dd@-Restliche Texte(8,1)-$dd$
+@de@- Meldungsfenster -$de$@en@- Message window -$en$@es@- Ventanilla de informacion -$es$@dd@- Meldungsfenster -$dd$
+@de@Kein Projekt geladen.$de$@en@No project opened.$en$@es@Ningun proyecto abierto$es$@dd@Kein Projekt geladen.$dd$
+@de@Zeile$de$@en@Line$en$@es@Linea$es$@dd@Zeile$dd$
+@de@Projektdatei$de$@en@Projectfile$en$@es@Archivo del proyecto$es$@dd@Projektdatei$dd$
+@de@Neues C-Projekt anlegen...$de$@en@Create a new C-projekt...$en$@es@Abrir nuevo C-proyecto...$es$@dd@Neues C-Projekt anlegen...$dd$
+@de@Neues C++-Projekt anlegen...$de$@en@Create a new C++-Projekt...$en$@es@Abrir nuevo C++-Proyecto...$es$@dd@Neues C++-Projekt anlegen...$dd$
+@de@Neues Qt/CPP-Projekt anlegen...$de$@en@Create a new Qt/CPP-projekt...$en$@es@Abrir nuevo Qt/CPP-proyecto...$es$@dd@Neues Qt/CPP-Projekt anlegen...$dd$
+@de@Neues GP2X-C-Projekt anlegen...$de$@en@Create a new GP2X-C-Project...$en$@es@Abrir nuevo GP2X-C-proyecto...$es$@dd@Neues GP2X-C-Projekt anlegen...$dd$
+@de@Neues GP2X-C++-Projekt anlegen...$de$@en@Create a new GP2X-C++-Project...$en$@es@Abrir nuevo GP2X-C++-proyecto...$es$@dd@Neues GP2X-C++-Projekt anlegen...$dd$
+@de@- UML-Warnung -$de$@en@- UML-Warning -$en$@es@- UML-Peligro -$es$@dd@- UML-Warnung -$dd$
+@de@Die Projektdatei soll mit einem Grossbuchstaben beginnen, da daraus die Basisklasse entsteht.<br>(Korrigiere selbstaendig)$de$@en@The projectfile is to begin with a capital letter, since from it the basis class.<br>(Correct independently)$en$@es@El archivo del proyecto tiene que empezar en mayuscula, para realizar la clase basica.$es$@dd@Die Projektdatei soll mit einem Großbuchstaben beginnen, da daraus die Basisklasse entsteht.<br>(Korrigiere selbständig)$dd$
+@de@Verzeichnis waehlen...$de$@en@Choose dirctory...$en$@es@Eligir directorio...$es$@dd@Verzeichnis wählen...$dd$
+@de@- Frage -$de$@en@- Question -$en$@es@- Pregunta -$es$@dd@- Frage -$dd$
+@de@Kann das Projekt nun gelinkt werden?$de$@en@Can the project be linked now?$en$@es@Puede el proyecto ser linkeado?$es$@dd@Kann das Projekt nun gelinkt werden?$dd$
+@de@Ja$de$@en@Yes$en$@es@Si$es$@dd@Ja$dd$
+@de@Nein$de$@en@No$en$@es@No$es$@dd@Nein$dd$
+@de@Kann das Projekt nun ausgefuehrt werden?$de$@en@Can the project be run now?$en$@es@Puede el proyecto ser activado?$es$@dd@Kann das Projekt nun ausgeführt werden?$dd$
+@de@Eine Klasse soll mit einem Grossbuchstaben beginnen.<br>(Korrigiere selbstaendig)$de$@en@A class is to begin with a capital letter.<br>(Correct independently)$en$@es@Una clase debe empezar con mayusculas.<br>(correccion automatica)$es$@dd@Eine Klasse soll mit einem Großbuchstaben beginnen.<br>(Korrigiere selbständig)$dd$
+@de@Fehlende Angabe$de$@en@missing declaration$en$@es@Informacion incompleta$es$@dd@Fehlende Angabe$dd$
+@de@Sie muessen die KlasserArt waehlen!$de$@en@You must select the type of class!$en$@es@Tiene que elegir la tipologia!$es$@dd@Sie müssen die KlasserArt wählen!$dd$
+@de@KlassenDeklaration$de$@en@ClassDeclaration$en$@es@Declaracion de la tipologia$es$@dd@KlassenDeklaration$dd$
+@de@Klassendeklaration oeffnen...$de$@en@Open classdeclaration...$en$@es@Abrir declaracion de la tipologia$es$@dd@Klassendeklaration Öffnen...$dd$
+@de@- Unsinnige Operation -$de$@en@- Unreasonably operation -$en$@es@- Operacion sin sentido -$es$@dd@- Unsinnige Operation -$dd$
+@de@Die Datei main.cpp zu loeschen macht keinen Sinn!$de$@en@Delete the file main.cpp is unreasonably!$en$@es@Borrar el archivo main.cpp no tiene sentido!$es$@dd@Die Datei main.cpp zu löschen macht keinen Sinn!$dd$
+@de@Die Basisklasse zu loeschen macht keinen Sinn!$de$@en@Delete the Basisclass is unreasonably!$en$@es@Borrar archivo basico no tiene sentido!$es$@dd@Die Basisklasse zu löschen macht keinen Sinn!$dd$
+@de@- Achtung: Loesche aktive Klasse -$de$@en@- Attention delete the active class -$en$@es@- Ojo borrar la clase activa! -$es$@dd@- Achtung: Lösche aktive Klasse -$dd$
+@de@Soll die Klasse$de$@en@Is the class$en$@es@Debe la clase$es$@dd@Soll die Klasse$dd$
+@de@geloescht werden?$de$@en@to be deleted?$en$@es@borrarse$es$@dd@gelöscht werden?$dd$
+@de@Spalte$de$@en@Column$en$@es@Columna$es$@dd@Spalte$dd$
+@de@Abbrechen$de$@en@Cancel$en$@es@Cancelar$es$@dd@Abbrechen$dd$
+@de@Ok$de$@en@Ok$en$@es@Ok$es$@dd@Ok$dd$
+@de@Speichern$de$@en@Save$en$@es@Guardar$es$@dd@Speichern$dd$
+@de@In der main.cpp ein GUI zu implementieren macht keinen Sinn.$de$@en@The main.cpp is not the right place for GUI-implementation.$en$@es@El main.cpp no esta en el lugar correcto para la puesta en practica-GUI.$es$@dd@In der main.cpp ein GUI zu implementieren macht keinen Sinn.$dd$
+@de@keine$de$@en@none$en$@es@ningunos$es$@dd@keine$dd$
+@de@- Fehler -$de$@en@- Error -$en$@es@- Error -$es$@dd@- Fehler -$dd$
+@de@Kann Designer nicht starten :-($de$@en@Can not start designer :-($en$@es@No puede comenzar a disenar :-($es$@dd@Kann Designer nicht starten :-($dd$
+@de@Die Struktur wurde veraendert!$de$@en@The structure was modified$en$@es@La estructura fue modificada$es$@dd@Die Struktur wurde verändert!$dd$
+@de@.babyDevelop_user.rc nicht gefunden. Das integrierte Hilfesystem wird evtl. nicht funktionieren.$de$@en@.babyDevelop_user.rc not found. The integrated help system may not functionaly.$en$@es@.babyDevelop_user.rc no encontrado - La ayuda integrada no puede funcionar.$es$@dd@.babyDevelop_user.rc nicht gefunden. Das integrierte Hilfesystem wird evtl. nicht funktionieren.$dd$
+@de@Idee$de$@en@Idea$en$@es@Idea$es$@dd@Idee$dd$
+@de@Keine cpp-Datei gefunden.$de$@en@No cpp-File found.$en$@es@Ningun cpp-archivo encontrado$es$@dd@Keine cpp-Datei gefunden.$dd$
+@de@Die Projektdatei soll mit einem Grossbuchstaben beginnen.<br>(Korrigiere selbstaendig)$de$@en@The projectfile is to begin with a capital letter.<br>(Correct independently)$en$@es@El archivo del proyecto tiene que empezar en mayuscula.$es$@dd@Die Projektdatei soll mit einem Großbuchstaben beginnen.<br>(Korrigiere selbständig)$dd$
+@de@- Achtung: Loesche aktiven Prototyp -$de$@en@- Attention: Delete the active prototyp -$en$@es@- Ojo: Borrar el prototipo activo -$es$@dd@- Achtung: Lösche aktiven Prototyp -$dd$
+@de@Soll der Prototyp$de$@en@Is the prototyp$en$@es@Debe el prototipo$es$@dd@Soll der Prototyp$dd$
+@de@PrototypDeklaration$de$@en@PrototypDeklaration$en$@es@declaracion de el prototipo$es$@dd@PrototypDeklaration$dd$
+@de@Prototypdeklaration oeffnen...$de$@en@Open prototypdeklaration...$en$@es@Abrir declaracion de el prototipo...$es$@dd@Prototypdeklaration Öffnen...$dd$
+@de@Keine c-Datei gefunden.$de$@en@No c-File found.$en$@es@Ningun c-archivo encontrado.$es$@dd@Keine c-Datei gefunden.$dd$
+@de@Projekt-Typ waehlen...$de$@en@Choose project-typ$en$@es@Elija tipo-proyecto$es$@dd@Projekt-Typ wählen...$dd$
+@de@Projekt waehlen...$de$@en@Choose project$en$@es@Elija proyecto$es$@dd@Projekt wählen...$dd$
+@de@C++/SDL-Projekt fuer den GP2X.$de$@en@C++/SDL-Project for the GP2X.$en$@es@C++/SDL-Proyecto para el GP2X.$es$@dd@C++/SDL-Projekt für den GP2X.$dd$
+@de@C...$de$@en@C...$en$@es@C...$es$@dd@C...$dd$
+@de@C++...$de$@en@C++...$en$@es@C++...$es$@dd@C++...$dd$
+@de@C++/Qt...$de$@en@C++/Qt...$en$@es@C++/Qt...$es$@dd@C++/Qt...$dd$
+@de@GP2X (C/SDL)...$de$@en@GP2X (C/SDL)...$en$@es@GP2X (C/SDL)...$es$@dd@GP2X (C/SDL)...$dd$
+@de@GP2X (C++/SDL)...$de$@en@GP2X (C++/SDL)...$en$@es@GP2X (C++/SDL)...$es$@dd@GP2X (C++/SDL)...$dd$
+@de@Bitte stellen Sie im Menue Bearbeiten unter Einstellungen die gewuenschten Werte ein.$de$@en@Please choose Edit, Settings and put in the right.$en$@es@Por favor ponga en el menu editar bajo preferncias con el valor deseado.$es$@dd@Bitte stellen Sie im Menü Bearbeiten unter Einstellungen die gewünschten Werte ein.$dd$
+@de@Waehlen Sie einen Projekttyp.$de$@en@Choose a type of project.$en$@es@Elija un tipo de proyecto.$es$@dd@Wählen Sie einen Projekttyp.$dd$
+@de@Kann Datei ausfuehren.sh nicht anlegen.$de$@en@Can not create file ausfuehren.sh$en$@es@No se puede crear el archivo ausfuehren.sh$es$@dd@Kann Datei ausführen.sh nicht anlegen.$dd$
+@de@Kann Datei main.sh nicht anlegen.$de$@en@Can not create file main.sh$en$@es@No se puede crear el archivo main.sh$es$@dd@Kann Datei main.sh nicht anlegen.$dd$
+@de@Kann Datei main-gp2x.sh nicht anlegen.$de$@en@Can not create file main-gp2x.sh$en$@es@No se puede crear el archivo main-gp2x.sh$es$@dd@Kann Datei main-gp2x.sh nicht anlegen.$dd$
+@de@Kann Datei linken.sh nicht anlegen.$de$@en@Can not create file linken.sh$en$@es@No se puede crear el archivo linken.sh$es$@dd@Kann Datei linken.sh nicht anlegen.$dd$
+@de@Kann Datei linken-gp2x.sh nicht anlegen.$de$@en@Can not create file linken-gp2x.sh$en$@es@No se puede crear el archivo linken-gp2x.sh$es$@dd@Kann Datei linken-gp2x.sh nicht anlegen.$dd$
+@de@Kann Datei bdpProjekt.rc nicht anlegen.$de$@en@Can not write file bdpProjekt.rc$en$@es@No se puede crear el archivo bdpProjekt.rc.$es$@dd@Kann Datei bdpProjekt.rc nicht anlegen.$dd$
+@de@Kann Datei .babydevelop.user.rc nicht anlegen.$de$@en@Can not wirte .babydevelop.user.rc$en$@es@No se puede crear el archivo .babydevelop.user.rc.$es$@dd@Kann Datei .babydevelop.user.rc nicht anlegen.$dd$
+@de@Kann Datei babydevelop.rc nicht oeffnen.$de$@en@Can not open file babydevelop.rc$en$@es@No se puede abrir el archivo babydevelop.rc.$es$@dd@Kann Datei babydevelop.rc nicht öffnen.$dd$
+@de@Kann Datei .babydevelop.user.rc nicht oeffnen.$de$@en@Can not open file .babydevelop.user.rc$en$@es@No se puede abrir el archivo .babydevelop.user.rc.$es$@dd@Kann Datei .babydevelop.user.rc nicht öffnen.$dd$
+@de@Konnte Datei main.c nicht oeffnen.$de$@en@Can not open file main.c$en$@es@No se puede abrir el archivo file main.c$es$@dd@Konnte Datei main.c nicht öffnen.$dd$
+@de@.babyDevelop_user.rc nicht gefunden. Die integrierte Hilfe und einige andere Funktionen werden evtl. nicht funktionieren.$de$@en@Can not open file .babyDevelop_user.rc. Perhaps some function not possible.$en$@es@El archivo .babyDevelop_user.rc no se ha encontrado. La ayuda integrada y otras funciones pueden no funcionar.$es$@dd@.babyDevelop_user.rc nicht gefunden. Die integrierte Hilfe und einige andere Funktionen werden evtl. nicht funktionieren.$dd$
+@de@fertig$de$@en@ready$en$@es@completado$es$@dd@fertig$dd$
+@de@kompiliere nur Datei$de$@en@compile only file$en$@es@compilar solo el archivo$es$@dd@kompiliere nur Datei$dd$
+@de@ausfuehren$de$@en@running$en$@es@comenzar$es$@dd@ausführen$dd$
+@de@linken$de$@en@linking$en$@es@linkear$es$@dd@linken$dd$
+@de@kompiliere Klasse/Funktion$de$@en@compile class/function$en$@es@compilar Clase/Funcion$es$@dd@kompiliere Klasse/Funktion$dd$
+@de@eigene Klassen/Funktionen kompilieren$de$@en@own classes/functions compiling$en$@es@compilar Clase/Funcion propia$es$@dd@eigene Klassen/Funktionen kompilieren$dd$
+@de@kompiliere BasisKlasse$de$@en@compiling base class$en$@es@compilar la clase basica$es$@dd@kompiliere BasisKlasse$dd$
+@de@kompiliere main.c|cpp$de$@en@compiling main.c|cpp$en$@es@compilar main.c|cpp$es$@dd@kompiliere main.c|cpp$dd$
+@de@kompiliere alle Dateien$de$@en@compile all files$en$@es@kompilar todos los archivos$es$@dd@kompiliere alle Dateien$dd$
+@de@Fehler beim Script anlegen!$de$@en@Error while making script!$en$@es@Error en la forma del script$es$@dd@Fehler beim Script anlegen!$dd$
+@de@Kann Datei$de$@en@Can file$en$@es@Puede el archivo$es$@dd@Kann Datei$dd$
+@de@nicht oeffnen.$de$@en@not open.$en$@es@no abrir.$es$@dd@nicht öffnen.$dd$
+@de@nicht anlegen.$de$@en@not create.$en$@es@no crear.$es$@dd@nicht anlegen.$dd$
+@de@Projektdatei einlesen gescheitert.$de$@en@Reading from Project-File abort.$en$@es@La lectura del archivo-proyecto ha sido abortada.$es$@dd@Projektdatei einlesen gescheitert.$dd$
+@de@ schon vorhanden.<br>Waehlen Sie einen anderen Namen.$de$@en@ exists.<br>Choose a other name$en$@es@ existe.<br>Elija otro nombre$es$@dd@ schon vorhanden.<br>Wählen Sie einen anderen Namen.$dd$
+@de@Sie haben keinen Namen eingegeben.<br>Geben Sie einen Namen ein.$de$@en@No name entered.<br>Please enter a name.$en$@es@No ha dado ningun nombre.<br>Por favor de un nombre.$es$@dd@Sie haben keinen Namen eingegeben.<br>Geben Sie einen Namen ein.$dd$
+@de@C-Projekt als Konsoleanwendung.$de$@en@C-Project for console$en$@es@C-Proyecto para console$es$@dd@C-Projekt als Konsoleanwendung.$dd$
+@de@C++-Projekt als Konsoleanwendung.$de$@en@C++-Project for console$en$@es@C++-Proyecto para console$es$@dd@C++-Projekt als Konsoleanwendung.$dd$
+@de@Grafisches Qt/C++-Projekt.$de$@en@Graphical Qt/C++-Project$en$@es@Grafico Qt/C++-Proyecto$es$@dd@Grafisches Qt/C++-Projekt.$dd$
+@de@C/SDL-Projekt fuer den GP2X.$de$@en@C/SDL-Project for GP2X.$en$@es@C/SDL-Proyecto para GP2X.$es$@dd@C/SDL-Projekt für den GP2X.$dd$
+@de@GP2X-Dateien$de$@en@GP2X-Files$en$@es@GP2X-Archivos$es$@dd@GP2X-Dateien$dd$
+@de@Eigene Prototypen kompilieren...$de$@en@Compiling own prototyps...$en$@es@Compilando propios prototipos...$es$@dd@Eigene Prototypen kompilieren...$dd$
+@de@Prototyp$de$@en@Prototyp$en$@es@Prototipo$es$@dd@Prototyp$dd$
+@de@Fehler beim Kompilieren.$de$@en@Error while compilation.$en$@es@Error en la compilacion.$es$@dd@Fehler beim Kompilieren.$dd$
+@de@Dateien fuer den GP2X erzeugt.$de$@en@Files for the GP2X created.$en$@es@Archivo para el GP2X creado.$es$@dd@Dateien für den GP2X erzeugt.$dd$
+@de@Erzeuge Dateien fuer den GP2X...$de$@en@Creating Files for the GP2X...$en$@es@Creando archivos para el GP2X...$es$@dd@Erzeuge Dateien für den GP2X...$dd$
+@de@Erzeuge Datei main-gp2x$de$@en@Creating File main-gp2x$en$@es@Creando el archivo main-gp2x$es$@dd@Erzeuge Datei main-gp2x$dd$
+@de@Kann Datei gp2x-dateien.sh nicht anlegen.$de$@en@It is not possible writing the file gp2x-dateien.sh.$en$@es@No es posible escribir el gp2x-archivo.sh.$es$@dd@Kann Datei gp2x-dateien.sh nicht anlegen.$dd$
+@de@Information: Keine Projektparameter definiert.$de$@en@Information: No parameters defined for this project.$en$@es@Informacio: No existen parametros para este proyecto.$es$@dd@Information: Keine Projektparameter definiert.$dd$
+@de@Projekteigenschaften$de$@en@Project properties$en$@es@Informacion del proyecto$es$@dd@Projekteigenschaften$dd$
+@de@Eigenschaften des geladenen Projekts$de$@en@Properties of the loaded project$en$@es@Propiedades del proyecto cargado$es$@dd@Eigenschaften des geladenen Projekts$dd$
+@de@ProjektName: $de$@en@Project name: $en$@es@Nombre del proyecto: $es$@dd@ProjektName: $dd$
+@de@Anzahl der Klassen = $de$@en@Count of classes = $en$@es@Numero de clases = $es$@dd@Anzahl der Klassen = $dd$
+@de@ProjektVerzeichnis: $de$@en@Project path: $en$@es@Proyecto directorio: $es$@dd@ProjektVerzeichnis: $dd$
+@de@Auflistung der Klassen$de$@en@List of classes$en$@es@Listado de clases$es$@dd@Auflistung der Klassen$dd$
+@de@allgemeine Klasse$de$@en@generic class$en$@es@clase general$es$@dd@allgemeine Klasse$dd$
+@de@grafische Klasse$de$@en@graphic class$en$@es@clase grafica$es$@dd@grafische Klasse$dd$
+@de@- Information -$de$@en@- Information -$en$@es@- Informacion -$es$@dd@- Information -$dd$
+@de@Fehler beim Linken.$de$@en@Error while linking.$en$@es@Error linkeando.$es$@dd@Fehler beim Linken.$dd$
+@de@ProjektTyp$de$@en@Project typ$en$@es@tipo de proyecto$es$@dd@ProjektTyp$dd$
+@de@Struktur der Projektdatei fehlerhaft.$de$@en@Project file incorrect$en$@es@Estructura del proyecto incorrecta$es$@dd@Struktur der Projektdatei fehlerhaft.$dd$
+@de@Kompilieren der Datei main.c|cpp mit Fehlern beendet.$de$@en@Error while compiling main.c|cpp.$en$@es@Error compilando main.c|cpp.$es$@dd@Kompilieren der Datei main.c|cpp mit Fehlern beendet.$dd$
+@de@Linken mit Fehlern beendet.$de$@en@Error while linking.$en$@es@Error linkeando.$es$@dd@Linken mit Fehlern beendet.$dd$
+@de@Kompilieren der Klasse$de$@en@Compiling the class$en$@es@Compilando las clase$es$@dd@Kompilieren der Klasse$dd$
+@de@mit Fehlern beendet.$de$@en@finished with errors$en$@es@acabado con errores$es$@dd@mit Fehlern beendet.$dd$
+@de@EscapeSequenzen$de$@en@Escape sequences$en$@es@Escape secuencias$es$@dd@EscapeSequenzen$dd$
+@de@   rest alt   $de$@en@   rest alt   $en$@es@   rest alt   $es$@dd@   rest alt   $dd$
+@@@@
+
+array in ufgi18n.h begrenzt auf 199!

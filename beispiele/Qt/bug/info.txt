@@ -1,0 +1,11 @@
+ bug1
+------
+   Punkte als Objekte stellen den Grafen dar.
+   Ein (einziges) Bild kann angezeigt werden.
+
+ bug2
+------
+   Punkte werden direkt in das Bild im Arbeitsspeicher gezeichnet.
+   Es wird dadurch das Bild im Arbeitsspeicher verändert.
+   Die Punkte sind keine Objekte.
+

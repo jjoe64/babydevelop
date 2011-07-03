@@ -1,0 +1,14 @@
+
+[Desktop Entry]
+Encoding=UTF-8
+Name=BabyDevelop
+GenericName=Entwicklungsumgebung
+Comment=Anfaengerfreundliche Entwicklungsumgebung
+Exec=/bin/babydevelop %f
+Terminal=false
+MultipleArgs=false
+Type=Application
+Icon=/opt/babyDevelop/babydevelop-icon.png
+Categories=Application;Development
+StartupNotify=false
+MimeType=application/bdp

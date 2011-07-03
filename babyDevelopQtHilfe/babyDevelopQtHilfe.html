@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>BabyDevelop-Qt-Hilfe - (c)ufg</title>
+</head>
+<body>
+<h1><b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop</b>-Qt-Hilfe</h1>
+<hr size="1">
+
+<h2>BLed - Klassenreferenz</h2>
+Mit dem BLed-Widget k&ouml;nnen farbige LEDs dargestellt werden.<br>
+<br>
+Sie m&uuml;ssen dazu die Dateien der Klasse <b>BLed</b> importieren (Men&uuml;: <b>Bearbeiten -&gt; Klasse importieren... -&gt; [x]Grafische Klasse</b>). 
+Sie finden diese im Installationsverzeichnis von 
+<b><font color="magenta">B</font><font color="blue">a</font><font color="red">b</font><font color="green">y</font></b>Develop 
+(/opt/babyDevelop/beispiele/Qt/5_bled/bled.h).
+
+<h3>Konstruktor</h3>
+Erzeugt eine Led.
+<pre>   BLed::BLed(QWidget* parent);             // Variante 1</pre>
+<pre>   BLed::BLed(Qt::QColor, QWidget* parent); // Variante 2</pre>
+<ul>
+Beispiel
+<table border="1" cellspacing="0" cellpadding="7" bgcolor="lightgreen"><tr><td><pre>
+...
+#include "bled.h"
+...
+BLed* lampe;
+lampe = new BLed(this);          // Variante 1
+lampe = new BLed(Qt::red, this); // Variante 2
+lampe-&gt;setGeometry(10,10,30,30);
+lampe-&gt;setColor(&quot;Qt::red&quot;);
+lampe-&gt;show();
+lampe-&gt;on();
+...
+</pre></td></tr></table>
+</ul>
+<h3>Methoden von BLed</h3>
+LED einschalten:
+<pre>   void BLed::<b>on()</b>;</pre>
+LED ausschalten:
+<pre>   void BLed::<b>off()</b>;</pre>
+(Ein-/Aus-)Zustand wechseln:
+<pre>   void BLed::<b>toggle()</b>;</pre>
+Farbe einstellen:
+<pre>   void BLed::<b>setColor(</b>const <i>QColor</i> &amp;<b>)</b>; [virtual]</pre>
+<ul>
+ M&ouml;gliche Farben: red, green, yellow, ... und Farbcodes (siehe QColor).
+</ul>
+Zustand ermitteln:
+<pre>   int oder bool BLed::<b>state()</b>;</pre>
+Gr&ouml;&szlig;e einstellen:
+<pre>   void BLed::<b>setGeometry(</b>int x, int y, int w, int h<b>)</b>;</pre>
+<ul>
+x = Abstand in Pixel von oberer, linken Ecke in x-Richtung.<br>
+y = Abstand in Pixel von oberer, linken Ecke in y-Richtung.<br>
+w = Breite in Pixel<br>
+h = H&ouml;he in Pixel; wobei gilt: h=w.<br>
+</ul>
+
+<hr size="1">
+
+<h2>Einfache Beispiele</h2>
+Diese u.a. Beispiele finden Sie im Verzeichnis <b>/opt/babyDevelop/beispiele</b>
+<p>
+<table border="0" cellspacing="0" cellpadding="7">
+<tr>
+<th>QLabel</th><th>QPushButton</th>
+</tr>
+<tr>
+   <td align="center">Verzeichnis: 1_qlabel</td>
+   <td align="center">Verzeichnis: 3_qlineedit</td>
+</tr>
+<tr>
+   <td valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/1_qlabel/screenshot.png"></td>
+   <td valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/4_qlineedit/screenshot.png"></td>
+</tr>
+
+<tr>
+<th colspan="2"><hr size="1"></th>
+</tr>
+
+<tr>
+<th>QLabel</th><th>QPushButton</th>
+</tr>
+<tr>
+<tr>
+   <td align="center">Verzeichnis: 2_qpushbutton</td>
+   <td align="center">Verzeichnis: 3_qpushbutton_luxus</td>
+</tr>
+<tr>
+   <td valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/2_qpushbutton/screenshot.png"></td>
+   <td valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/3_qpushbutton_luxus/screenshot.png"><br>beachte Methode beenden()</td>
+</tr>
+
+<tr>
+<th colspan="2"><hr size="1"></th>
+</tr>
+
+<tr>
+<th>BLed</th><th>QTimer</th>
+</tr>
+<tr>
+<tr>
+   <td align="center">Verzeichnis: 5_bled</td>
+   <td align="center">Verzeichnis: 6_qtimer</td>
+</tr>
+<tr>
+   <td valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/5_bled/screenshot.png"></td>
+   <td valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/6_qtimer/screenshot.png"></td>
+</tr>
+
+<tr>
+<th colspan="2"><hr size="1"></th>
+</tr>
+
+<tr>
+<th colspan="2" align="left">mp3-Player</th>
+</tr>
+<tr>
+<tr>
+   <td colspan="2" align="left">Verzeichnis: mp3_player</td>
+</tr>
+<tr>
+   <td colspan="2" valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/mp3_player/screenshot.png"></td>
+</tr>
+<tr>
+<th colspan="2" align="left">Klassendiagramm</th>
+</tr>
+<tr>
+   <td colspan="2" valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/mp3_player/diagramme/klassen.png"></td>
+</tr>
+<tr>
+<th colspan="2" align="left">Sequenzdiagramm</th>
+</tr>
+<tr>
+   <td colspan="2" valign="top" align="center"><img src="/opt/babyDevelop/beispiele/Qt/mp3_player/diagramme/sequenz.png"></td>
+</tr>
+
+</table>
+</p>
+
+<hr size="1" noshade>
+<table border="0" width="100%"><tr><td align="right">&copy;ufg@hosengummi.de</td></tr></table>
+</body>
+</html>

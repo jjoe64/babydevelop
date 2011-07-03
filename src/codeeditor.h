@@ -8,6 +8,8 @@
 #include <QPlainTextEdit>
 #include <QObject>
 
+#include "highlighter.h"
+
 class QPaintEvent;
 class QResizeEvent;
 class QSize;
@@ -24,6 +26,8 @@ public:
 
 private:
   QWidget* lineNumberArea;
+  Highlighter* highlighter;
+  void syntaxHighlighting();
 
 public:
   void lineNumberAreaPaintEvent(QPaintEvent *event);

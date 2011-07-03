@@ -43,7 +43,7 @@ OUT=babydevelop
 SRC=../src
 OBJ=../obj
 
-all: clean arbeiter ufgi18n codeeditor eingabe_1 import einstellungen ufgdesigner ufgbasis ufgpushbutton ufglineedit ufglabel ufgled ufgbild debugger programmfenster bled main bdp linken
+all: clean arbeiter highlighter ufgi18n codeeditor eingabe_1 import einstellungen ufgdesigner ufgbasis ufgpushbutton ufglineedit ufglabel ufgled ufgbild debugger programmfenster bled main bdp linken
 
 clean:
 	-rm -f ../$(OUT)
@@ -51,6 +51,11 @@ clean:
 
 arbeiter:
 	$(CC) $(CFLAGS) $(SRC)/arbeiter.cpp -o $(OBJ)/arbeiter.o
+
+highlighter:
+	$(CC) $(CFLAGS) $(SRC)/highlighter.cpp -o $(OBJ)/highlighter.o
+	$(MOC) $(SRC)/highlighter.h -o $(OBJ)/highlighter.moc.cpp
+	$(CC) $(CFLAGS) $(OBJ)/highlighter.moc.cpp -o $(OBJ)/highlighter.moc.o
 
 ufgi18n:
 	$(CC) $(CFLAGS) $(SRC)/ufgi18n.cpp -o $(OBJ)/ufgi18n.o

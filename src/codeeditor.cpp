@@ -16,10 +16,23 @@ CodeEditor::CodeEditor(QWidget *parent) : QPlainTextEdit(parent)
 
   updateLineNumberAreaWidth(0);
   highlightCurrentLine();
+  
+  syntaxHighlighting();
 }
 
 CodeEditor::~CodeEditor()
 {
+}
+
+void CodeEditor::syntaxHighlighting() {
+   QFont font;
+   font.setFamily("Courier");
+   font.setFixedPitch(true);
+   font.setPointSize(10);
+
+   setFont(font);
+
+   highlighter = new Highlighter(document());
 }
 
 int CodeEditor::lineNumberAreaWidth()

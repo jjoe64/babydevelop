@@ -33,9 +33,9 @@ MOC=$(MOCDIR)/moc
 RM=del
 BIN=babydevelop.exe
 
-OBJECTS=obj/main.o obj/babydevelop.o obj/babydevelop.moc.o obj/arbeiter.o obj/eingabe_1.o obj/eingabe_1.moc.o obj/importieren.o obj/importieren.moc.o obj/codeeditor.o obj/codeeditor.moc.o obj/einstellungen.o obj/einstellungen.moc.o obj/ufgi18n.o obj/ufgdesigner.o obj/ufgdesigner.moc.o obj/ufgbild.o obj/ufgbild.moc.o obj/ufgbasis.o obj/ufgpushbutton.o obj/ufgpushbutton.moc.o obj/ufglineedit.o obj/ufglineedit.moc.o obj/ufglabel.o obj/ufglabel.moc.o obj/ufgled.o obj/ufgled.moc.o obj/bled.o obj/bled.moc.o obj/debugger.o obj/debugger.moc.o
+OBJECTS=obj/main.o obj/babydevelop.o obj/babydevelop.moc.o obj/arbeiter.o obj/eingabe_1.o obj/eingabe_1.moc.o obj/importieren.o obj/importieren.moc.o obj/codeeditor.o obj/codeeditor.moc.o obj/einstellungen.o obj/einstellungen.moc.o obj/ufgi18n.o obj/ufgdesigner.o obj/ufgdesigner.moc.o obj/ufgbild.o obj/ufgbild.moc.o obj/ufgbasis.o obj/ufgpushbutton.o obj/ufgpushbutton.moc.o obj/ufglineedit.o obj/ufglineedit.moc.o obj/ufglabel.o obj/ufglabel.moc.o obj/ufgled.o obj/ufgled.moc.o obj/bled.o obj/bled.moc.o obj/debugger.o obj/debugger.moc.o obj/highlighter.moc.o
 
-all: clean arbeiter ufgi18n codeeditor eingabe_1 import einstellungen ufgdesigner ufgbasis ufgpushbutton ufglineedit ufglabel ufgled ufgbild debugger programmfenster bled main bdp linken
+all: clean arbeiter ufgi18n codeeditor eingabe_1 import einstellungen ufgdesigner ufgbasis ufgpushbutton ufglineedit ufglabel ufgled ufgbild debugger programmfenster bled main bdp highlighter linken
 
 clean:
 	-rm ../$(OUT)
@@ -51,6 +51,11 @@ codeeditor:
 	$(CC) $(CFLAGS) src/codeeditor.cpp -o obj/codeeditor.o
 	$(MOC) src/codeeditor.h -o obj/codeeditor.moc.cpp
 	$(CC) $(CFLAGS) obj/codeeditor.moc.cpp -o obj/codeeditor.moc.o
+
+highlighter:
+	$(CC) $(CFLAGS) src/highlighter.cpp -o obj/highlighter.o
+	$(MOC) src/highlighter.h -o obj/highlighter.moc.cpp
+	$(CC) $(CFLAGS) obj/highlighter.moc.cpp -o obj/highlighter.moc.o
 
 eingabe_1:
 	$(CC) $(CFLAGS) src/eingabe_1.cpp -o obj/eingabe_1.o

@@ -79,6 +79,7 @@ make -f ../makefiles/Makefile_Linux programmfenster
 make -f ../makefiles/Makefile_Linux bled
 make -f ../makefiles/Makefile_Linux main
 make -f ../makefiles/Makefile_Linux bdp
+make -f ../makefiles/Makefile_Linux highlighter
 make -f ../makefiles/Makefile_Linux linken
 cd .. ;
 

@@ -168,7 +168,7 @@ private:
 
    //------------------------------------------------
    QWidget     *mitte;
-   QHBoxLayout *layoutMitte;
+   QVBoxLayout *layoutMitte;
 
 //remember: Eine Klasse die escape-Sequenzen anzeigen kann nehmen
 //   QTextEdit     *meldungsFenster; // Fuer Kompiler-/Linker-Meldungen

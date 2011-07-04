@@ -56,12 +56,12 @@ BabyDevelop::BabyDevelop() : QMainWindow()
 
    //erzeuge Meldungsfenster
 //   meldungsFenster=new QTextEdit("", 0);
-   meldungsFenster=new QPlainTextEdit("", 0);
+   meldungsFenster=new QPlainTextEdit("", this);
 
-   meldungsFenster->setGeometry(x0mf, y0mf, xmf, ymf);
-   meldungsFenster->setWindowTitle(landestext->getText("- Meldungsfenster -"));
-   meldungsFenster->setWindowIcon(QIcon(bdpInstallVerzeichnis+"/babyDevelop/bilder/meldungsfenster_mini.xpm"));
-   meldungsFenster->show();
+   //meldungsFenster->setGeometry(x0mf, y0mf, xmf, ymf);
+   //meldungsFenster->setWindowTitle(landestext->getText("- Meldungsfenster -"));
+   //meldungsFenster->setWindowIcon(QIcon(bdpInstallVerzeichnis+"/babyDevelop/bilder/meldungsfenster_mini.xpm"));
+   //meldungsFenster->show();
    connect(this->meldungsFenster, SIGNAL(selectionChanged()), this, SLOT(meldung_doppelklick()));
 
    //hauptfenster
@@ -440,11 +440,12 @@ BabyDevelop::BabyDevelop() : QMainWindow()
 
 	// Tabulatorenbereich zuweisen
    //-----------------------------
-	layoutMitte  = new QHBoxLayout(); // nebeneinander - obwohl es nur ein Objekt darinnen gibt
+	layoutMitte  = new QVBoxLayout(); // nebeneinander - obwohl es nur ein Objekt darinnen gibt
 	mitte = new QWidget();            // drei-teiliges Fenster -> mitte -> siehe babydevelop.h
 	mitte->setLayout(layoutMitte);
 	this->setCentralWidget(mitte);
    layoutMitte->addWidget(tabulatorRahmen);
+   layoutMitte->addWidget(meldungsFenster);
 
    // Startbildanzeige erzeugen
    //---------------------------

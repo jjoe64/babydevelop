@@ -56,13 +56,7 @@ BabyDevelop::BabyDevelop() : QMainWindow()
    landestext=new UFGi18n();
 
    //erzeuge Meldungsfenster
-//   meldungsFenster=new QTextEdit("", 0);
    meldungsFenster=new QPlainTextEdit("", this);
-
-   //meldungsFenster->setGeometry(x0mf, y0mf, xmf, ymf);
-   //meldungsFenster->setWindowTitle(landestext->getText("- Meldungsfenster -"));
-   //meldungsFenster->setWindowIcon(QIcon(bdpInstallVerzeichnis+"/babyDevelop/bilder/meldungsfenster_mini.xpm"));
-   //meldungsFenster->show();
    connect(this->meldungsFenster, SIGNAL(selectionChanged()), this, SLOT(meldung_doppelklick()));
 
    //hauptfenster
@@ -4097,13 +4091,16 @@ void BabyDevelop::darstellung()
 /* -------------------------------------------------------------------------- */
 void BabyDevelop::meldungsfensterEinAus()
 {
-   if(meldungsFenster->isVisible()==true)   // unsichtbar machen
-   {
-      meldungsFenster->hide();
-   }
-   else   // sichtbar machen
-   {
+   if (meldungsFenster->parent() != 0) {
+      // als eigenständiges Fenster
+      meldungsFenster->setParent(0);
+      meldungsFenster->setGeometry(x0mf, y0mf, xmf, ymf);
+      meldungsFenster->setWindowTitle(landestext->getText("- Meldungsfenster -"));
+      meldungsFenster->setWindowIcon(QIcon(bdpInstallVerzeichnis+"/babyDevelop/bilder/meldungsfenster_mini.xpm"));
       meldungsFenster->show();
+   } else {
+      // sichtbarkeit an/aus
+      meldungsFenster->setVisible(!meldungsFenster->isVisible());
    }
 }
 

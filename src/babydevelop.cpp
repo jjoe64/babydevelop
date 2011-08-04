@@ -25,6 +25,7 @@ int zeilenumbruch;
 
 #include <QMessageBox>
 #include <QRegExp>
+#include <QSpacerItem>
 
 BabyDevelop::BabyDevelop() : QMainWindow()
 {
@@ -440,12 +441,12 @@ BabyDevelop::BabyDevelop() : QMainWindow()
 
 	// Tabulatorenbereich zuweisen
    //-----------------------------
-	layoutMitte  = new QVBoxLayout(); // nebeneinander - obwohl es nur ein Objekt darinnen gibt
-	mitte = new QWidget();            // drei-teiliges Fenster -> mitte -> siehe babydevelop.h
-	mitte->setLayout(layoutMitte);
+	mitte = new QSplitter(Qt::Vertical);            // drei-teiliges Fenster -> mitte -> siehe babydevelop.h
 	this->setCentralWidget(mitte);
-   layoutMitte->addWidget(tabulatorRahmen);
-   layoutMitte->addWidget(meldungsFenster);
+   mitte->addWidget(tabulatorRahmen);
+   mitte->addWidget(meldungsFenster);
+   mitte->setStretchFactor(0, 2);
+   mitte->setStretchFactor(1, 1);
 
    // Startbildanzeige erzeugen
    //---------------------------

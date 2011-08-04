@@ -19,6 +19,7 @@
 #include <QDialog>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QSplitter>
 #include <QTabWidget>
 
 #include <qtextedit.h>
@@ -167,8 +168,7 @@ private:
    int znr_fehler_reiter;
 
    //------------------------------------------------
-   QWidget     *mitte;
-   QVBoxLayout *layoutMitte;
+   QSplitter     *mitte;
 
 //remember: Eine Klasse die escape-Sequenzen anzeigen kann nehmen
 //   QTextEdit     *meldungsFenster; // Fuer Kompiler-/Linker-Meldungen

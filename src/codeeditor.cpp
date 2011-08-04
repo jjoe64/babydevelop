@@ -125,3 +125,15 @@ void CodeEditor::lineNumberAreaPaintEvent(QPaintEvent *event)
   }
 }
 
+void CodeEditor::keyPressEvent ( QKeyEvent * e ) {
+   // das shift+return event wollen wir nicht, weil sonst ein <br> statt ein <p> gemacht wird
+   // return => 16777220
+   if ((e->key() == Qt::Key_Enter || e->key() == 16777220) && ((e->modifiers() & Qt::ShiftModifier) == Qt::ShiftModifier)) {
+   	// object wird geclont aber ohne shift
+   	// aktuelle modifiers & alle möglichen modifiers, außer SHIFT,ALT,CTRL
+   	e = new QKeyEvent(e->type(), e->key(), e->modifiers()&Qt::MetaModifier&Qt::KeypadModifier, e->text(), e->isAutoRepeat(), (ushort) e->count());
+   }
+   QPlainTextEdit::keyPressEvent(e);
+}
+
+

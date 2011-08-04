@@ -7,6 +7,7 @@
 
 #include <QPlainTextEdit>
 #include <QObject>
+#include <QKeyEvent>
 
 #include "highlighter.h"
 
@@ -35,6 +36,7 @@ public:
 
 protected:
   void resizeEvent(QResizeEvent *event);
+  void keyPressEvent ( QKeyEvent * e );
 
 private slots:
   void updateLineNumberAreaWidth(int newBlockCount);
